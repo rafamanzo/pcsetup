@@ -1,0 +1,11 @@
+#!/usr/bin/zsh
+
+# Copied from: https://michaelheap.com/ansible-quickly-create-new-role-structure/
+# Updated accordingly to structure at http://docs.ansible.com/ansible/playbooks_roles.html#roles
+# Last updated: 2016/02/02
+
+mkdir $1 && cd $1
+mkdir tasks handlers templates files vars meta defaults
+echo "---" > {handlers,meta,tasks,vars}/main.yml
+touch {templates,defaults,files}/.keep
+cd ..
