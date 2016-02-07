@@ -1,3 +1,4 @@
 ---
-- name: install base-devel
-  package: base-devel
+- name: Install base-devel
+  sudo: yes
+  pacman: name=base-devel state=present
