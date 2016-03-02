@@ -1,2 +1,21 @@
 ---
-- include: pacaur.yml
+- name: Check cower installed
+  command: pacman -Q cower
+  register: cower_installed
+  ignore_errors: True
+  changed_when: False
+  always_run: yes
+- name: Check pacaur installed
+  command: pacman -Q pacaur
+  register: pacaur_installed
+  ignore_errors: True
+  changed_when: False
+  always_run: yes
+- name: Install base-devel
+  include: base-devel.yml
+- name: Install cower
+  include: cower
+  when: cower_installed|failed
+- name: Install pacaur
+  include: pacaur.yml
+  when: pacaur_installed|failed

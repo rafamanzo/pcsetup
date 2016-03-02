@@ -1,0 +1,11 @@
+# Waiting for better group packages handling by Ansible:
+#
+# * https://github.com/ansible/ansible-modules-extras/pull/1646
+# * https://github.com/ansible/ansible-modules-extras/pull/1651
+#
+---
+- name: Install base-devel
+  become: yes
+  become_user: root
+  become_method: sudo
+  pacman: name=base-devel state=present

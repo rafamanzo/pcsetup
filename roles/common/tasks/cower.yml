@@ -1,0 +1,10 @@
+---
+- name: Add cower's developer GPG key
+  command: gpg --recv-keys 1EB2638FF56C0C53
+- file: dest=/tmp/cower state=directory
+- name: Download cower PKGBUILG
+  get_url: url=https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=cower dest=/tmp/cower/PKGBUILD
+- name: Build and install cower
+  command: makepkg -si --noconfirm
+  args:
+    chdir: /tmp/cower

@@ -1,33 +1,8 @@
 ---
-- name: Install base-devel
-  become: yes
-  become_user: root
-  become_method: sudo
-  pacman: name=base-devel state=present
-- command: pacman -Q cower
-  register: cower_installed
-  ignore_errors: True
-- name: Add cower's developer GPG key
-  command: gpg --recv-keys 1EB2638FF56C0C53
-  when: cower_installed|failed
-- file: dest=/tmp/cower state=directory
-- name: Download cower PKGBUILG
-  get_url: url=https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=cower dest=/tmp/cower/PKGBUILD
-  when: cower_installed|failed
-- name: Build and install cower
-  command: makepkg -si --noconfirm
-  args:
-    chdir: /tmp/cower
-  when: cower_installed|failed
-- command: pacman -Q pacaur
-  register: pacaur_installed
-  ignore_errors: True
 - file: dest=/tmp/pacaur state=directory
 - name: Download pacaur PKGBUILG
   get_url: url=https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=pacaur dest=/tmp/pacaur/PKGBUILD
-  when: pacaur_installed|failed
 - name: Build and install pacaur
   command: makepkg -si --noconfirm
   args:
     chdir: /tmp/pacaur
-  when: pacaur_installed|failed
