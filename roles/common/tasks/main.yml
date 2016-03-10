@@ -1,4 +1,6 @@
 ---
+- name: Update mirrorlist
+  include: mirrorlist
 - name: Check cower installed
   command: pacman -Q cower
   register: cower_installed
