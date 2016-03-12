@@ -1,0 +1,19 @@
+---
+- name: Install microcode package
+  pacman: name=intel-ucode state=present
+  become: yes
+  become_user: root
+  become_method: sudo
+  register: installed_intel_ucode
+- name: Backup GRUB configuration
+  copy: remote_src=True src=/boot/grub/grub.cfg dest=/boot/grub/grub.cfg.bkp
+  become: yes
+  become_user: root
+  become_method: sudo
+  when: installed_intel_ucode.changed
+- name: Regenerate GRUB configuration
+  command: grub-mkconfig -o /boot/grub/grub.cfg
+  become: yes
+  become_user: root
+  become_method: sudo
+  when: installed_intel_ucode.changed
