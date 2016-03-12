@@ -10,6 +10,6 @@
 - replace: dest=/tmp/mirrorlist regexp='^#'
 - replace: dest=/tmp/mirrorlist regexp='^#.*'
 - name: Copy new mirror list
-  copy: src=/tmp/mirrorlist dest=/etc/pacman.d/mirrorlist
+  copy: remote_src=True src=/tmp/mirrorlist dest=/etc/pacman.d/mirrorlist
   notify:
     - update sources
