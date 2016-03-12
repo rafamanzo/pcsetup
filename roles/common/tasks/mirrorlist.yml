@@ -3,23 +3,13 @@
   get_url: url='https://www.archlinux.org/mirrorlist/?country=BR&country=CL&country=CO&country=EC&protocol=http&ip_version=4&use_mirror_status=on' dest=/tmp/mirrorlist
   changed_when: False
   always_run: yes
-- command: sha1 /tmp/mirrorlist
+- stat: path=/tmp/mirrorlist checksum_algorithm=sha1
   register: new_mirrorlist_sum
   changed_when: False
   always_run: yes
-- stat: path=/etc/pacman.d/mirrorlist checksum_algorithm=sha1
-  register: current_mirrorlist_sum
-  changed_when: False
-  always_run: yes
-- name: Check if there is a newer mirror list
-  command: ! test {{ current_mirrorlist_sum }} = {{ new_mirrorlist_sum }}
-  register: new_mirrorlist_available
-  ignore_errors: True
-  changed_when: False
-  always_run: yes
+- replace: dest=/tmp/mirrorlist regexp='^#'
+- replace: dest=/tmp/mirrorlist regexp='^#.*'
 - name: Copy new mirror list
   copy: src=/tmp/mirrorlist dest=/etc/pacman.d/mirrorlist
-  when: new_mirrorlist_available
-- name: Update sources
-  command: pacman -Sy
-  when: new_mirrorlist_available
+  notify:
+    - update sources

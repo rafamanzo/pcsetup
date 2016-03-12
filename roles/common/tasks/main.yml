@@ -1,6 +1,9 @@
 ---
 - name: Update mirrorlist
-  include: mirrorlist
+  include: mirrorlist.yml
+  become: yes
+  become_user: root
+  become_method: sudo
 - name: Check cower installed
   command: pacman -Q cower
   register: cower_installed
@@ -15,8 +18,11 @@
   always_run: yes
 - name: Install base-devel
   include: base-devel.yml
+  become: yes
+  become_user: root
+  become_method: sudo
 - name: Install cower
-  include: cower
+  include: cower.yml
   when: cower_installed|failed
 - name: Install pacaur
   include: pacaur.yml

@@ -5,7 +5,4 @@
 #
 ---
 - name: Install base-devel
-  become: yes
-  become_user: root
-  become_method: sudo
   pacman: name=base-devel state=present

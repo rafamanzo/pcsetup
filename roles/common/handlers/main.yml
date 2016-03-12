@@ -1,1 +1,6 @@
 ---
+- name: update sources
+  command: pacman -Sy
+  become: yes
+  become_user: root
+  become_method: sudo
