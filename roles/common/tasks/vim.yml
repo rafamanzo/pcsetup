@@ -1,0 +1,5 @@
+- name: Install vim package
+  pacman: name=vim state=present
+  become: yes
+  become_user: root
+  become_method: sudo
