@@ -27,3 +27,5 @@
 - name: Install pacaur
   include: pacaur.yml
   when: pacaur_installed|failed
+- name: Install git
+  include: git.yml

@@ -1,0 +1,23 @@
+- name: Install git package
+  pacman: name=git state=present
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Check configured git user name
+  shell: git config --get user.name
+  register: host_git_username
+  changed_when: False
+  always_run: yes
+  ignore_errors: True
+- name: Set git user name
+  shell: git config --global user.name "{{ git_username }}"
+  when: host_git_username.stdout != "{{ git_username }}"
+- name: Check configured git user email
+  shell: git config --get user.email
+  register: host_git_useremail
+  changed_when: False
+  always_run: yes
+  ignore_errors: True
+- name: Set git user email
+  shell: git config --global user.email "{{ git_useremail }}"
+  when: host_git_useremail.stdout != "{{ git_useremail }}"
