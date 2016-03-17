@@ -1,0 +1,6 @@
+---
+- name: Install awesome package
+  pacman: name=awesome state=present
+  become: yes
+  become_user: root
+  become_method: sudo
