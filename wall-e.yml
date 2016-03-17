@@ -3,3 +3,6 @@
   roles:
     - common
     - intel-ucode
+    - intel-graphics
+    - awesomewm
+    - lightdm

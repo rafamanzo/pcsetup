@@ -1,0 +1,11 @@
+---
+- name: Install lightdm package
+  pacman: name=lightdm state=present
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Enable lightdm
+  service: name=lightdm enabled=yes
+  become: yes
+  become_user: root
+  become_method: sudo
