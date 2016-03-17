@@ -1,0 +1,16 @@
+---
+- name: Install xf86-video-intel
+  pacman: name=xf86-video-intel state=present
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Install mesa-libgl
+  pacman: name=mesa-libgl state=present
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Install lib32-mesa-libgl
+  pacman: name=lib32-mesa-libgl state=present
+  become: yes
+  become_user: root
+  become_method: sudo
