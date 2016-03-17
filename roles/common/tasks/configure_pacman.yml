@@ -1,0 +1,19 @@
+---
+- name: Set pacman preferences
+  template: src=pacman.conf dest=/etc/pacman.conf
+  become: yes
+  become_user: root
+  become_method: sudo
+  register: pacman_preferences
+- name: Update mirrorlist
+  include: mirrorlist.yml
+  become: yes
+  become_user: root
+  become_method: sudo
+  register: mirrorlist
+- name: Update the syatem
+  command: pacman -Syu --noconfirm
+  become: yes
+  become_user: root
+  become_method: sudo
+  when: pacman_preferences|changed or mirrorlist|changed
