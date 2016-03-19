@@ -28,3 +28,8 @@
   include: vim.yml
 - name: Install git
   include: git.yml
+- name: Install htop
+  pacman: name=htop state=present
+  become: yes
+  become_user: root
+  become_method: sudo
