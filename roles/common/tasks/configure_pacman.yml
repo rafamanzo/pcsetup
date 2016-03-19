@@ -11,8 +11,8 @@
   become_user: root
   become_method: sudo
   register: mirrorlist
-- name: Update the syatem
-  command: pacman -Syu --noconfirm
+- name: Update the system
+  pacman: update_cache=yes upgrade=yes
   become: yes
   become_user: root
   become_method: sudo
