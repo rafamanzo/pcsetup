@@ -2,7 +2,29 @@
 - file: dest=/tmp/pacaur state=directory
 - name: Download pacaur PKGBUILG
   get_url: url=https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=pacaur dest=/tmp/pacaur/PKGBUILD
-- name: Build and install pacaur
-  command: makepkg -si --noconfirm
+- name: Install expac
+  pacman: name=expac state=present
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Install perl
+  pacman: name=perl state=present
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Install git
+  pacman: name=git state=present
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Build pacaur
+  command: makepkg
+  args:
+    chdir: /tmp/pacaur
+- name: Install pacaur
+  shell: pacman -U --noconfirm pacaur-*.tar.xz
+  become: yes
+  become_user: root
+  become_method: sudo
   args:
     chdir: /tmp/pacaur

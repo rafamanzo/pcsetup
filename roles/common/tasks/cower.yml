@@ -4,7 +4,34 @@
 - file: dest=/tmp/cower state=directory
 - name: Download cower PKGBUILG
   get_url: url=https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=cower dest=/tmp/cower/PKGBUILD
-- name: Build and install cower
-  command: makepkg -si --noconfirm
+- name: Install curl
+  pacman: name=curl state=present
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Install openssl
+  pacman: name=openssl state=present
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Install yajl
+  pacman: name=yajl state=present
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Install perl
+  pacman: name=perl state=present
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Build cower
+  command: makepkg
+  args:
+    chdir: /tmp/cower
+- name: Install cower package
+  shell: pacman -U --noconfirm cower-*.tar.xz
+  become: yes
+  become_user: root
+  become_method: sudo
   args:
     chdir: /tmp/cower
