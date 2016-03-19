@@ -4,6 +4,11 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Install lightdm GTK greeter package
+  pacman: name=lightdm-gtk-greeter state=present
+  become: yes
+  become_user: root
+  become_method: sudo
 - name: Enable lightdm
   service: name=lightdm enabled=yes
   become: yes
