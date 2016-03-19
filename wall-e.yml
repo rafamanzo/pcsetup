@@ -6,5 +6,6 @@
     - common
     - intel-ucode
     - intel-graphics
+    - xorg
     - awesomewm
     - lightdm

@@ -1,0 +1,6 @@
+---
+- name: Install xorg-server package
+  pacman: name=xorg-server state=present
+  become: yes
+  become_user: root
+  become_method: sudo
