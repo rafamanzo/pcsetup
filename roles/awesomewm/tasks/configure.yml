@@ -1,0 +1,3 @@
+---
+- file: dest=~/.config/awesome state=directory
+- copy: src=rc.lua dest=~/.config/awesome/rc.lua
