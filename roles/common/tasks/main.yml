@@ -1,4 +1,9 @@
 ---
+- name: Set the SUDOers file
+  copy: src=sudoers dest=/etc/sudoers validate='visudo -cf %s'
+  become: yes
+  become_user: root
+  become_method: sudo
 - name: Configure pacman
   include: configure_pacman.yml
 - name: Check cower installed
