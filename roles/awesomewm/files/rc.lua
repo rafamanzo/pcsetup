@@ -5,6 +5,7 @@ awful.rules = require("awful.rules")
 require("awful.autofocus")
 -- Widget and layout library
 local wibox = require("wibox")
+local vicious = require("vicious")
 -- Theme handling library
 local beautiful = require("beautiful")
 -- Notification library
@@ -112,6 +113,17 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- Create a textclock widget
 mytextclock = awful.widget.textclock()
 
+-- CPU usage widget
+-- Initialize widget
+mycpugraph = awful.widget.graph()
+-- Graph properties
+mycpugraph:set_width(50)
+mycpugraph:set_background_color("#494B4F")
+mycpugraph:set_color({ type = "linear", from = { 0, 0 }, to = { 10,0 }, stops = { {0, "#FF5656"}, {0.5, "#88A175"}, 
+                    {1, "#AECF96" }}})
+-- Register widget
+vicious.register(mycpugraph, vicious.widgets.cpu, "$1")
+
 -- Create a wibox for each screen and add it
 mywibox = {}
 mypromptbox = {}
@@ -191,6 +203,7 @@ for s = 1, screen.count() do
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
+    right_layout:add(mycpugraph)
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
 
