@@ -38,3 +38,5 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Install NetworkManager
+  include: networkmanager.yml
