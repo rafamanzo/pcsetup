@@ -18,3 +18,5 @@
   become_method: sudo
 - name: Configure
   include: configure.yml
+- name: Install NetworkManager applet
+  include: nm-applet.yml
