@@ -4,3 +4,8 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Install gnome-keyring package
+  pacman: name=gnome-keyring state=present
+  become: yes
+  become_user: root
+  become_method: sudo
