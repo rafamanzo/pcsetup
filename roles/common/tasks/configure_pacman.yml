@@ -4,16 +4,8 @@
   become: yes
   become_user: root
   become_method: sudo
-  register: pacman_preferences
 - name: Update mirrorlist
   include: mirrorlist.yml
   become: yes
   become_user: root
   become_method: sudo
-  register: mirrorlist
-- name: Update the system
-  pacman: update_cache=yes upgrade=yes
-  become: yes
-  become_user: root
-  become_method: sudo
-  when: pacman_preferences|changed or mirrorlist|changed
