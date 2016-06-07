@@ -1,0 +1,5 @@
+---
+- name: Disable systemd power management (logind)
+  include: disable_logind.yml
+- name: Install ACPID
+  include: install.yml

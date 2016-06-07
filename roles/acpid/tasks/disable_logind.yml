@@ -1,0 +1,12 @@
+---
+- copy: src=logind.conf dest=/etc/systemd/logind.conf
+  become: yes
+  become_user: root
+  become_method: sudo
+  register: replaced_logind
+- name: Restart systemd-logind
+  service: name=systemd-logind state=restarted
+  become: yes
+  become_user: root
+  become_method: sudo
+  when: replaced_logind|changed

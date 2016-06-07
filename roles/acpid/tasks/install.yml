@@ -1,0 +1,16 @@
+---
+- name: Install acpid package
+  pacman: name=acpid state=present
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Enable acpid
+  service: name=acpid enabled=yes
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Start acpid
+  service: name=acpid state=started
+  become: yes
+  become_user: root
+  become_method: sudo
