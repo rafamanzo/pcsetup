@@ -12,6 +12,8 @@
 
 * At the root dir run `make preconfig`
 
+(If you are running inside the Vagrant box, remember to remove the user restriction on /etc/ssh/sshd_config)
+
 ### Everyday
 
 * `ansible-playbook <HOST> -K`
