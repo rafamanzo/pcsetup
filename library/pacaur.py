@@ -64,7 +64,9 @@ options:
 
     force:
         description:
-            - Force remove package, without any checks.
+            - When removing package - force remove package, without any
+              checks. When update_cache - force redownload repo
+              databases.
         required: false
         default: no
         choices: ["yes", "no"]
@@ -153,7 +155,12 @@ def query_package(module, pacaur_path, name, state="present"):
 
 
 def update_package_db(module, pacaur_path):
-    cmd = "%s -Sy" % (pacaur_path)
+    if module.params["force"]:
+        args = "Syy"
+    else:
+        args = "Sy"
+
+    cmd = "%s -%s" % (pacaur_path, args)
     rc, stdout, stderr = module.run_command(cmd, check_rc=False)
 
     if rc == 0:
@@ -179,14 +186,13 @@ def upgrade(module, pacaur_path):
         module.exit_json(changed=False, msg='Nothing to upgrade')
 
 def remove_packages(module, pacaur_path, packages):
-    if module.params["recurse"]:
-        args = "Rs"
-    else:
-        args = "R"
-
-def remove_packages(module, pacaur_path, packages):
-    if module.params["force"]:
-        args = "Rdd"
+    if module.params["recurse"] or module.params["force"]:
+        if module.params["recurse"]:
+            args = "Rs"
+        if module.params["force"]:
+            args = "Rdd"
+        if module.params["recurse"] and module.params["force"]:
+            args = "Rdds"
     else:
         args = "R"
 
@@ -232,7 +238,7 @@ def install_packages(module, pacaur_path, state, packages, package_files):
         else:
             params = '-S %s' % package
 
-        cmd = "%s %s --noconfirm  --noedit" % (pacaur_path, params)
+        cmd = "%s %s --noconfirm --noedit --needed" % (pacaur_path, params)
         rc, stdout, stderr = module.run_command(cmd, check_rc=False)
 
         if rc != 0:
@@ -265,6 +271,25 @@ def check_packages(module, pacaur_path, packages, state):
         module.exit_json(changed=False, msg="package(s) already %s" % state)
 
 
+def expand_package_groups(module, pacaur_path, pkgs):
+    expanded = []
+
+    for pkg in pkgs:
+        cmd = "%s -Sgq %s" % (pacaur_path, pkg)
+        rc, stdout, stderr = module.run_command(cmd, check_rc=False)
+
+        if rc == 0:
+            # A group was found matching the name, so expand it
+            for name in stdout.split('\n'):
+                name = name.strip()
+                if name:
+                    expanded.append(name)
+        else:
+            expanded.append(pkg)
+
+    return expanded
+
+
 def main():
     module = AnsibleModule(
         argument_spec    = dict(
@@ -279,9 +304,6 @@ def main():
         supports_check_mode = True)
 
     pacaur_path = module.get_bin_path('pacaur', True)
-
-    if not os.path.exists(pacaur_path):
-        module.fail_json(msg="cannot find pacaur, in path %s" % (pacaur_path))
 
     p = module.params
 
@@ -303,7 +325,7 @@ def main():
         upgrade(module, pacaur_path)
 
     if p['name']:
-        pkgs = p['name']
+        pkgs = expand_package_groups(module, pacaur_path, p['name'])
 
         pkg_files = []
         for i, pkg in enumerate(pkgs):
