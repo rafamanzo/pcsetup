@@ -45,3 +45,5 @@
   become_method: sudo
 - name: Install NetworkManager
   include: networkmanager.yml
+- name: Create Pandora's Box directory
+  include: pandorasbox.yml

@@ -1,0 +1,5 @@
+- name: Create Pandora's Box dir (software and scripts installed from source)
+  file: path=/opt/pandorasbox state=directory owner={{ ansible_env.LOGNAME }} group={{ ansible_env.LOGNAME }}
+  become: yes
+  become_user: root
+  become_method: sudo
