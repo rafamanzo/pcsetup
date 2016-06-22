@@ -20,3 +20,6 @@
   include: configure.yml
 - name: Install NetworkManager applet
   include: nm-applet.yml
+- name: Install assult battery status display
+  include: assault.yml
+  when: notebook

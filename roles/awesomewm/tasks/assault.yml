@@ -1,0 +1,3 @@
+---
+- name: Get Assault from git
+  git: repo=https://github.com/NuckChorris/assault.git dest=/opt/pandorasbox/assault
