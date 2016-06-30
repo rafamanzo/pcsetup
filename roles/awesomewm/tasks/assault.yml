@@ -1,3 +1,5 @@
 ---
 - name: Get Assault from git
   git: repo=https://github.com/NuckChorris/assault.git dest=/opt/pandorasbox/assault
+- name: Link assault to awesome config folder
+  file: src=/opt/pandorasbox/assault/awesomewm/assault.lua dest=~/.config/awesome/assault.lua state=link
