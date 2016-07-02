@@ -16,3 +16,13 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Enable laptop-mode
+  service: name=laptop-mode enabled=yes
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Start laptop-mode
+  service: name=laptop-mode state=started
+  become: yes
+  become_user: root
+  become_method: sudo
