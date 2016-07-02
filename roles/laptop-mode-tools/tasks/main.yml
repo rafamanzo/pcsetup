@@ -1,0 +1,6 @@
+---
+- name: Install laptop-mode-tools-git
+  pacaur: name=laptop-mode-tools-git state=present
+  become: yes
+  become_user: super{{ ansible_env.LOGNAME }}
+  become_method: sudo
