@@ -1,0 +1,6 @@
+---
+- name: Install cpupower
+  pacman: name=cpupower state=present
+- name: Enable acpi-cpufreq kernel module
+  copy: src=acpi-cpufreq.conf dest=/etc/modules-load.d/acpi-cpufreq.conf
+- modprobe: name=acpi-cpufreq state=present
