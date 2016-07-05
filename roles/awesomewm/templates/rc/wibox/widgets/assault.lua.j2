@@ -1,0 +1,9 @@
+[% if notebook | default(false) is sameas true %]
+-- Create battery widget
+myassault = assault({
+            width = 12,
+            height = 7,
+            bolt_width = 8,
+            bolt_height = 7,
+})
+[% endif %]

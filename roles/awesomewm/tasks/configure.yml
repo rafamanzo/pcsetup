@@ -1,3 +1,3 @@
 ---
 - file: dest=~/.config/awesome state=directory
-- template: src=rc.lua.j2 dest=~/.config/awesome/rc.lua
+- template: src=rc/main.lua.j2 dest=~/.config/awesome/rc.lua

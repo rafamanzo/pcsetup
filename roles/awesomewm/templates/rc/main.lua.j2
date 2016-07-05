@@ -1,0 +1,25 @@
+#jinja2:block_start_string:'[%', block_end_string:'%]', variable_start_string:'[[%' , variable_end_string:'%]]', comment_start_string:'[[#' , comment_end_string:'#]]'
+
+[% include 'requires.lua.j2' %]
+
+[% include 'errors.lua.j2' %]
+
+[% include 'variables.lua.j2' %]
+
+[% include 'wallpaper.lua.j2' %]
+
+[% include 'tags.lua.j2' %]
+
+[% include 'menu.lua.j2' %]
+
+[% include 'wibox/main.lua.j2' %]
+
+[% include 'bindings.lua.j2' %]
+
+[% include 'rules.lua.j2' %]
+
+[% include 'signals.lua.j2' %]
+
+-- {{{ Spawn
+awful.util.spawn("nm-applet")
+-- }}}

@@ -1,0 +1,16 @@
+-- Standard awesome library
+local gears = require("gears")
+local awful = require("awful")
+awful.rules = require("awful.rules")
+require("awful.autofocus")
+-- Widget and layout library
+local wibox = require("wibox")
+local vicious = require("vicious")
+-- Theme handling library
+local beautiful = require("beautiful")
+-- Notification library
+local naughty = require("naughty")
+local menubar = require("menubar")
+[% if notebook | default(false) is sameas true %]
+local assault = require("assault")
+[% endif %]
