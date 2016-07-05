@@ -2,6 +2,7 @@
 [% include 'wibox/widgets/clock.lua.j2' %]
 [% include 'wibox/widgets/cpu.lua.j2' %]
 [% include 'wibox/widgets/assault.lua.j2' %]
+[% include 'wibox/widgets/alsa.lua.j2' %]
 
 
 -- Create a wibox for each screen and add it
@@ -87,6 +88,7 @@ for s = 1, screen.count() do
     [% if notebook | default(false) is sameas true %]
     right_layout:add(myassault)
     [% endif %]
+    right_layout:add(alsawidget.bar)
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
 

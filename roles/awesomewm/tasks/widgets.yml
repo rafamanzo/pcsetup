@@ -9,3 +9,5 @@
   pacman: name=hddtemp state=present
 - name: Install wireless_tools package
   pacman: name=wireless_tools state=present
+- name: Install gnome-icon-theme package
+  pacman: name=gnome-icon-theme state=present
