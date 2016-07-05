@@ -47,3 +47,8 @@
   include: networkmanager.yml
 - name: Create Pandora's Box directory
   include: pandorasbox.yml
+- name: Install alsa-utils
+  pacman: name=alsa-utils state=present
+  become: yes
+  become_user: root
+  become_method: sudo
