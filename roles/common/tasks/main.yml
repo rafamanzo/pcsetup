@@ -52,3 +52,5 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Setup web browsers
+  include: browsers.yml
