@@ -11,6 +11,10 @@
 ### First time only
 
 * At the root dir run `make preconfig`
+  - Creates `sudo` group and add the current user to it as several ansible steps will require sudo
+  - Create a super user that can run sudo passwordless. This is require to properly make pacaur work without asking sudo password
+  - Update the system
+  - Install ansible
 
 ### Everyday
 
