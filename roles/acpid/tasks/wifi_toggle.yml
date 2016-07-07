@@ -1,0 +1,20 @@
+---
+# Based on https://wiki.archlinux.org/index.php/acpid#Enabling_Wi-Fi_toggle
+- name: Set ACPID wlan toggle handler
+  copy: src=handlers/wlan dest=/etc/acpi/handlers/wlan mode=744
+  become: yes
+  become_user: root
+  become_method: sudo
+  register: handler_set
+- name: Set ACPID wlan toggle event
+  copy: src=events/wlan dest=/etc/acpi/events/wlan
+  become: yes
+  become_user: root
+  become_method: sudo
+  register: event_set
+- name: Restart acpid
+  service: name=acpid state=restarted
+  become: yes
+  become_user: root
+  become_method: sudo
+  when: handler_set or event_set

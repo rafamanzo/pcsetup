@@ -1,0 +1,2 @@
+event=button/wlan
+action=/etc/acpi/handlers/wlan
