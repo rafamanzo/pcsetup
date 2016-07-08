@@ -19,3 +19,13 @@
 ### Everyday
 
 * `ansible-playbook <HOST> -K`
+
+### Managed machines
+
+* WALL-E (Netbook)
+  - Specs
+    * Intel Atom N450
+    * 2 GB RAM
+    * 250 GB HDD
+  - Workarounds
+    * The wifi toggle does not generate ACPI events. So the toggle has been mapped to ModKey+F2 there
