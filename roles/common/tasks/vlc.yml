@@ -1,0 +1,4 @@
+- name: Install vlc
+  pacman: name=vlc state=present
+- name: Install qt4
+  pacman: name=qt4 state=present

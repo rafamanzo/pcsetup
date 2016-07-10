@@ -64,3 +64,8 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Setup vlc
+  include: vlc.yml
+  become: yes
+  become_user: root
+  become_method: sudo
