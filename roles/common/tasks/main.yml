@@ -54,3 +54,8 @@
   become_method: sudo
 - name: Setup web browsers
   include: browsers.yml
+- name: Set timezone
+  file: src=/usr/share/zoneinfo/Brazil/East dest=/etc/localtime state=link force=yes
+  become: yes
+  become_user: root
+  become_method: sudo
