@@ -59,3 +59,8 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Setup systemd-timesyncd
+  include: systemd-timesyncd.yml
+  become: yes
+  become_user: root
+  become_method: sudo
