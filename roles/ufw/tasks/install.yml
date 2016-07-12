@@ -1,7 +1,7 @@
 ---
 - name: Install ufw package
   pacman: name=ufw state=present
-- name: Enable ufw
+- name: Enable ufw service
   service: name=ufw enabled=yes
-- name: Start ufw
+- name: Start ufw service
   service: name=ufw state=started

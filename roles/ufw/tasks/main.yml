@@ -4,6 +4,11 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Configure ufw
+  include: configure.yml
+  become: yes
+  become_user: root
+  become_method: sudo
 - name: Block all traffic
   include: close.yml
   become: yes

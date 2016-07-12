@@ -1,0 +1,3 @@
+---
+- copy: src=before.rules dest=/etc/ufw/before.rules
+- copy: src=before6.rules dest=/etc/ufw/before6.rules
