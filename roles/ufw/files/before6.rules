@@ -35,40 +35,40 @@
 -A ufw6-before-input -m conntrack --ctstate INVALID -j DROP
 
 # ok icmp codes for INPUT (rfc4890, 4.4.1 and 4.4.2)
--A ufw6-before-input -p icmpv6 --icmpv6-type destination-unreachable -j ACCEPT
--A ufw6-before-input -p icmpv6 --icmpv6-type packet-too-big -j ACCEPT
+-A ufw6-before-input -p icmpv6 --icmpv6-type destination-unreachable -j DROP
+-A ufw6-before-input -p icmpv6 --icmpv6-type packet-too-big -j DROP
 # codes 0 and 1
--A ufw6-before-input -p icmpv6 --icmpv6-type time-exceeded -j ACCEPT
+-A ufw6-before-input -p icmpv6 --icmpv6-type time-exceeded -j DROP
 # codes 0-2
--A ufw6-before-input -p icmpv6 --icmpv6-type parameter-problem -j ACCEPT
--A ufw6-before-input -p icmpv6 --icmpv6-type echo-request -j ACCEPT
--A ufw6-before-input -p icmpv6 --icmpv6-type echo-reply -j ACCEPT
--A ufw6-before-input -p icmpv6 --icmpv6-type router-solicitation -m hl --hl-eq 255 -j ACCEPT
--A ufw6-before-input -p icmpv6 --icmpv6-type router-advertisement -m hl --hl-eq 255 -j ACCEPT
--A ufw6-before-input -p icmpv6 --icmpv6-type neighbor-solicitation -m hl --hl-eq 255 -j ACCEPT
--A ufw6-before-input -p icmpv6 --icmpv6-type neighbor-advertisement -m hl --hl-eq 255 -j ACCEPT
+-A ufw6-before-input -p icmpv6 --icmpv6-type parameter-problem -j DROP
+-A ufw6-before-input -p icmpv6 --icmpv6-type echo-request -j DROP
+-A ufw6-before-input -p icmpv6 --icmpv6-type echo-reply -j DROP
+-A ufw6-before-input -p icmpv6 --icmpv6-type router-solicitation -m hl --hl-eq 255 -j DROP
+-A ufw6-before-input -p icmpv6 --icmpv6-type router-advertisement -m hl --hl-eq 255 -j DROP
+-A ufw6-before-input -p icmpv6 --icmpv6-type neighbor-solicitation -m hl --hl-eq 255 -j DROP
+-A ufw6-before-input -p icmpv6 --icmpv6-type neighbor-advertisement -m hl --hl-eq 255 -j DROP
 # IND solicitation
--A ufw6-before-input -p icmpv6 --icmpv6-type 141 -m hl --hl-eq 255 -j ACCEPT
+-A ufw6-before-input -p icmpv6 --icmpv6-type 141 -m hl --hl-eq 255 -j DROP
 # IND advertisement
--A ufw6-before-input -p icmpv6 --icmpv6-type 142 -m hl --hl-eq 255 -j ACCEPT
+-A ufw6-before-input -p icmpv6 --icmpv6-type 142 -m hl --hl-eq 255 -j DROP
 # MLD query
--A ufw6-before-input -p icmpv6 --icmpv6-type 130 -s fe80::/10 -j ACCEPT
+-A ufw6-before-input -p icmpv6 --icmpv6-type 130 -s fe80::/10 -j DROP
 # MLD report
--A ufw6-before-input -p icmpv6 --icmpv6-type 131 -s fe80::/10 -j ACCEPT
+-A ufw6-before-input -p icmpv6 --icmpv6-type 131 -s fe80::/10 -j DROP
 # MLD done
--A ufw6-before-input -p icmpv6 --icmpv6-type 132 -s fe80::/10 -j ACCEPT
+-A ufw6-before-input -p icmpv6 --icmpv6-type 132 -s fe80::/10 -j DROP
 # MLD report v2
--A ufw6-before-input -p icmpv6 --icmpv6-type 143 -s fe80::/10 -j ACCEPT
+-A ufw6-before-input -p icmpv6 --icmpv6-type 143 -s fe80::/10 -j DROP
 # SEND certificate path solicitation
--A ufw6-before-input -p icmpv6 --icmpv6-type 148 -m hl --hl-eq 255 -j ACCEPT
+-A ufw6-before-input -p icmpv6 --icmpv6-type 148 -m hl --hl-eq 255 -j DROP
 # SEND certificate path advertisement
--A ufw6-before-input -p icmpv6 --icmpv6-type 149 -m hl --hl-eq 255 -j ACCEPT
+-A ufw6-before-input -p icmpv6 --icmpv6-type 149 -m hl --hl-eq 255 -j DROP
 # MR advertisement
--A ufw6-before-input -p icmpv6 --icmpv6-type 151 -s fe80::/10 -m hl --hl-eq 1 -j ACCEPT
+-A ufw6-before-input -p icmpv6 --icmpv6-type 151 -s fe80::/10 -m hl --hl-eq 1 -j DROP
 # MR solicitation
--A ufw6-before-input -p icmpv6 --icmpv6-type 152 -s fe80::/10 -m hl --hl-eq 1 -j ACCEPT
+-A ufw6-before-input -p icmpv6 --icmpv6-type 152 -s fe80::/10 -m hl --hl-eq 1 -j DROP
 # MR termination
--A ufw6-before-input -p icmpv6 --icmpv6-type 153 -s fe80::/10 -m hl --hl-eq 1 -j ACCEPT
+-A ufw6-before-input -p icmpv6 --icmpv6-type 153 -s fe80::/10 -m hl --hl-eq 1 -j DROP
 
 # ok icmp codes for OUTPUT (rfc4890, 4.4.1 and 4.4.2)
 -A ufw6-before-output -p icmpv6 --icmpv6-type destination-unreachable -j ACCEPT
