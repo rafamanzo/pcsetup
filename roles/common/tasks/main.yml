@@ -34,6 +34,11 @@
 - name: Install pacaur
   include: pacaur.yml
   when: pacaur_installed|failed
+- name: Update AUR packages
+  pacaur: update_cache=yes upgrade=yes
+  become: yes
+  become_user: super{{ ansible_env.LOGNAME }}
+  become_method: sudo
 - name: Install vim
   include: vim.yml
 - name: Install git
