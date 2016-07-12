@@ -1,0 +1,3 @@
+---
+- name: Block incoming traffic
+  ufw: rule=deny direction=in
