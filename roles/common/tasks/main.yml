@@ -74,3 +74,8 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Setup CUPS
+  include: cups.yml
+  become: yes
+  become_user: root
+  become_method: sudo

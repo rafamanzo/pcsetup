@@ -1,0 +1,7 @@
+---
+- name: Install cups package
+  pacman: name=cups state=present
+- name: Install ghostscript package
+  pacman: name=ghostscript state=present
+- name: Install gsfonts package
+  pacman: name=gsfonts state=present
