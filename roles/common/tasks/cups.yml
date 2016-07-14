@@ -5,3 +5,9 @@
   pacman: name=ghostscript state=present
 - name: Install gsfonts package
   pacman: name=gsfonts state=present
+- name: Install gutenprint package
+  pacman: name=gutenprint state=present
+- name: Install foomatic-db-gutenprint package
+  pacman: name=foomatic-db-gutenprint state=present
+- name: Install foomatic-db-gutenprint-ppds package
+  pacman: name=foomatic-db-gutenprint-ppds state=present
