@@ -20,7 +20,17 @@
 
 * `ansible-playbook <HOST> -K`
 
-### Managed machines
+## Known ~~issues~~ features
+
+### Firewall (UFW)
+
+* Locks you out of Vagrant box after rebooting the machine
+  - Going through the VirtualBox's gui, disable UFW (`sudo ufw disable`) and reload the box (`vagrant reload`)
+* CUPS network printer discovery
+  - Simplest thing is to disable UFW while setting up the printer (`sudo ufw disable`), set it up and enable UFW back (`sudo ufw enable`). After configured the printer should stay working
+  - If you know the printer network address and model (for driver choosing), you can go through CUPS configuration process
+
+## Managed machines
 
 * WALL-E (Netbook)
   - Specs
