@@ -11,3 +11,8 @@
   pacman: name=foomatic-db-gutenprint state=present
 - name: Install foomatic-db-gutenprint-ppds package
   pacman: name=foomatic-db-gutenprint-ppds state=present
+- name: Install epson-inkjet-printer-201207w package # For Epson L355
+  pacaur: name=epson-inkjet-printer-201207w state=present
+  become: yes
+  become_user: super{{ ansible_env.LOGNAME }}
+  become_method: sudo
