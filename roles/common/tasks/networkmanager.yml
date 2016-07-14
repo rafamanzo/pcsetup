@@ -12,3 +12,4 @@
   become: yes
   become_user: root
   become_method: sudo
+  changed_when: False # It does not behaviour well when reporting its status to systemd
