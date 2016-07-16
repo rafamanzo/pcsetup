@@ -79,3 +79,8 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Install ttf-dejavu package # (high quality, general-purpose fonts with good Unicode coverage)
+  pacman: name=ttf-dejavu state=present
+  become: yes
+  become_user: root
+  become_method: sudo
