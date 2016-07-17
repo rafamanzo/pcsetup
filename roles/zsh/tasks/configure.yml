@@ -4,3 +4,10 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Create zshrc
+  copy: src=.zshrc dest={{ ansible_env.HOME }}/.zshrc
+- name: Set zsh as default shell
+  user: name={{ ansible_env.LOGNAME }} shell=/usr/bin/zsh
+  become: yes
+  become_user: root
+  become_method: sudo
