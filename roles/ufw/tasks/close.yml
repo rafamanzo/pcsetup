@@ -1,3 +1,15 @@
 ---
+- name: Check default incoming status
+  shell: 'ufw status verbose | grep -q "Default: deny (incoming)"'
+  register: default_deny_in
+  changed_when: False
+  always_run: yes
+  ignore_errors: True
 - name: Block incoming traffic
-  ufw: rule=deny direction=in
+  # WRONG: ufw: rule=deny direction=in
+  # It does not set as a default rule
+  command: ufw default deny incoming
+  become: yes
+  become_user: root
+  become_method: sudo
+  when: default_deny_in.rc != 0
