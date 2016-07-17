@@ -1,0 +1,8 @@
+---
+- name: Install zsh package
+  pacman: name=zsh state=present
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Cofigure zsh
+  include: configure.yml

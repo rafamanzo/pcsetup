@@ -1,0 +1,6 @@
+---
+- name: Install grml-zsh-config package
+  pacman: name=grml-zsh-config state=present
+  become: yes
+  become_user: root
+  become_method: sudo
