@@ -4,6 +4,16 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Install zsh-syntax-highlighting package
+  pacman: name=zsh-syntax-highlighting state=present
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Install zsh-autosuggestions package
+  pacaur: name=zsh-autosuggestions state=present
+  become: yes
+  become_user: super{{ ansible_env.LOGNAME }}
+  become_method: sudo
 - name: Create zshrc
   copy: src=.zshrc dest={{ ansible_env.HOME }}/.zshrc
 - name: Set zsh as default shell
