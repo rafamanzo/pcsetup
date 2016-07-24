@@ -4,3 +4,5 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Configure through Xresources
+  copy: src=.Xresources dest=~/.Xresources
