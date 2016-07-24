@@ -4,5 +4,10 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Install xorg-xrdb package # Enables configuration loading
+  pacman: name=xorg-xrdb state=present
+  become: yes
+  become_user: root
+  become_method: sudo
 - name: Configure through Xresources
   copy: src=.Xresources dest=~/.Xresources
