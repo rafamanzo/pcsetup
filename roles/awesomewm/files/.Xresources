@@ -17,3 +17,11 @@ urxvt.urlLauncher: firefox
 urxvt.matcher.button: 1
 
 urxvt.loginShell: true
+
+urxvt.scrollBar_right: true
+
+urxvt.scrollTtyOutput: false
+urxvt.scrollWithBuffer: true
+urxvt.scrollTtyKeypress: true
+urxvt.secondaryScreen: 1
+urxvt.secondaryScroll: 0
