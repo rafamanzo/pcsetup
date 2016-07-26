@@ -15,3 +15,5 @@ urxvt.saveLines: 5000
 urxvt.perl-ext-common: default,matcher
 urxvt.urlLauncher: firefox
 urxvt.matcher.button: 1
+
+urxvt.loginShell: true
