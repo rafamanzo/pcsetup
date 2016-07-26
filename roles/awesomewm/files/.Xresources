@@ -2,7 +2,7 @@ urxvt.background: [70]#000000
 urxvt.foreground: [100]#ffffff
 
 urxvt.transparent: true
-urxvt.shading: 30
+urxvt.shading: 15
 
 urxvt.geometry: 71x40
 urxvt.font: xft:Terminus:pixelsize=7
