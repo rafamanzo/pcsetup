@@ -15,6 +15,7 @@
   - Create a super user that can run sudo passwordless. This is require to properly make pacaur work without asking sudo password
   - Update the system
   - Install ansible
+* If you are not me, you need to [set your own personal information](https://github.com/rafamanzo/pcsetup/wiki/Replace-my-personal-information-by-yours)
 
 ### Everyday
 
