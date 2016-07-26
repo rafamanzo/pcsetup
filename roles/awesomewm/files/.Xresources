@@ -1,25 +1,36 @@
+! Main colours
 urxvt.background: [70]#000000
 urxvt.foreground: [100]#ffffff
 
+! Transparency
 urxvt.transparent: true
 urxvt.shading: 15
 
+! Size
 urxvt.geometry: 71x40
+
+! Font
 urxvt.font: xft:Terminus:pixelsize=7
 urxvt.letterSpace: -1
 
+! Remove border
 urxvt.borderless: 1
 
+! Set lines saved buffer size
 urxvt.saveLines: 5000
 
+! Open URLs
 urxvt.perl-ext-common: default,matcher
 urxvt.urlLauncher: firefox
 urxvt.matcher.button: 1
 
+! Start as login shell
 urxvt.loginShell: true
 
+! Move the scrollbar to the right
 urxvt.scrollBar_right: true
 
+! Set buffer scrolling behaviour
 urxvt.scrollTtyOutput: false
 urxvt.scrollWithBuffer: true
 urxvt.scrollTtyKeypress: true
