@@ -1,2 +1,5 @@
 urxvt*transparent: true
 urxvt*shading: 30
+
+urxvt.geometry: 71x40
+urxvt.font: xft:Terminus:pixelsize=7
