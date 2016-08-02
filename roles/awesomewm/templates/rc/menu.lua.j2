@@ -4,11 +4,15 @@ myawesomemenu = {
    { "manual", terminal .. " -e man awesome" },
    { "edit config", editor_cmd .. " " .. awesome.conffile },
    { "restart", awesome.restart },
-   { "quit", awesome.quit }
 }
 
-mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "open terminal", terminal }
+mysessionmenu = {  { "logout", awesome.quit },
+                   { "shutdown", terminal .. " -e systemctl poweroff -i" }
+}
+
+mymainmenu = awful.menu({ items = { { "terminal", terminal },
+                                    { "awesome", myawesomemenu, beautiful.awesome_icon },
+                                    { "session", mysessionmenu }
                                   }
                         })
 
