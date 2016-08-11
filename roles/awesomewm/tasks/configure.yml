@@ -1,3 +1,13 @@
 ---
 - file: dest=~/.config/awesome state=directory
 - template: src=rc/main.lua.j2 dest=~/.config/awesome/rc.lua
+- name: Install ArchLinux Wallpapers
+  pacman: name=archlinux-wallpaper state=present
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Set theme wallpaper
+  copy: src=/usr/share/archlinux/wallpaper/archlinux-tribute.jpg dest=/usr/share/awesome/themes/bamboo/background.jpg backup=yes remote_src=true
+  become: yes
+  become_user: root
+  become_method: sudo
