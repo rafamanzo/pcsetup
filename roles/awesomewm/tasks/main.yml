@@ -23,3 +23,13 @@
 - name: Install assult battery status display
   include: assault.yml
   when: notebook
+- name: Install GNOME File Manager
+  pacman: name=nautilus state=present
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Install GNOME File Roller
+  pacman: name=file-roller state=present
+  become: yes
+  become_user: root
+  become_method: sudo
