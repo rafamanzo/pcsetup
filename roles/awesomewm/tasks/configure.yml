@@ -6,8 +6,5 @@
   become: yes
   become_user: root
   become_method: sudo
-- name: Set theme wallpaper
-  copy: src=/usr/share/archlinux/wallpaper/archlinux-tribute.jpg dest=/usr/share/awesome/themes/bamboo/background.jpg backup=yes remote_src=true
-  become: yes
-  become_user: root
-  become_method: sudo
+- name: Set awesome theme file
+  copy: src=theme.lua dest=~/.config/awesome/theme.lua
