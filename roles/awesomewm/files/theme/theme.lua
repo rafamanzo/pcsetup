@@ -20,6 +20,7 @@ if not awful.util.file_readable(themes .. themename .. "/theme.lua") then
        themes = sharedthemes
 end
 themedir      = themes .. themename
+home_themedir = "~/.config/awesome/theme"
 
 wallpaper1    = "/usr/share/archlinux/wallpaper/archlinux-tribute.jpg"
 wallpaper2    = themedir .. "/background.jpg"
@@ -116,24 +117,24 @@ theme.taglist_squares_unsel = themedir .. "/taglist/squarez.png"
 -- }}}
 
 -- {{{ Misc
-theme.awesome_icon           = themedir .. "/awesome-icon.png"
+theme.awesome_icon           = home_themedir .. "/awesome-icon.png"
 theme.menu_submenu_icon      = sharedthemes .. "/default/submenu.png"
 theme.tasklist_floating_icon = sharedthemes .. "/default/tasklist/floatingw.png"
 -- }}}
 
 -- {{{ Layout
-theme.layout_tile       = themedir .. "/layouts/tile.png"
-theme.layout_tileleft   = themedir .. "/layouts/tileleft.png"
-theme.layout_tilebottom = themedir .. "/layouts/tilebottom.png"
-theme.layout_tiletop    = themedir .. "/layouts/tiletop.png"
-theme.layout_fairv      = themedir .. "/layouts/fairv.png"
-theme.layout_fairh      = themedir .. "/layouts/fairh.png"
-theme.layout_spiral     = themedir .. "/layouts/spiral.png"
-theme.layout_dwindle    = themedir .. "/layouts/dwindle.png"
-theme.layout_max        = themedir .. "/layouts/max.png"
-theme.layout_fullscreen = themedir .. "/layouts/fullscreen.png"
-theme.layout_magnifier  = themedir .. "/layouts/magnifier.png"
-theme.layout_floating   = themedir .. "/layouts/floating.png"
+theme.layout_tile       = home_themedir .. "/layouts/tile.png"
+theme.layout_tileleft   = home_themedir .. "/layouts/tileleft.png"
+theme.layout_tilebottom = home_themedir .. "/layouts/tilebottom.png"
+theme.layout_tiletop    = home_themedir .. "/layouts/tiletop.png"
+theme.layout_fairv      = home_themedir .. "/layouts/fairv.png"
+theme.layout_fairh      = home_themedir .. "/layouts/fairh.png"
+theme.layout_spiral     = home_themedir .. "/layouts/spiral.png"
+theme.layout_dwindle    = home_themedir .. "/layouts/dwindle.png"
+theme.layout_max        = home_themedir .. "/layouts/max.png"
+theme.layout_fullscreen = home_themedir .. "/layouts/fullscreen.png"
+theme.layout_magnifier  = home_themedir .. "/layouts/magnifier.png"
+theme.layout_floating   = home_themedir .. "/layouts/floating.png"
 -- }}}
 
 -- {{{ Titlebar

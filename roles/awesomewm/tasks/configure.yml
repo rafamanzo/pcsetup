@@ -6,5 +6,5 @@
   become: yes
   become_user: root
   become_method: sudo
-- name: Set awesome theme file
-  copy: src=theme.lua dest=~/.config/awesome/theme.lua
+- name: Set AwesomeWM theme
+  copy: src=theme dest=~/.config/awesome
