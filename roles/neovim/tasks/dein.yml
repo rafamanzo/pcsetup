@@ -1,0 +1,13 @@
+---
+- name: Create dein.vim dir
+  file: dest=/opt/pandorasbox/dein.vim state=directory
+- stat: path=/opt/pandorasbox/dein.vim/installer.sh
+  register: installer
+- name: Download dein.vim installer
+  get_url: url=https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh dest=/opt/pandorasbox/dein.vim/installer.sh mode=755
+  when: not installer.stat.exists
+- name: Run dein.vim installer
+  shell: ./installer.sh .
+  args:
+    chdir: /opt/pandorasbox/dein.vim
+    creates: repos # Runs the installer only if this does not exists

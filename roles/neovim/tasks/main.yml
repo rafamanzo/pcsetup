@@ -4,3 +4,5 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Install dein.vim plugin manager
+  include: dein.yml
