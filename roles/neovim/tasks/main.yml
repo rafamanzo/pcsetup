@@ -6,3 +6,5 @@
   become_method: sudo
 - name: Install dein.vim plugin manager
   include: dein.yml
+- name: Configure neovim
+  include: configure.yml
