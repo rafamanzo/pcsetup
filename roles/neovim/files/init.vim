@@ -9,10 +9,10 @@ if &compatible
 endif
 
 " Required:
-set runtimepath^=/opt/pandorasbox/dein/repos/github.com/Shougo/dein.vim
+set runtimepath^=/opt/pandorasbox/dein.vim/repos/github.com/Shougo/dein.vim
 
 " Required:
-call dein#begin('/opt/pandorasbox/dein')
+call dein#begin('/opt/pandorasbox/dein.vim')
 
 " Let dein manage dein
 " Required:
