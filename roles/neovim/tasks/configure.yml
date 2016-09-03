@@ -2,4 +2,4 @@
 - name: Create neovim configurations directory
   file: dest=~/.config/nvim state=directory
 - name: Set neovim's configuration file
-  copy: src=init.vim dest=~/.config/nvim/init.vim
+  template: src=init.vim.j2 dest=~/.config/nvim/init.vim
