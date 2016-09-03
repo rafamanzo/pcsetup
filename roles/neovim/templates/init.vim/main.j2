@@ -1,0 +1,66 @@
+
+" Most of the ideas have been taken from:
+"
+" https://gitlab.com/marcheing/vimrc
+
+"dein Scripts-----------------------------
+if &compatible
+  set nocompatible               " Be iMproved
+endif
+
+" Required:
+set runtimepath^=/opt/pandorasbox/dein.vim/repos/github.com/Shougo/dein.vim
+
+" Required:
+call dein#begin('/opt/pandorasbox/dein.vim')
+
+" Let dein manage dein
+" Required:
+call dein#add('Shougo/dein.vim')
+
+" Add or remove your plugins here:
+
+{% include 'plugins/vim-colorschemes.j2' %}
+
+{% include 'plugins/vim-airline.j2' %}
+
+{% include 'plugins/vim-cpp-enhanced-highlight.j2' %}
+
+" You can specify revision/branch/tag.
+" call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+
+" Required:
+call dein#end()
+
+" Required:
+filetype plugin indent on
+
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
+
+"End dein Scripts-------------------------
+
+
+" Start NeoVIM configurations-------------
+
+set encoding=utf8
+
+" Allows the use of this little arrow that follows the movements of this
+" mechanical thing that doesn't look like a mouse.
+" But, really, have you seen the commands to alter the windows dimensions?
+" They suck, so I prefer using the mouse for a moment instead of mapping four
+" directional commands to do something that closely resembles what you don't
+" want.
+" Oh yes, and it allows for clicking on the tabs. Useful when pair programming
+" for those who have any idea where the discussed code is even when not able
+" to touch the keyboard.
+" And the a means 'all'. It works on normal/visual/insert/command-line modes.
+set mouse=a
+
+" Set splits expected directions
+set splitright
+set splitbelow
+
+{% include 'keybindings.j2' %}
