@@ -1,0 +1,26 @@
+" Shows file tree, lets me move, delete, create, rename files and folders.
+" Now, a lot of people are against this, saying tat something like this is not
+" necessary if I know what I'm doing with the other plugins and vim
+" buffer/file commands. Good, I don't have a clue of what I'm doing, so this
+" is a good guide for me. Also, who needs that extra space on the right?
+call dein#add('scrooloose/nerdtree')
+
+" Every mode, let's go! This shows or hides the NERDtree with the first F-key
+" that I wanted to use. Well, there are like 11 more to use and, besides, I
+" didn't want to use the leader key for something this simple.
+noremap <F2> :NERDTreeToggle<CR>
+
+" Shows hidden files on NERDTree by default for those cases when the
+" .gitignore file is important, or when you're coding some kind of
+" configuration file for some kind of text editor that wants to be some kind
+" of IDE.
+let NERDTreeShowHidden = 1
+
+" Hides the files matched by wildignore so that they can be hidden on
+" Nerdtree. Why isn't this on by default I can only guess it is because the
+" wildignore setting could cause this collateral damage, and some people would
+" feel startled by that.
+" Kinda like a ton of other things that get automatically set up and can fuck
+" with your configuration based solely on the order they're included in this
+" configuration. See airline.
+let NERDTreeRespectWildIgnore = 1
