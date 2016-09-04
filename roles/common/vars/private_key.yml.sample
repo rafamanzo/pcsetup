@@ -1,0 +1,6 @@
+---
+private_key:
+  ~/.ssh/id_rsa:
+    content: |
+      PLACE YOUR PRIVATE KEY HERE
+  ~/.ssh/id_rsa.pub: PLACE KEY YOUR PUBLIC KEY HERE

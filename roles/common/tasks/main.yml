@@ -84,3 +84,5 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Set SSH private key files
+  include: set_ssh_key.yml

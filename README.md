@@ -16,6 +16,7 @@
   - Update the system
   - Install ansible
 * If you are not me, you need to [set your own personal information](https://github.com/rafamanzo/pcsetup/wiki/Replace-my-personal-information-by-yours)
+  - Specially set the vault files and password
 
 ### Everyday
 
