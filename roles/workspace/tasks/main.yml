@@ -1,0 +1,3 @@
+---
+- name: Get workspace main repository
+  git: repo=git@gitlab.com:rafamanzo/workspace.git dest=~/workspace accept_hostkey=yes
