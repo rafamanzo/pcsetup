@@ -3,3 +3,8 @@
   git: repo=git@gitlab.com:rafamanzo/workspace.git dest=~/workspace accept_hostkey=yes
 - name: Setup RVM
   include: rvm/main.yml
+- name: Install PostgreSQL
+  include: postgresql.yml
+  become: yes
+  become_user: root
+  become_method: sudo

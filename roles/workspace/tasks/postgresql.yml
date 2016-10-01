@@ -1,0 +1,4 @@
+- name: Install postgresql-libs package
+  pacman: name=postgresql-libs state=present force=yes
+- name: Install postgresql package
+  pacman: name=postgresql state=present force=yes
