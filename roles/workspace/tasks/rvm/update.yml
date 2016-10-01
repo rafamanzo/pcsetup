@@ -1,0 +1,14 @@
+---
+- name: Get latest RVM version number
+  shell: curl -s https://api.github.com/repos/rvm/rvm/releases/latest | grep tag_name | cut -d '"' -f 4
+  register: rvm_latest_version
+  changed_when: False
+  always_run: yes
+- name: Get installed RVM version number
+  shell: /usr/bin/bash -lc "rvm --version | cut -d ' ' -f 2"
+  register: rvm_current_version
+  changed_when: False
+  always_run: yes
+- name: Upgrade RVM version
+  shell: /usr/bin/bash -lc "rvm get stable"
+  when: rvm_current_version.stdout != rvm_latest_version.stdout

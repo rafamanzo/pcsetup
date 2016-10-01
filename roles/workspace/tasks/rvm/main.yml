@@ -1,0 +1,13 @@
+---
+- name: Check RVM installed
+  shell: /usr/bin/bash -lc "rvm"
+  register: rvm_installed
+  ignore_errors: True
+  changed_when: False
+  always_run: yes
+- name: Install RVM
+  include: install.yml
+  when: rvm_installed|failed
+- name: Update RVM
+  include: update.yml
+  when: rvm_installed|succeeded

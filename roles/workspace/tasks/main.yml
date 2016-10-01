@@ -1,3 +1,5 @@
 ---
 - name: Get workspace main repository
   git: repo=git@gitlab.com:rafamanzo/workspace.git dest=~/workspace accept_hostkey=yes
+- name: Setup RVM
+  include: rvm/main.yml
