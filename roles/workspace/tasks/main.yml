@@ -8,3 +8,8 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Install PhantomJS package
+  pacman: name=phantomjs state=present force=yes
+  become: yes
+  become_user: root
+  become_method: sudo
