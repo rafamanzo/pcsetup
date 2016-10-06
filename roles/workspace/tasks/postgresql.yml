@@ -1,4 +1,15 @@
 - name: Install postgresql-libs package
   pacman: name=postgresql-libs state=present force=yes
+  become: yes
+  become_user: root
+  become_method: sudo
 - name: Install postgresql package
   pacman: name=postgresql state=present force=yes
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Initialize database cluster
+  command: initdb --locale $LANG -E UTF8 -D '/var/lib/postgres/data'
+  become: yes
+  become_user: postgres
+  become_method: sudo

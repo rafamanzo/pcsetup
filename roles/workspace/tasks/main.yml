@@ -5,9 +5,6 @@
   include: rvm/main.yml
 - name: Install PostgreSQL
   include: postgresql.yml
-  become: yes
-  become_user: root
-  become_method: sudo
 - name: Install PhantomJS package
   pacman: name=phantomjs state=present force=yes
   become: yes
