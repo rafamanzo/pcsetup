@@ -1,6 +1,8 @@
 - name: Enable locales
   copy: src=locale.gen dest=/etc/locale.gen
+  register: locales_enablement
 - name: Generate locales
   command: locale-gen
+  when: locales_enablement|changed
 - name: Configure locales
   copy: src=locale.conf dest=/etc/locale.conf
