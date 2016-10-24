@@ -88,13 +88,17 @@ globalkeys = awful.util.table.join(
         awful.util.spawn("amixer sset " .. "Headphone" .. " unmute")
         vicious.force({ alsawidget.bar })
         alsawidget.notify()
-    [% if wifi_toggle_workaround | default(false) is sameas true %]
     end),
+    [% if wifi_toggle_workaround | default(false) is sameas true %]
 
     -- Wifi toggle
     awful.key({ modkey }, "F2", function()
         awful.util.spawn_with_shell("((nmcli r wifi | grep enabled) && nmcli r wifi off) || nmcli r wifi on")
+    end),
     [% endif %]
+
+    -- Lock screen
+    awful.key({ modkey, "Control" }, "l", function () awful.util.spawn("xscreensaver-command -lock")
     end)
 )
 

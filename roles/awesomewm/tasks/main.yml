@@ -33,3 +33,8 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Install XScreenSaver
+  pacman: name=xscreensaver state=present
+  become: yes
+  become_user: root
+  become_method: sudo

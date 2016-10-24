@@ -36,3 +36,6 @@ urxvt.scrollWithBuffer: true
 urxvt.scrollTtyKeypress: true
 urxvt.secondaryScreen: 1
 urxvt.secondaryScroll: 0
+
+! Allow user switching from XScreenSaver
+xscreensaver.newLoginCommand: dm-tool switch-to-greeter
