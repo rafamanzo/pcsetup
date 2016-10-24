@@ -10,11 +10,15 @@ mysessionmenu = {  { "logout", awesome.quit },
                    { "shutdown", terminal .. " -e systemctl poweroff -i" }
 }
 
+myconfigurationsmenu = {  { "monitor", "arandr" }
+}
+
 mymainmenu = awful.menu({ items = { { "files", "nautilus" },
                                     { "terminal", terminal },
                                     { "browser", browser },
                                     { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "session", mysessionmenu }
+                                    { "session", mysessionmenu },
+                                    { "configurations", myconfigurationsmenu }
                                   }
                         })
 
