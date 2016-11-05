@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Adjust urxvt font
 * Fix deprecated Ansible syntax always_run
 * Add menu for keyboard layout configuration to AwesomeWM
 * Fix SSH key setup from vault file to newer Ansible syntax

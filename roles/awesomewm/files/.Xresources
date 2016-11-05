@@ -10,7 +10,7 @@ urxvt.shading: 15
 urxvt.geometry: 71x40
 
 ! Font
-urxvt.font: xft:Terminus:pixelsize=7
+urxvt.font: xft:DejaVu Sans Mono:pixelsize=11
 urxvt.letterSpace: -1
 
 ! Remove border
