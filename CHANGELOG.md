@@ -6,6 +6,8 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Fix SSH key setup from vault file to newer Ansible syntax
+
 ## alpha1 - 25/10/2016
 
 * setup basic feature for WALL-E

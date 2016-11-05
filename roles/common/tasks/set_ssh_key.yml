@@ -9,5 +9,5 @@
     dest="{{ item.key }}"
     content="{{ item.value.content }}"
     mode=600
-  with_dict: private_key
+  with_dict: "{{ private_key }}"
   no_log: true
