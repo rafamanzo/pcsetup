@@ -7,7 +7,7 @@
   shell: git config --get user.name
   register: host_git_username
   changed_when: False
-  always_run: yes
+  check_mode: no
   ignore_errors: True
 - name: Set git user name
   shell: git config --global user.name "{{ git_username }}"
@@ -16,7 +16,7 @@
   shell: git config --get user.email
   register: host_git_useremail
   changed_when: False
-  always_run: yes
+  check_mode: no
   ignore_errors: True
 - name: Set git user email
   shell: git config --global user.email "{{ git_useremail }}"

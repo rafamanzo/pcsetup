@@ -21,13 +21,13 @@
   register: cower_installed
   ignore_errors: True
   changed_when: False
-  always_run: yes
+  check_mode: no
 - name: Check pacaur installed
   command: pacman -Q pacaur
   register: pacaur_installed
   ignore_errors: True
   changed_when: False
-  always_run: yes
+  check_mode: no
 - name: Install base-devel
   include: base-devel.yml
   become: yes

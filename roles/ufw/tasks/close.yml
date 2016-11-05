@@ -3,7 +3,7 @@
   shell: 'ufw status verbose | grep -q "Default: deny (incoming)"'
   register: default_deny_in
   changed_when: False
-  always_run: yes
+  check_mode: no
   ignore_errors: True
 - name: Block incoming traffic
   # WRONG: ufw: rule=deny direction=in

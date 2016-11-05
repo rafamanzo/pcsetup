@@ -2,11 +2,11 @@
 - name: Fetch mirror list
   get_url: url='https://www.archlinux.org/mirrorlist/?country=BR&country=CL&country=CO&country=EC&protocol=http&ip_version=4&use_mirror_status=on' dest=/tmp/mirrorlist
   changed_when: False
-  always_run: yes
+  check_mode: no
 - stat: path=/tmp/mirrorlist checksum_algorithm=sha1
   register: new_mirrorlist_sum
   changed_when: False
-  always_run: yes
+  check_mode: no
 - replace: dest=/tmp/mirrorlist regexp='^#'
 - replace: dest=/tmp/mirrorlist regexp='^#.*'
 - name: Copy new mirror list

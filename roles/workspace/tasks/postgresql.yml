@@ -12,7 +12,7 @@
   find: paths=/var/lib/postgres/data file_type=directory patterns='*'
   register: cluster_files
   changed_when: False
-  always_run: yes
+  check_mode: no
   become: yes
   become_user: root
   become_method: sudo
