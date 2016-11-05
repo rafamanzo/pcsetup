@@ -10,7 +10,13 @@ mysessionmenu = {  { "logout", awesome.quit },
                    { "shutdown", terminal .. " -e systemctl poweroff -i" }
 }
 
-myconfigurationsmenu = {  { "monitor", "arandr" }
+kblayoutcmd = "setxkbmap"
+mykblayoutmenu = { {'abnt2', kblayoutcmd .. " br abnt2" },
+                   {'us', kblayoutcmd .. " us intl nodeadkeys" }
+}
+
+myconfigurationsmenu = {  { "monitor", "arandr" },
+                          { "keyboard", mykblayoutmenu }
 }
 
 mymainmenu = awful.menu({ items = { { "files", "nautilus" },
