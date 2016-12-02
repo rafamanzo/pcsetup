@@ -5,3 +5,6 @@ preconfig:
 	sudo pacman -Syu --noconfirm
 	sudo systemctl daemon-reload
 	sudo pacman -S --noconfirm python2 ansible
+
+download_box:
+	vagrant box add archlinux-x86_64 http://cloud.terry.im/vagrant/archlinux-x86_64.box

@@ -41,3 +41,13 @@
     * 250 GB HDD
   - Workarounds
     * The wifi toggle does not generate ACPI events. So the toggle has been mapped to ModKey+F2 there
+
+## Testing
+
+```shell
+make download_box
+vagrant up
+vagrant ssh
+```
+
+Then start the provisioning steps on detailes by the [Usage](#usage) section.
