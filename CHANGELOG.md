@@ -11,6 +11,7 @@ The version numbers try to follow the standards set by http://semver.org
 * Add menu for keyboard layout configuration to AwesomeWM
 * Fix SSH key setup from vault file to newer Ansible syntax
 * Install openssl
+* Install xclip
 
 ## alpha1 - 25/10/2016
 
