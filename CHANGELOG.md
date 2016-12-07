@@ -12,6 +12,7 @@ The version numbers try to follow the standards set by http://semver.org
 * Fix SSH key setup from vault file to newer Ansible syntax
 * Install openssl
 * Install xclip
+* Install libmariadbclient
 
 ## alpha1 - 25/10/2016
 
