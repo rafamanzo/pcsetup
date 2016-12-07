@@ -101,3 +101,8 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Install wget package
+  pacman: name=wget state=present
+  become: yes
+  become_user: root
+  become_method: sudo

@@ -13,6 +13,7 @@ The version numbers try to follow the standards set by http://semver.org
 * Install openssl
 * Install xclip
 * Install libmariadbclient
+* Install wget
 
 ## alpha1 - 25/10/2016
 
