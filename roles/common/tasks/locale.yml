@@ -6,3 +6,7 @@
   when: locales_enablement|changed
 - name: Configure locales
   copy: src=locale.conf dest=/etc/locale.conf
+- name: Configure console
+  copy: src=vconsole.conf dest=/etc/vconsole.conf
+- name: Configure X11 keyboard layout
+  copy: src=00-keyboard.conf dest=/etc/X11/xorg.conf.d/00-keyboard.conf 

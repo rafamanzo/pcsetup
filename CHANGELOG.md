@@ -17,6 +17,7 @@ The version numbers try to follow the standards set by http://semver.org
 * Install basic C++ development tools
 * Install C++ dependencies for my masters development
 * Set NeoVIM as the default editor
+* Set default keyboard to ABNT2
 
 ## alpha1 - 25/10/2016
 
