@@ -1,0 +1,11 @@
+---
+- name: Install base-devel package
+  pacman: name=base-devel state=present force=yes
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Install cmake package
+  pacman: name=cmake state=present force=yes
+  become: yes
+  become_user: root
+  become_method: sudo
