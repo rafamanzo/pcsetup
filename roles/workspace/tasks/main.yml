@@ -17,4 +17,5 @@
   become_method: sudo
 - name: Install C++ development tools
   include: cpp.yml
-
+- name: Install MSc dependencies
+  include: msc_dependencies.yml

@@ -1,0 +1,11 @@
+---
+- name: Install vtk package
+  pacman: name=vtk state=present force=yes
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Install boost package
+  pacman: name=boost state=present force=yes
+  become: yes
+  become_user: root
+  become_method: sudo

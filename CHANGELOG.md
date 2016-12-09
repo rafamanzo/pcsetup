@@ -15,6 +15,7 @@ The version numbers try to follow the standards set by http://semver.org
 * Install libmariadbclient
 * Install wget
 * Install basic C++ development tools
+* Install C++ dependencies for my masters development
 
 ## alpha1 - 25/10/2016
 
