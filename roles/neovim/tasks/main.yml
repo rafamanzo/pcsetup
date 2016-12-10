@@ -8,3 +8,18 @@
   include: dein.yml
 - name: Configure neovim
   include: configure.yml
+- name: Install python-neovim package
+  pacman: name=python-neovim state=present
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Install python2-neovim package
+  pacman: name=python2-neovim state=present
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Install ruby-neovim package
+  pacaur: name=ruby-neovim state=present
+  become: yes
+  become_user: super{{ ansible_env.LOGNAME }}
+  become_method: sudo
