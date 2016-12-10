@@ -1,0 +1,11 @@
+---
+- name: Install texlive-most package
+  pacman: name=texlive-most state=present force=yes
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Install biber package
+  pacman: name=biber state=present force=yes
+  become: yes
+  become_user: root
+  become_method: sudo
