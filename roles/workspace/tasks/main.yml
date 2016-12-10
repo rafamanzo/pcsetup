@@ -21,3 +21,5 @@
   include: msc_dependencies.yml
 - name: Install LaTeX
   include: latex.yml
+- name: Install Python Virtualenv
+  include: python-virtualenv/main.yml

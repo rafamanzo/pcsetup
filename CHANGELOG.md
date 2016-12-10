@@ -22,6 +22,7 @@ The version numbers try to follow the standards set by http://semver.org
 * Install Evince PDF reader 
 * Avoid update to workspace repository
 * Install NeoVIM's plugin providers
+* Make Python virtualenvs possible
 
 ## alpha1 - 25/10/2016
 

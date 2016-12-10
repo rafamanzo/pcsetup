@@ -1,0 +1,11 @@
+---
+- name: Install python-virtualenv package
+  pacman: name=python-virtualenv state=present force=yes
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Install python-virtualenvwrapper package
+  pacman: name=python-virtualenvwrapper state=present force=yes
+  become: yes
+  become_user: root
+  become_method: sudo

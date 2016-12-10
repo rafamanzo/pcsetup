@@ -1,0 +1,3 @@
+---
+- name: Install python virtualenv packages
+  include: install.yml
