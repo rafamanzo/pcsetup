@@ -19,6 +19,7 @@ The version numbers try to follow the standards set by http://semver.org
 * Set NeoVIM as the default editor
 * Set default keyboard to ABNT2
 * Install LaTeX compilation tools and dependencies
+* Install Evince PDF reader 
 
 ## alpha1 - 25/10/2016
 
