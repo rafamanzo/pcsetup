@@ -1,6 +1,6 @@
 ---
 - name: Get workspace main repository
-  git: repo=git@gitlab.com:rafamanzo/workspace.git dest=~/workspace accept_hostkey=yes
+  git: repo=git@gitlab.com:rafamanzo/workspace.git dest=~/workspace accept_hostkey=yes update=no
 - name: Setup RVM
   include: rvm/main.yml
 - name: Install PostgreSQL
@@ -19,3 +19,5 @@
   include: cpp.yml
 - name: Install MSc dependencies
   include: msc_dependencies.yml
+- name: Install LaTeX
+  include: latex.yml
