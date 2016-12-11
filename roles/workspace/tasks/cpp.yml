@@ -9,3 +9,8 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Install ccache package
+  pacman: name=ccache state=present force=yes
+  become: yes
+  become_user: root
+  become_method: sudo
