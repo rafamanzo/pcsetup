@@ -34,3 +34,8 @@
   become: yes
   become_user: super{{ ansible_env.LOGNAME }}
   become_method: sudo
+- name: Install lcov package
+  pacaur: name=lcov state=present force=yes
+  become: yes
+  become_user: super{{ ansible_env.LOGNAME }}
+  become_method: sudo
