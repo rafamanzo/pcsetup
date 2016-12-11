@@ -1,4 +1,24 @@
 ---
+- name: Install gdal package # equired by VTK's Python 2 binding
+  pacman: name=gdal state=present force=yes
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Install openmpi package # equired by VTK's Python 2 binding
+  pacman: name=openmpi state=present force=yes
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Install unixodbc package # equired by VTK's Python 2 binding
+  pacman: name=unixodbc state=present force=yes
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Install qt package # equired by VTK's Python 2 binding
+  pacman: name=qt state=present force=yes
+  become: yes
+  become_user: root
+  become_method: sudo
 - name: Install vtk package
   pacman: name=vtk state=present force=yes
   become: yes
