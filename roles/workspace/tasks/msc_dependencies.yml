@@ -39,3 +39,14 @@
   become: yes
   become_user: super{{ ansible_env.LOGNAME }}
   become_method: sudo
+- name: Install tcl package # Required by BIS compilation
+  pacman: name=tcl state=present force=yes
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Install tk package # Required by BIS compilation
+  pacman: name=tk state=present force=yes
+  become: yes
+  become_user: root
+  become_method: sudo
+
