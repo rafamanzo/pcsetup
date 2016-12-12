@@ -23,6 +23,7 @@ The version numbers try to follow the standards set by http://semver.org
 * Avoid update to workspace repository
 * Install NeoVIM's plugin providers
 * Make Python virtualenvs possible
+* Install Skype
 
 ## alpha1 - 25/10/2016
 
