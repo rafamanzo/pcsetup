@@ -89,13 +89,6 @@
   become: yes
   become_user: root
   become_method: sudo
-- name: Set SSH private key files
-  include: set_ssh_key.yml
-- name: Install openssl package
-  pacman: name=openssl state=present
-  become: yes
-  become_user: root
-  become_method: sudo
 - name: Install xclip package
   pacman: name=xclip state=present
   become: yes
