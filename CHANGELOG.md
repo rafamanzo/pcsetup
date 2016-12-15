@@ -6,6 +6,8 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+## v1.0.0 - 15/12/2016
+
 * Adjust urxvt font
 * Fix deprecated Ansible syntax always_run
 * Add menu for keyboard layout configuration to AwesomeWM
