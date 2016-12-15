@@ -3,6 +3,22 @@
 "
 " https://gitlab.com/marcheing/vimrc
 
+" Standard modifier key for VIM
+"
+" It must come at the begin in order to following remaps to work
+"
+" The choice of the space key was made by marcheing:
+"
+" Using space as the leader key to be able to add as many nnoremaps with
+" arbitrary keys as I want without having to think about vim's default key
+" uses. All I have to do is <Leader>.
+" Actually, I like to change between the classical '\' and space because I'm
+" still not sure of which one is the best. For now, I like space because it
+" makes a sound when I'm using it, and I like to believe it is the sound of
+" progress, instead of the sound of my keyboard dying and my colleagues being
+" annoyed.
+let mapleader=" "
+
 "dein Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
@@ -27,6 +43,10 @@ call dein#add('Shougo/dein.vim')
 {% include 'plugins/vim-cpp-enhanced-highlight.j2' %}
 
 {% include 'plugins/nerdtree.j2' %}
+
+{% include 'plugins/vimproc.vim.j2' %}
+
+{% include 'plugins/unite.vim.j2' %}
 
 " You can specify revision/branch/tag.
 " call dein#add('Shougo/vimshell', { 'rev': '3787e5' })

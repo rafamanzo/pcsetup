@@ -24,6 +24,7 @@ The version numbers try to follow the standards set by http://semver.org
 * Install NeoVIM's plugin providers
 * Make Python virtualenvs possible
 * Install Skype
+* Install unite.vim plugin (sublimetext's ctrl+p like feature)
 
 ## alpha1 - 25/10/2016
 
