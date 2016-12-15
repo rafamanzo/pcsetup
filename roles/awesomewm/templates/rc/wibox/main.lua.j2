@@ -1,5 +1,6 @@
 -- {{{ Wibox
 [% include 'wibox/widgets/clock.lua.j2' %]
+[% include 'wibox/widgets/memory.lua.j2' %]
 [% include 'wibox/widgets/cpu.lua.j2' %]
 [% include 'wibox/widgets/assault.lua.j2' %]
 [% include 'wibox/widgets/alsa.lua.j2' %]
@@ -85,6 +86,7 @@ for s = 1, screen.count() do
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
     right_layout:add(mycpugraph)
+    right_layout:add(memwidget)
     [% if notebook | default(false) is sameas true %]
     right_layout:add(myassault)
     [% endif %]

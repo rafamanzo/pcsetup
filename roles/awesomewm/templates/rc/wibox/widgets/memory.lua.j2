@@ -1,0 +1,28 @@
+-- Based on: http://jasonmaur.com/awesome-wm-widgets-configuration/
+
+-- RAM usage widget
+memwidget = awful.widget.progressbar()
+memwidget:set_width(15)
+memwidget:set_height(30)
+memwidget:set_vertical(true)
+memwidget:set_background_color('#494B4F')
+memwidget:set_color({ type = "linear",
+                      from = { 0, 0 },
+                      to = { 0, 1 },
+                      stops = {
+                                {0, "#FF5656"},
+                                {0.5, "#88A175"},
+                                {1, "#AECF96" }
+                              }
+                    })
+
+-- RAM usage tooltip
+memwidget_t = awful.tooltip({ objects = { memwidget },})
+
+vicious.cache(vicious.widgets.mem)
+vicious.register(memwidget, vicious.widgets.mem,
+                function (widget, args)
+                    memwidget_t:set_text(" RAM: " .. args[2] .. "MB / " .. args[3] .. "MB ")
+                    return args[1]
+                 end, 13)
+                 --update every 13 seconds
