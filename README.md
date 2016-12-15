@@ -20,7 +20,7 @@
 
 ### Everyday
 
-* `ansible-playbook <HOST> -K`
+* `ansible-playbook <HOST PLAYBOOK> -K`
 
 ## Known ~~issues~~ features
 
@@ -34,7 +34,14 @@
 
 ## Managed machines
 
-* WALL-E (Netbook)
+* BURN-E (Notebook)
+  - Specs
+    * Intel Core i7 2620M
+    * Geforce GT 520M
+    * 8 GB RAM
+    * 240 GB SSD
+    * 640 GB HDD
+* WALL-E (Decesased Netbook) 
   - Specs
     * Intel Atom N450
     * 2 GB RAM
