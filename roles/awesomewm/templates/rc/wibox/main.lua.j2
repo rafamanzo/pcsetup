@@ -5,6 +5,11 @@
 [% include 'wibox/widgets/assault.lua.j2' %]
 [% include 'wibox/widgets/alsa.lua.j2' %]
 
+-- Based on: http://jasonmaur.com/awesome-wm-widgets-configuration/
+spacer = wibox.widget.textbox()
+separator = wibox.widget.textbox()
+spacer:set_text(" ")
+separator:set_text("|")
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -85,12 +90,33 @@ for s = 1, screen.count() do
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
+
+    right_layout:add(spacer)
+    right_layout:add(separator)
+    right_layout:add(spacer)
+
     right_layout:add(mycpugraph)
+    right_layout:add(spacer)
+    right_layout:add(separator)
+    right_layout:add(spacer)
+
     right_layout:add(memwidget)
+    right_layout:add(spacer)
+    right_layout:add(separator)
+    right_layout:add(spacer)
+
     [% if notebook | default(false) is sameas true %]
     right_layout:add(myassault)
+    right_layout:add(spacer)
+    right_layout:add(separator)
+    right_layout:add(spacer)
     [% endif %]
+
     right_layout:add(alsawidget.bar)
+    right_layout:add(spacer)
+    right_layout:add(separator)
+    right_layout:add(spacer)
+
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
 
