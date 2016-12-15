@@ -41,10 +41,3 @@
     * 8 GB RAM
     * 240 GB SSD
     * 640 GB HDD
-* WALL-E (Decesased Netbook) 
-  - Specs
-    * Intel Atom N450
-    * 2 GB RAM
-    * 250 GB HDD
-  - Workarounds
-    * The wifi toggle does not generate ACPI events. So the toggle has been mapped to ModKey+F2 there

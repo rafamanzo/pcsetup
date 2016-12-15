@@ -2,8 +2,9 @@
 - hosts: local
   connection: local
   vars:
-    notebook: true
-    wifi_toggle_workaround: true
+    notebook:
+      ps_ac_string: 'ACAD'
+      ps_bt_string: 'BAT1'
   environment:
     PATH: "/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
   roles:

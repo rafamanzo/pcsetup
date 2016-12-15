@@ -11,6 +11,6 @@ local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
-[% if notebook | default(false) is sameas true %]
+[% if notebook is defined %]
 local assault = require("assault")
 [% endif %]

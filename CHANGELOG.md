@@ -27,6 +27,7 @@ The version numbers try to follow the standards set by http://semver.org
 * Install unite.vim plugin (sublimetext's ctrl+p like feature)
 * Add memory widget
 * Create separator between AwesomeWM widgets
+* Fix power and battery notebook indicator (assault)
 
 ## alpha1 - 25/10/2016
 

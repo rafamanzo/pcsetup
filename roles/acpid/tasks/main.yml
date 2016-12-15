@@ -5,4 +5,4 @@
   include: install.yml
 - name: Setup wifi toggle
   include: wifi_toggle.yml
-  when: notebook
+  when: notebook is defined

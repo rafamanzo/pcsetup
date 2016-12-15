@@ -105,7 +105,7 @@ for s = 1, screen.count() do
     right_layout:add(separator)
     right_layout:add(spacer)
 
-    [% if notebook | default(false) is sameas true %]
+    [% if notebook is defined %]
     right_layout:add(myassault)
     right_layout:add(spacer)
     right_layout:add(separator)

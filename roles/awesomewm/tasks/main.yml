@@ -22,7 +22,7 @@
   include: nm-applet.yml
 - name: Install assult battery status display
   include: assault.yml
-  when: notebook
+  when: notebook is defined
 - name: Install GNOME File Manager
   pacman: name=nautilus state=present
   become: yes
