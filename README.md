@@ -41,3 +41,8 @@
     * 8 GB RAM
     * 240 GB SSD
     * 640 GB HDD
+  - Statistics (v1.0.0)
+    * Boot time: < 20s
+    * Mem. usage after boot: ~190MB
+    * Expected battery life: ~3h
+    * Disk usage: 8.6GB
