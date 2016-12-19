@@ -7,6 +7,7 @@ The version numbers try to follow the standards set by http://semver.org
 ## Unreleased
 
 * Set NeoVIM wordwrap toggle keybinding
+* Set NeoVIM line number toggle keybinding
 
 ## v1.0.0 - 15/12/2016
 
