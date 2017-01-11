@@ -10,6 +10,7 @@ The version numbers try to follow the standards set by http://semver.org
 * Set NeoVIM line number toggle keybinding
 * Highlight trailing whitespaces with NeoVIM
 * Configure NeoVIM spellchecking
+* Setup NeoVIM autocomplete
 
 ## v1.0.0 - 15/12/2016
 

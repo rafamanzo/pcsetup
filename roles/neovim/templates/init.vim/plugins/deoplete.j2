@@ -1,0 +1,36 @@
+" An autocompletion plugin that doesn't make me want to kill myself because of
+" a recompilation every time a new version comes out. Well... Almost like
+" that.
+" There are a lot of good things that come from this plugin, code completion
+" is the obvious one, even if it is not in the level of eclipse's completion
+" or whatever other IDE you can mention, but the file completion and vim
+" completion are features I can't live without. Besides, it's fast. Not
+" incredibly fast, but fast enough for my uses. Now to waste a lot of time
+" configuring it to be more or less like what I want.
+call dein#add('Shougo/deoplete.nvim')
+
+" This option is here just to save time and prevent my high level memory of
+" failing again to remember to call the whole NeoComplete/DeoppleteEnable thing.
+" At least the cache won't be erased. I think.
+let g:deoplete#enable_at_startup = 1
+
+" Autoselects the first option on the completion menu to avoid one simple
+" key press to actually bring your attention to the list and then actually see
+" what you're completing. This saves time for the ones who can be bothered
+" enough to not look at the keyboard while typing and actually look at the
+" thing that matters.
+let g:deoplete#enable_auto_select = 1
+
+" Makes neocomplete/deoplete insert delimiters automatically when completing
+" something that has delimiters, like '#' with these vim variables.
+" I like this option because of the quick
+" completion-and-show-another-list-for-completion thing, which seems very fluid.
+" Maybe it becomes bad for objects and their .method, but I'm going to test it
+" before removing this option.
+let g:deoplete#enable_auto_delimiter = 1
+
+" Wait for at least 4 characters to start your autocomplete shenanigans. Do,
+" def, end, if, etc. are common reserved words that should not be completed
+" this fast. And I guess if the method/variable/word has only 3/4 chars I
+" should be able to remember it.
+let g:deoplete#auto_completion_start_length = 4
