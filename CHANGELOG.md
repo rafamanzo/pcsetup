@@ -6,6 +6,8 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+## v1.1.0 - 16/01/2016
+
 * Set NeoVIM wordwrap toggle keybinding
 * Set NeoVIM line number toggle keybinding
 * Highlight trailing whitespaces with NeoVIM
