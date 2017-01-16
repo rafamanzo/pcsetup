@@ -12,6 +12,7 @@ The version numbers try to follow the standards set by http://semver.org
 * Configure NeoVIM spellchecking
 * Setup NeoVIM autocomplete
 * Configure NeoVIM <tab> behaviour
+* Configure NeoVIM indentation
 
 ## v1.0.0 - 15/12/2016
 
@@ -28,7 +29,7 @@ The version numbers try to follow the standards set by http://semver.org
 * Set NeoVIM as the default editor
 * Set default keyboard to ABNT2
 * Install LaTeX compilation tools and dependencies
-* Install Evince PDF reader 
+* Install Evince PDF reader
 * Avoid update to workspace repository
 * Install NeoVIM's plugin providers
 * Make Python virtualenvs possible

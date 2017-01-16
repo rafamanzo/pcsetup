@@ -120,4 +120,27 @@ set shiftwidth=2
 " is okay (and use a delightful mix of spaces and tabs).
 set softtabstop=2
 
+" Insert the shiftwidth amount of spaces instead of a tab at the start
+" of a line. Be careful as it only inserts spaces because of the expandtab
+" already set. Look about 2 options up from this ^^^
+" This is useful to control indentation while leaving the tabs with the size
+" they want, because you may want to see the mess that they cause with their
+" default size (8 spaces).
+set smarttab
+
+" Inserts the same amount of spaces found on the previous line when you <CR>
+" in insert mode or use 'o'/'O'.
+" This may lead to some frustrations when you don't actually want the next
+" line to be indented and have to <ESC> out of insert mode, but most of the
+" time I'm able to continue typing away my function with its four or five
+" levels of useless callbacks, so I'm not complaining.
+set autoindent
+
+" Add indentation when the previous line ended with one of the 'special' words
+" (like while, if, switch, etc) or the opening of blocks with '{'.
+" I won't be using cindent here because this option would get overridden and
+" it is too strict for me. I have the indentation spaces set and it works for
+" most of my code.
+set smartindent
+
 {% include 'keybindings.j2' %}
