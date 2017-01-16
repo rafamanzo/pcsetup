@@ -11,6 +11,7 @@ The version numbers try to follow the standards set by http://semver.org
 * Highlight trailing whitespaces with NeoVIM
 * Configure NeoVIM spellchecking
 * Setup NeoVIM autocomplete
+* Configure NeoVIM <tab> behaviour
 
 ## v1.0.0 - 15/12/2016
 

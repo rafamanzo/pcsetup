@@ -92,4 +92,32 @@ set splitbelow
 " Set default spell language
 set spelllang=pt_br
 
+" This will insert spaces instead of tabs when you press tab because tab.
+" Say NO to tabs. I hate it when trying to edit a file that someone else
+" programmed and then the lines jump at every direction known to vim every
+" time the other guy(s) didn't know about tabs/spaces and tried their own
+" pattern. My pattern is simple: spaces. I don't want python files that look
+" perfectly reasonable but doesn't work.
+set expandtab
+
+" Use 2 spaces for indentation.
+" 2 Spaces is enough for most of my code. If I'm going to work with some other
+" strange pattern for spacing, then I can change it to open according to the
+" file type or project or env variable or phase of the moon.
+" For now, I want to keep it simple, so setting it to 2. Also, Now I can have
+" almost infinite levels of `if` statements!
+set shiftwidth=2
+
+" Pretend that the ta key will not insert tabs. Now, it inserts 2 spaces in
+" the middle of the text, because when I'm pressing <tab> I never meant to
+" actually press it.
+" This option without expandtab is weird to the point of making an art piece
+" composition with spaces and tabs just to meet the number that was specified.
+" Lucky for me, I only use 2 spaces and never use tabs.
+" By the way, this does not affect the size of a `true` tab character when
+" viewing the file, so yuo can see all its glorious 8 spaces and how bad the
+" code gets with it. Alternatively, you can set tabstop and pretend everything
+" is okay (and use a delightful mix of spaces and tabs).
+set softtabstop=2
+
 {% include 'keybindings.j2' %}
