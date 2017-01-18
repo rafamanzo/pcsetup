@@ -6,6 +6,8 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Install image processing tools (gimp & inkskape)
+
 ## v1.1.0 - 16/01/2016
 
 * Set NeoVIM wordwrap toggle keybinding

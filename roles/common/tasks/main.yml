@@ -109,3 +109,13 @@
   become: yes
   become_user: super{{ ansible_env.LOGNAME }}
   become_method: sudo
+- name: Install gimp package
+  pacman: name=gimp state=present
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Install inkscape package
+  pacman: name=inkscape state=present
+  become: yes
+  become_user: root
+  become_method: sudo
