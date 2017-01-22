@@ -6,13 +6,19 @@
 
 [% include 'variables.lua.j2' %]
 
-[% include 'wallpaper.lua.j2' %]
-
-[% include 'tags.lua.j2' %]
+[% include 'helper_functions.lua.j2' %]
 
 [% include 'menu.lua.j2' %]
 
 [% include 'wibox/main.lua.j2' %]
+
+[% include 'tag_list.lua.j2' %]
+
+[% include 'task_list.lua.j2' %]
+
+[% include 'wallpaper.lua.j2' %]
+
+[% include 'each_screen.lua.j2' %]
 
 [% include 'bindings.lua.j2' %]
 
@@ -21,6 +27,6 @@
 [% include 'signals.lua.j2' %]
 
 -- {{{ Spawn
-awful.util.spawn("nm-applet")
-awful.util.spawn("xscreensaver -nosplash")
+awful.spawn("nm-applet")
+awful.spawn("xscreensaver -nosplash")
 -- }}}

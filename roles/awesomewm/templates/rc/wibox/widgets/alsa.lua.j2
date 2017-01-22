@@ -27,27 +27,29 @@ local alsawidget =
 }
 -- widget
 alsawidget.bar = awful.widget.progressbar ()
-alsawidget.bar:set_width (8)
+-- alsawidget.bar:set_width (8)
+-- Version 4.0 workaround
+alsawidget.bar:set_height(8)
 alsawidget.bar:set_vertical (true)
 alsawidget.bar:set_background_color ("#494B4F")
 alsawidget.bar:set_color (alsawidget.colors.unmute)
 alsawidget.bar:buttons (awful.util.table.join (
   awful.button ({}, 1, function()
-    awful.util.spawn (alsawidget.mixer)
+    awful.spawn (alsawidget.mixer)
   end),
   awful.button ({}, 3, function()
                 -- You may need to specify a card number if you're not using your main set of speakers.
                 -- You'll have to apply this to every call to 'amixer sset'.
-                -- awful.util.spawn ("amixer sset -c " .. yourcardnumber .. " " .. alsawidget.channel .. " toggle")
-    awful.util.spawn ("amixer sset " .. alsawidget.channel .. " toggle")
+                -- awful.spawn ("amixer sset -c " .. yourcardnumber .. " " .. alsawidget.channel .. " toggle")
+    awful.spawn ("amixer sset " .. alsawidget.channel .. " toggle")
     vicious.force ({ alsawidget.bar })
   end),
   awful.button ({}, 4, function()
-    awful.util.spawn ("amixer sset " .. alsawidget.channel .. " " .. alsawidget.step .. "+")
+    awful.spawn ("amixer sset " .. alsawidget.channel .. " " .. alsawidget.step .. "+")
     vicious.force ({ alsawidget.bar })
   end),
   awful.button ({}, 5, function()
-    awful.util.spawn ("amixer sset " .. alsawidget.channel .. " " .. alsawidget.step .. "-")
+    awful.spawn ("amixer sset " .. alsawidget.channel .. " " .. alsawidget.step .. "-")
     vicious.force ({ alsawidget.bar })
   end)
 ))
@@ -124,3 +126,9 @@ vicious.register (alsawidget.bar, vicious.widgets.volume, function (widget, args
   widget:set_color (alsawidget.colors.unmute)
   return args[1]
 end, 5, alsawidget.channel) -- relatively high update time, use of keys/mouse will force update
+
+alsawidget_bar_container = wibox.container {
+  alsawidget.bar,
+  direction = 'east',
+  widget = wibox.container.rotate
+}

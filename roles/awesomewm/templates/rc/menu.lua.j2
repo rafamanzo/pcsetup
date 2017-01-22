@@ -10,13 +10,14 @@ mysessionmenu = {  { "logout", awesome.quit },
                    { "shutdown", terminal .. " -e systemctl poweroff -i" }
 }
 
-kblayoutcmd = "setxkbmap"
-mykblayoutmenu = { {'abnt2', kblayoutcmd .. " br abnt2" },
-                   {'us', kblayoutcmd .. " us intl nodeadkeys" }
-}
+-- Awesome 4.0 is supposed to provide a widget for this
+-- kblayoutcmd = "setxkbmap"
+-- mykblayoutmenu = { {'abnt2', kblayoutcmd .. " br abnt2" },
+--                    {'us', kblayoutcmd .. " us intl nodeadkeys" }
+-- }
 
 myconfigurationsmenu = {  { "monitor", "arandr" },
-                          { "keyboard", mykblayoutmenu }
+--                        { "keyboard", mykblayoutmenu }
 }
 
 mymainmenu = awful.menu({ items = { { "files", "nautilus" },

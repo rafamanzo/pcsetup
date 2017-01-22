@@ -135,6 +135,10 @@ theme.layout_max        = home_themedir .. "/layouts/max.png"
 theme.layout_fullscreen = home_themedir .. "/layouts/fullscreen.png"
 theme.layout_magnifier  = home_themedir .. "/layouts/magnifier.png"
 theme.layout_floating   = home_themedir .. "/layouts/floating.png"
+theme.layout_cornerne   = home_themedir .. "/layouts/cornerne.png"
+theme.layout_cornernw   = home_themedir .. "/layouts/cornernw.png"
+theme.layout_cornerse   = home_themedir .. "/layouts/cornerse.png"
+theme.layout_cornersw   = home_themedir .. "/layouts/cornersw.png"
 -- }}}
 
 -- {{{ Titlebar

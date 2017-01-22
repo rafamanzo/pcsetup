@@ -2,9 +2,13 @@
 
 -- RAM usage widget
 memwidget = awful.widget.progressbar()
-memwidget:set_width(15)
-memwidget:set_height(30)
-memwidget:set_vertical(true)
+-- Version 4.0 workaround
+-- set_vertical has been deprecated and Vicious still lacks proper support
+-- memwidget:set_width(15)
+-- memwidget:set_height(30)
+-- memwidget:set_vertical(true)
+memwidget:set_width(30)
+memwidget:set_height(15)
 memwidget:set_background_color('#494B4F')
 memwidget:set_color({ type = "linear",
                       from = { 0, 0 },
@@ -15,6 +19,12 @@ memwidget:set_color({ type = "linear",
                                 {1, "#AECF96" }
                               }
                     })
+
+memwidget_container = wibox.container {
+  memwidget,
+  direction = 'east',
+  widget = wibox.container.rotate
+}
 
 -- RAM usage tooltip
 memwidget_t = awful.tooltip({ objects = { memwidget },})
