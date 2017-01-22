@@ -6,6 +6,8 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+## v1.1.1 - 22/06/2016
+
 * Install image processing tools (gimp & inkskape)
 * Fix AwesomeWM configuration to version 4.0
 
