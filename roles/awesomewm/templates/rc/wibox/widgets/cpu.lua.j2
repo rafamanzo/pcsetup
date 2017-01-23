@@ -1,8 +1,8 @@
 -- CPU usage widget
 -- Initialize widget
-mycpugraph = awful.widget.graph()
+mycpugraph = wibox.widget.graph()
 -- Graph properties
-mycpugraph:set_width(50)
+mycpugraph:set_forced_width(50)
 mycpugraph:set_background_color("#494B4F")
 mycpugraph:set_color({ type = "linear",
                        from = { 0, 0 },

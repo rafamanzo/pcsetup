@@ -26,11 +26,11 @@ local alsawidget =
   }
 }
 -- widget
-alsawidget.bar = awful.widget.progressbar ()
+alsawidget.bar = wibox.widget.progressbar ()
 -- alsawidget.bar:set_width (8)
 -- Version 4.0 workaround
-alsawidget.bar:set_height(8)
-alsawidget.bar:set_vertical (true)
+alsawidget.bar:set_forced_height(8)
+-- alsawidget.bar:set_vertical (true) -- deprecated on version 4.0
 alsawidget.bar:set_background_color ("#494B4F")
 alsawidget.bar:set_color (alsawidget.colors.unmute)
 alsawidget.bar:buttons (awful.util.table.join (
