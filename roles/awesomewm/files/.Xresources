@@ -12,6 +12,8 @@ urxvt.geometry: 71x40
 ! Font
 urxvt.font: xft:DejaVu Sans Mono:pixelsize=11
 urxvt.letterSpace: -1
+! Font resolution: xdpyinfo | grep dots
+Xft.dpi: 96
 
 ! Remove border
 urxvt.borderless: 1

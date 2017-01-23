@@ -7,6 +7,7 @@ The version numbers try to follow the standards set by http://semver.org
 ## Unreleased
 
 * Fix AwesomeWM widgets using deprecated functions
+* Set default font resolution through Xresources
 
 ## v1.1.1 - 22/06/2016
 
