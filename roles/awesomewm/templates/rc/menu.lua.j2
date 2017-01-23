@@ -6,7 +6,7 @@ myawesomemenu = {
    { "restart", awesome.restart },
 }
 
-mysessionmenu = {  { "logout", awesome.quit },
+mysessionmenu = {  { "logout", function() awesome.quit() end },
                    { "shutdown", terminal .. " -e systemctl poweroff -i" }
 }
 
