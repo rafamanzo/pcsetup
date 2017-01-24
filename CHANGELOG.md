@@ -9,6 +9,7 @@ The version numbers try to follow the standards set by http://semver.org
 * Fix AwesomeWM widgets using deprecated functions
 * Set default font resolution through Xresources
 * Fix AwesomeWM logout menu button
+* Set default colourscheme through Xresources
 
 ## v1.1.1 - 22/06/2016
 

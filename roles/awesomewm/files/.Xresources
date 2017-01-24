@@ -1,3 +1,29 @@
+! Molokai colour theme
+! This is supposed to be a fallback
+! Obtained from: http://www.futurile.net/2016/06/15/xterm-256color-themes-molokai-terminal-theme/
+background: [100]#272822
+foreground: [100]#d0d0d0
+color0: [100]#272822
+color1: [100]#d0d0d0
+color2: [100]#66AA11
+color3: [100]#c47f2c
+color4: [100]#30309b
+color5: [100]#7e40a5
+color6: [100]#3579A8
+color7: [100]#4eb4fa
+color8: [100]#303030
+color9: [100]#ff0090
+color10: [100]#80FF00
+color11: [100]#ffba68
+color12: [100]#5f5fee
+color13: [100]#bb88dd
+color14: [100]#4eb4fa
+color15: [100]#ffffff
+
+!!!!!!!!!
+! URXVT !
+!!!!!!!!!
+
 ! Main colours
 urxvt.background: [70]#000000
 urxvt.foreground: [100]#ffffff
@@ -38,6 +64,10 @@ urxvt.scrollWithBuffer: true
 urxvt.scrollTtyKeypress: true
 urxvt.secondaryScreen: 1
 urxvt.secondaryScroll: 0
+
+!!!!!!!!!!!!!!!!
+! XScreenSaver !
+!!!!!!!!!!!!!!!!
 
 ! Allow user switching from XScreenSaver
 xscreensaver.newLoginCommand: dm-tool switch-to-greeter
