@@ -6,17 +6,19 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+## v1.1.2 - 24/01/2017
+
 * Fix AwesomeWM widgets using deprecated functions
 * Set default font resolution through Xresources
 * Fix AwesomeWM logout menu button
 * Set default colourscheme through Xresources
 
-## v1.1.1 - 22/06/2016
+## v1.1.1 - 22/01/2017
 
 * Install image processing tools (gimp & inkskape)
 * Fix AwesomeWM configuration to version 4.0
 
-## v1.1.0 - 16/01/2016
+## v1.1.0 - 16/01/2017
 
 * Set NeoVIM wordwrap toggle keybinding
 * Set NeoVIM line number toggle keybinding
