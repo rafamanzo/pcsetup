@@ -119,3 +119,8 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Install ntfs-3g package
+  pacman: name=ntfs-3g state=present
+  become: yes
+  become_user: root
+  become_method: sudo
