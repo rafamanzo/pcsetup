@@ -8,6 +8,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 * Install NTFS-3g
 * Install rsync
+* Install Discord client
 
 ## v1.1.2 - 24/01/2017
 
