@@ -23,3 +23,5 @@
   include: latex.yml
 - name: Install Python Virtualenv
   include: python-virtualenv/main.yml
+- name: Install FDM dependencies
+  include: fdm_dependencies.yml

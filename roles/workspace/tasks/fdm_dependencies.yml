@@ -1,0 +1,6 @@
+---
+- name: Install mariadb-clients package # Required for data migration from postgres
+  pacman: name=mariadb-clients state=present force=yes
+  become: yes
+  become_user: root
+  become_method: sudo
