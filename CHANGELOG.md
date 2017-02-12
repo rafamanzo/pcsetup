@@ -10,6 +10,7 @@ The version numbers try to follow the standards set by http://semver.org
 * Install rsync
 * Install Discord client
 * Create FDM dependencies installation task
+* Remove deprecated package foomatic-db-gutenprint
 
 ## v1.1.2 - 24/01/2017
 
