@@ -6,6 +6,8 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+## v1.2.0 - 27/02/2017
+
 * Install NTFS-3g
 * Install rsync
 * Install Discord client
