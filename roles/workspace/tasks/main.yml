@@ -30,3 +30,8 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Install docker
+  pacman: name=docker state=present
+  become: yes
+  become_user: root
+  become_method: sudo
