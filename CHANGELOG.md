@@ -6,6 +6,8 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+## v1.3.0
+
 * Screen brightness control for AwesomeWM
 * Control screen color gama with redshift
 
