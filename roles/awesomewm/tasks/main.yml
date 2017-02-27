@@ -23,6 +23,9 @@
 - name: Install assult battery status display
   include: assault.yml
   when: notebook is defined
+- name: Install backlight display
+  include: backlight.yml
+  when: notebook is defined
 - name: Install GNOME File Manager
   pacman: name=nautilus state=present
   become: yes

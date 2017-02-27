@@ -47,6 +47,8 @@ awful.screen.connect_for_each_screen(function(s)
             memwidget_container, -- Version 4.0 workaround
             spacer, separator, spacer,
             [% if notebook is defined %]
+            brightness.widget,
+            spacer, separator, spacer,
             myassault,
             spacer, separator, spacer,
             [% endif %]

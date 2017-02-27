@@ -6,6 +6,8 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Screen brightness control for AwesomeWM
+
 ## v1.2.0 - 27/02/2017
 
 * Install NTFS-3g
