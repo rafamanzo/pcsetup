@@ -1,0 +1,23 @@
+---
+- name: Install redshift package
+  pacman: name=redshift state=present
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Install python-gobject package
+  pacman: name=python-gobject state=present
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Install python-xdg package
+  pacman: name=python-xdg state=present
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Install librsvg package
+  pacman: name=librsvg state=present
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Configure RedShift
+  copy: src=redshift.conf dest=~/.config/redshift.conf

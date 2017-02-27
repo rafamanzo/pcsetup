@@ -139,3 +139,5 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Setup redshift
+  include: redshift.yml
