@@ -15,6 +15,7 @@ The version numbers try to follow the standards set by http://semver.org
 * Install sshpass for sudo password usage with Ansible
 * Install docker
 * Install vagrant
+* Install sshfs
 
 ## v1.1.2 - 24/01/2017
 

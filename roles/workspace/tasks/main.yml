@@ -40,3 +40,8 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Install sshfs
+  pacman: name=sshfs state=present
+  become: yes
+  become_user: root
+  become_method: sudo
