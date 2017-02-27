@@ -16,6 +16,7 @@ The version numbers try to follow the standards set by http://semver.org
 * Install docker
 * Install vagrant
 * Install sshfs
+* Install sshuttle
 
 ## v1.1.2 - 24/01/2017
 

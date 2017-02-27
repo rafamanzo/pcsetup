@@ -45,3 +45,8 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Install sshuttle
+  pacman: name=sshuttle state=present
+  become: yes
+  become_user: root
+  become_method: sudo
