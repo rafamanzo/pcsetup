@@ -12,6 +12,7 @@ The version numbers try to follow the standards set by http://semver.org
 * Create FDM dependencies installation task
 * Remove deprecated package foomatic-db-gutenprint
 * Install Android tools package for recovery and flashing
+* Install sshpass for sudo password usage with Ansible
 
 ## v1.1.2 - 24/01/2017
 

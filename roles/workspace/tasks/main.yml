@@ -25,3 +25,8 @@
   include: python-virtualenv/main.yml
 - name: Install FDM dependencies
   include: fdm_dependencies.yml
+- name: Install sshpass
+  pacman: name=sshpass state=present
+  become: yes
+  become_user: root
+  become_method: sudo
