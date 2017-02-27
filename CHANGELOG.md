@@ -17,6 +17,7 @@ The version numbers try to follow the standards set by http://semver.org
 * Install vagrant
 * Install sshfs
 * Install sshuttle
+* Install screen
 
 ## v1.1.2 - 24/01/2017
 

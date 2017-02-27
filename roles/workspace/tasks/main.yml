@@ -50,3 +50,8 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Install screen
+  pacman: name=screen state=present
+  become: yes
+  become_user: root
+  become_method: sudo
