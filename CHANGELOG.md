@@ -6,6 +6,8 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Fix Redshift coordinates
+
 ## v1.3.0
 
 * Screen brightness control for AwesomeWM
