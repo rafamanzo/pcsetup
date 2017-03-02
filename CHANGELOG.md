@@ -6,9 +6,11 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+## v1.3.1 - 02/03/2017
+
 * Fix Redshift coordinates
 
-## v1.3.0
+## v1.3.0 - 27/02/2017
 
 * Screen brightness control for AwesomeWM
 * Control screen color gama with redshift
