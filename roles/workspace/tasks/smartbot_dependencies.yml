@@ -1,0 +1,6 @@
+---
+- name: Install redis
+  pacman: name=redis state=present force=yes
+  become: yes
+  become_user: root
+  become_method: sudo

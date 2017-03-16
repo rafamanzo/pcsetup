@@ -7,6 +7,7 @@ The version numbers try to follow the standards set by http://semver.org
 ## Unreleased
 
 * Install nodejs-istanbul
+* Install redis
 
 ## v1.3.1 - 02/03/2017
 
