@@ -4,13 +4,13 @@
   become: yes
   become_user: root
   become_method: sudo
-- name: Install mesa-libgl
-  pacman: name=mesa-libgl state=present
+- name: Install mesa
+  pacman: name=mesa state=present
   become: yes
   become_user: root
   become_method: sudo
-- name: Install lib32-mesa-libgl
-  pacman: name=lib32-mesa-libgl state=present
+- name: Install lib32-mesa
+  pacman: name=lib32-mesa state=present
   become: yes
   become_user: root
   become_method: sudo

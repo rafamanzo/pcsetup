@@ -6,6 +6,9 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Monitor hardware temperature
+* Fix mesa package name
+
 ## v1.4.0 - 16/03/2017
 
 * Install nodejs-istanbul
