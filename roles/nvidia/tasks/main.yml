@@ -1,0 +1,12 @@
+---
+- name: Install nvidia GPU driver package
+  pacman: name=nvidia state=present
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Install nvidia GPU driver 32 bits lib package
+  pacman: name=lib32-nvidia-utils state=present
+  become: yes
+  become_user: root
+  become_method: sudo
+
