@@ -30,4 +30,10 @@
 awful.spawn("nm-applet")
 awful.spawn("xscreensaver -nosplash")
 awful.spawn("redshift-gtk")
+awful.spawn("psensor")
+
+-- Close all the windows that might get spawned
+for _, c in ipairs(client.get()) do
+  c:kill()
+end
 -- }}}
