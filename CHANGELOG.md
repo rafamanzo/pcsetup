@@ -9,6 +9,7 @@ The version numbers try to follow the standards set by http://semver.org
 * Monitor hardware temperature
 * Fix mesa package name
 * Install NVIDIA driver package
+* Install Bumblebee for notebooks
 
 ## v1.4.0 - 16/03/2017
 

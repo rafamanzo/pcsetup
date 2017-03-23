@@ -9,4 +9,20 @@
   become: yes
   become_user: root
   become_method: sudo
-
+- block:
+  - name: Install Bumblebee packages
+    pacman: name={{ item }} state=present
+    with_items:
+      - bumblebee
+      - lib32-virtualgl
+  - name: Setup Bumblebee systemd unit
+    systemd: name=bumblebeed state=started enabled=yes
+  - name: Allow current user to use Bumbleblee
+    user:
+      name: '{{ ansible_env.LOGNAME }}'
+      groups: bumblebee
+      append: yes
+  become: yes
+  become_user: root
+  become_method: sudo
+  when: notebook is defined
