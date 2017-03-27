@@ -14,3 +14,10 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Set XOrg configuration
+  file:
+    dest: /etc/X11/xorg.conf.d/20-intel.conf
+    src: 20-intel.conf
+  become: yes
+  become_user: root
+  become_method: sudo
