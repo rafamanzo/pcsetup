@@ -1,0 +1,16 @@
+---
+- name: Install Steam package
+  pacman: name=steam state=present
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Install Steam runtime dependencies package
+  pacman: name=steam-native-runtime state=present
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Install ttf-liberation package (provides Arial font)
+  pacman: name=ttf-liberation state=present
+  become: yes
+  become_user: root
+  become_method: sudo

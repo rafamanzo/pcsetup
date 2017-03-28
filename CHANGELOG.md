@@ -10,6 +10,7 @@ The version numbers try to follow the standards set by http://semver.org
 * Fix mesa package name
 * Install NVIDIA driver package
 * Install Bumblebee for notebooks
+* Install Steam
 
 ## v1.4.0 - 16/03/2017
 
