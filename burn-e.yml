@@ -11,8 +11,9 @@
     - common
     - ssh
     - intel-ucode
-    - intel-graphics
     - xorg
+    - intel-graphics
+    - nvidia
     - awesomewm
     - lightdm
     - acpid
@@ -22,4 +23,3 @@
     - neovim
     - workspace
     - temperature
-    - nvidia
