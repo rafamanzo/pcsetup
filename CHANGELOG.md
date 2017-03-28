@@ -6,6 +6,8 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+## v1.5.0 - 27/03/2017
+
 * Monitor hardware temperature
 * Fix mesa package name
 * Install NVIDIA driver package
