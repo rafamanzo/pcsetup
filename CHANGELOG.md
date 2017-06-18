@@ -6,6 +6,10 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Replace NeoVIM plugin Unite by Denite
+* Add suspend option to AwesomeWM menu
+* Support printscreen on AwesomeWM
+
 ## v1.5.0 - 27/03/2017
 
 * Monitor hardware temperature
