@@ -1,13 +1,13 @@
 " This is probably the most useful plugin I've seen. Except for almost all of
 " the other ones.
-" Unite allows for creating user interfaces that have a nifty fuzzy search
-" feature. Theses screens can be used for file searching, plugin searching,
-" buffer searching and a lot more. But, because I'm not original in any way, I
-" just use it to show that 'vim can also have CTRL-P'.
-call dein#add('Shougo/unite.vim')
+" Unite- I mean, Denite allows for creating user interfaces that have a nifty
+" fuzzy search feature. Theses screens can be used for file searching, plugin
+" searching, buffer searching and a lot more. But, because I'm not original in
+" any way, I just use it to show that 'vim can also have CTRL-P'.
+call dein#add('Shougo/denite.nvim')
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Unite Mappings:
+" Denite Mappings:
 "  Trying to find the simplest and most useful mappings to act like an IDE or
 "  something similar. By the way vim is not an IDE.
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -20,32 +20,32 @@ call dein#add('Shougo/unite.vim')
 " The original command from the docs had `:!` at the end, just before the
 " <CR>, but I removed it because I have no idea what it does. No seriously, I
 " must be blind to obvious things because I saw nothing on the docs that
-" referred to it in relation to this unite command.
-nnoremap <leader>r :<C-u>Unite -start-insert -default-action=tabopen
-      \ file_rec/async<CR>
+" referred to it in relation to this denite command.
+nnoremap <leader>r :<C-u>Denite -default-action=tabopen
+      \ file_rec<CR>
 
 " List buffers with a simple and fast leader mapping, which will allow for
 " easing switching of files. The thing is, this is not as easy as opening a
 " ton of windows and forgetting that buffers even exist for common people that
 " use IDEs (like me).
-nnoremap <leader>b :<C-u>Unite -start-insert buffer<CR>
+nnoremap <leader>b :<C-u>Denite buffer<CR>
 
-" Search the code for a pattern and display on a unite buffer. Pretty sweet if
+" Search the code for a pattern and display on a denite buffer. Pretty sweet if
 " I use ag, pretty slow if I stay with grep. This code search is useful
 " whenever the tags are not useful, which should be almost never.
-nnoremap <leader>f :<C-u>Unite grep:.<CR>
+nnoremap <leader>f :<C-u>Denite grep:.<CR>
 
 " Use ag for faster code searching. Faster than grep, at least, and any
 " feature that grep has and ag doesn't which should be a problem to me wasn't
 " found yet.
-let g:unite_source_grep_command = 'ag'
+let g:Denite_source_grep_command = 'ag'
 
-" The default options to pass to ag for unite search.
+" The default options to pass to ag for denite search.
 " --vimgrep will make the output like... vimgrep. And it will stop the
-"  annoying "you've no idea what you're doing" error from unite.
+"  annoying "you've no idea what you're doing" error from denite.
 " --hidden will allow ag to search on hidden files, like this one.
-let g:unite_source_grep_default_opts = '--vimgrep --hidden'
+let g:Denite_source_grep_default_opts = '--vimgrep --hidden'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" END Unite Mappings:
+" END Denite Mappings:
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
