@@ -144,10 +144,11 @@ globalkeys = awful.util.table.join(
 
     -- Backlight
     awful.key({}, "XF86MonBrightnessDown", function() brightness:down() end),
-    awful.key({}, "XF86MonBrightnessUp", function() brightness:up() end)
-    [% else %]
-    end)
+    awful.key({}, "XF86MonBrightnessUp", function() brightness:up() end),
     [% endif %]
+
+    -- Printscreen
+    awful.key({}, "Print", function() awful.spawn('gnome-screenshot') end)
 )
 
 -- @DOC_CLIENT_KEYBINDINGS@

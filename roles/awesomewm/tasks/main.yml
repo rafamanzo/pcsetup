@@ -46,3 +46,8 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Install gnome-screenshot
+  pacman: name=gnome-screenshot state=present
+  become: yes
+  become_user: root
+  become_method: sudo
