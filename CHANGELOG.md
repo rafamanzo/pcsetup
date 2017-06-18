@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Install nerdtree-git NeoVIM plugin
 * Replace NeoVIM plugin Unite by Denite
 * Add suspend option to AwesomeWM menu
 * Support printscreen on AwesomeWM
