@@ -7,6 +7,7 @@ The version numbers try to follow the standards set by http://semver.org
 ## Unreleased
 
 * Do not try to start installed services
+* Fix lm_sensors configuration 
 
 ## v1.6.0 - 14/07/2017 
 

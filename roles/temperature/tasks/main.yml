@@ -5,7 +5,7 @@
   become_user: root
   become_method: sudo
 - name: Configure lm_sensors (detect the chips)
-  command: sensor-detect --auto
+  command: sensors-detect --auto
   args:
     creates: /etc/conf.d/lm_sensors
   become: yes
