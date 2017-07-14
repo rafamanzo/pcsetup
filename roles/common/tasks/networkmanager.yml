@@ -4,11 +4,11 @@
   become_user: root
   become_method: sudo
 - name: Start NetworkManager services
-  service: name=NetworkManager enabled=yes state=started
+  service: name=NetworkManager enabled=yes
   become: yes
   become_user: root
   become_method: sudo
-- service: name=NetworkManager-dispatcher enabled=yes state=started
+- service: name=NetworkManager-dispatcher enabled=yes
   become: yes
   become_user: root
   become_method: sudo

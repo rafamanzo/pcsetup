@@ -14,8 +14,3 @@
   become: yes
   become_user: root
   become_method: sudo
-- name: Start acpid
-  service: name=acpid state=started
-  become: yes
-  become_user: root
-  become_method: sudo

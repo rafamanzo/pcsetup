@@ -3,5 +3,3 @@
   pacman: name=ufw state=present
 - name: Enable ufw service
   service: name=ufw enabled=yes
-- name: Start ufw service
-  service: name=ufw state=started
