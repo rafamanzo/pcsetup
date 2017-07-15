@@ -8,10 +8,10 @@
   environment:
     PATH: "/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
   roles:
+    - xorg # Required by font configuration part of common
     - ssh # Required by common (openssh)
     - common
     - intel-ucode
-    - xorg
     - intel-graphics
     - nvidia
     - awesomewm

@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Run xorg role before common
 * Run ssh role before common
 * Make sure ~/.config exists for RedShift configuration
 * Fix AwesomeWM keybinding configuration
