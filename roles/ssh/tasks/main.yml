@@ -4,5 +4,10 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Install openssh
+  pacman: name=openssh state=present
+  become: yes
+  become_user: root
+  become_method: sudo
 - name: Set SSH private key files
   include: set_key.yml

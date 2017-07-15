@@ -8,8 +8,8 @@
   environment:
     PATH: "/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
   roles:
+    - ssh # Required by common (openssh)
     - common
-    - ssh
     - intel-ucode
     - xorg
     - intel-graphics
