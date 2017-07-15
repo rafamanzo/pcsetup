@@ -11,3 +11,10 @@ call dein#add('vim-airline/vim-airline')
 " would very much like my bar on the bottom to actually match colors.
 " It does have other themes too, I'm just too biased towards badwolf.
 call dein#add('vim-airline/vim-airline-themes')
+
+" Airline wants to use fancy unicode chars and this prevents this mess. See:
+" https://github.com/vim-airline/vim-airline/blob/master/autoload/airline/init.vim#L80
+"
+" It is hell to get all of the unicode symbols working even falling back to
+" unifont.
+let g:airline_symbols_ascii=1
