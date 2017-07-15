@@ -46,3 +46,15 @@
     * Mem. usage after boot: ~190MB
     * Expected battery life: ~3h
     * Disk usage: 8.6GB
+* WALL-A (Desktop)
+  - Specs
+    * AMD FX8320E
+    * Geforce GTX 1050
+    * 16 GB RAM
+    * 256 GB SSD
+    * 300 GB HDD
+    * 1 TB RAID1 HDD
+  - Statistics (v1.6.1)
+    * Boot time: < 23s
+    * Mem. usage after boot: ~260MB
+    * Disk usage: 11.5GB
