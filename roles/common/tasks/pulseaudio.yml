@@ -1,0 +1,15 @@
+- name: Install alsa-utils
+  pacman: name=alsa-utils state=present
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Install pulseaudio
+  pacman: name=pulseaudio state=present
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Install pulseaudio-alsa
+  pacman: name=pulseaudio-alsa state=present
+  become: yes
+  become_user: root
+  become_method: sudo

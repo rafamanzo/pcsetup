@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Setup PulseAudio
 * Restrict vim-airline to ascii characters
 * Increase rxvt-unicode font spacing
 * Configure XScreenSaver

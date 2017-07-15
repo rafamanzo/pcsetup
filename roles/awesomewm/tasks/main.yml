@@ -55,3 +55,8 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Install pavucontrol
+  pacman: name=pavucontrol state=present
+  become: yes
+  become_user: root
+  become_method: sudo
