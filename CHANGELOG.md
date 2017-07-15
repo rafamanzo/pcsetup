@@ -6,8 +6,10 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
-* Do not try to start installed services
+* Make sure ~/.config exists for RedShift configuration
+* Fix AwesomeWM keybinding configuration
 * Fix lm_sensors configuration 
+* Do not try to start installed services
 
 ## v1.6.0 - 14/07/2017 
 

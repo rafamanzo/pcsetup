@@ -19,5 +19,7 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Make sure ~/.config exists
+  file: path=~/.config state=directory
 - name: Configure RedShift
   copy: src=redshift.conf dest=~/.config/redshift.conf
