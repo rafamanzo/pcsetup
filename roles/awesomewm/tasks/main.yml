@@ -41,6 +41,10 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Configure XScreenSaver
+  copy:
+    src: .xscreensaver
+    dest: ~/.xscreensaver
 - name: Install arandr
   pacman: name=arandr state=present
   become: yes
