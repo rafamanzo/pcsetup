@@ -6,6 +6,8 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+## v.1.6.1 - 14/07/2017
+
 * Run xorg role before common
 * Run ssh role before common
 * Make sure ~/.config exists for RedShift configuration
