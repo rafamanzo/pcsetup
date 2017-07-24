@@ -143,3 +143,8 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Install libreoffice-fresh package
+  pacman: name=libreoffice-fresh state=present
+  become: yes
+  become_user: root
+  become_method: sudo
