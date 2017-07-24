@@ -138,3 +138,8 @@
   become_method: sudo
 - name: Setup redshift
   include: redshift.yml
+- name: Install transmission-qt package
+  pacman: name=transmission-qt state=present
+  become: yes
+  become_user: root
+  become_method: sudo
