@@ -1,15 +1,12 @@
-- name: Install alsa-utils
-  pacman: name=alsa-utils state=present
-  become: yes
-  become_user: root
-  become_method: sudo
-- name: Install pulseaudio
-  pacman: name=pulseaudio state=present
-  become: yes
-  become_user: root
-  become_method: sudo
-- name: Install pulseaudio-alsa
-  pacman: name=pulseaudio-alsa state=present
+- block:
+  - name: Install alsa-utils
+    pacman: name=alsa-utils state=present
+  - name: Install pulseaudio
+    pacman: name=pulseaudio state=present
+  - name: Install pulseaudio-alsa
+    pacman: name=pulseaudio-alsa state=present
+  - name: Configure pulseaudio
+    copy: src=default.pa dest=/etc/pulse/default.pa
   become: yes
   become_user: root
   become_method: sudo
