@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Create gaming role
 * Create EVA playbook
 * Fix intel-graphics XOrg configuration
 * Install yarn

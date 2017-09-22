@@ -126,11 +126,6 @@
   become: yes
   become_user: root
   become_method: sudo
-- name: Install Discord package
-  pacaur: name=discord state=present
-  become: yes
-  become_user: super{{ ansible_env.LOGNAME }}
-  become_method: sudo
 - name: Install android-tools package
   pacman: name=android-tools state=present
   become: yes
