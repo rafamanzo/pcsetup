@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Fix intel-graphics XOrg configuration
 * Install yarn
 * Configure PulseAudio echo cancellation
 * Install libreoffice-fresh package
