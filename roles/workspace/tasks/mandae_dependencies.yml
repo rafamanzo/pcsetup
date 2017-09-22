@@ -4,3 +4,18 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Install jre8-openjdk
+  pacman: name=jre8-openjdk state=present force=yes
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Install maven
+  pacman: name=maven state=present force=yes
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Set settings.xml for maven
+  copy: src=settings.xml dest=/opt/maven/conf/settings.xml
+  become: yes
+  become_user: root
+  become_method: sudo

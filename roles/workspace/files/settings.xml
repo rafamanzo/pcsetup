@@ -1,0 +1,41 @@
+<settings>
+  <servers>
+    <server>
+      <id>mandae-snapshots</id>
+      <username>deployment</username>
+      <password>nexusdep21</password>
+    </server>
+    <server>
+      <id>mandae-releases</id>
+      <username>deployment</username>
+      <password>nexusdep21</password>
+    </server>
+    <server>
+      <id>mandae-core-releases</id>
+      <username>deployment</username>
+      <password>nexusdep21</password>
+    </server>
+    <server>
+      <id>mandae-core-snapshots</id>
+      <username>deployment</username>
+      <password>nexusdep21</password>
+    </server>
+  </servers>
+  <pluginGroups>
+    <pluginGroup>org.sonarsource.scanner.maven</pluginGroup>
+  </pluginGroups>
+  <profiles>
+    <profile>
+      <id>sonar</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+        <!-- Optional URL to server. Default value is http://localhost:9000 -->
+        <sonar.host.url>
+          http://ci.dev.mandae.com.br:9000/
+        </sonar.host.url>
+      </properties>
+    </profile>
+  </profiles>
+</settings>
