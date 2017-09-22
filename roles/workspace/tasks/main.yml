@@ -57,3 +57,5 @@
   become_method: sudo
 - name: Install smartbot dependencies
   include: smartbot_dependencies.yml
+- name: Install mandae dependencies
+  include: mandae_dependencies.yml

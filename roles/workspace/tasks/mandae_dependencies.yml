@@ -1,0 +1,6 @@
+---
+- name: Install slack-desktop
+  pacaur: name=slack-desktop state=present force=yes
+  become: yes
+  become_user: root
+  become_method: sudo
