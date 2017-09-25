@@ -36,15 +36,11 @@
   become: yes
   become_user: root
   become_method: sudo
-- name: Install XScreenSaver
-  pacman: name=xscreensaver state=present
+- name: Install light-locker
+  pacman: name=light-locker state=present
   become: yes
   become_user: root
   become_method: sudo
-- name: Configure XScreenSaver
-  copy:
-    src: .xscreensaver
-    dest: ~/.xscreensaver
 - name: Install arandr
   pacman: name=arandr state=present
   become: yes

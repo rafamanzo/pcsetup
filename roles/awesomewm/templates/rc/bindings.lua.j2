@@ -138,7 +138,7 @@ globalkeys = awful.util.table.join(
     [% endif %]
 
     -- Lock screen
-    awful.key({ modkey, "Control" }, "l", function () awful.spawn("xscreensaver-command -lock") end),
+    awful.key({ modkey, "Control" }, "l", function () awful.spawn("light-locker-command -l") end),
 
     [% if notebook is defined %]
     -- Backlight
