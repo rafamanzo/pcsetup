@@ -14,6 +14,11 @@
   become: yes
   become_user: super{{ ansible_env.LOGNAME }}
   become_method: sudo
+- name: Install python-virtualenvwrapper package
+  pacaur: name=python-virtualenvwrapper state=present
+  become: yes
+  become_user: super{{ ansible_env.LOGNAME }}
+  become_method: sudo
 - name: Create zshrc
   copy: src=.zshrc dest={{ ansible_env.HOME }}/.zshrc
 - name: Set zsh as default shell

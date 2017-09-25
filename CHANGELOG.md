@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Install python-virtualenvwrapper
 * Replace XScreenSaver by light-lock
 * Setup additional SSH key
 * Allow custom git user email for each playbook
