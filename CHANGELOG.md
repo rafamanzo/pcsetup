@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Fix acpid enablement right after installation
 * Install python-virtualenvwrapper
 * Replace XScreenSaver by light-lock
 * Setup additional SSH key
