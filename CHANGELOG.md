@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Setup additional SSH key
 * Allow custom git user email for each playbook
 * Create Mandaê tasks file
 * Create gaming role
