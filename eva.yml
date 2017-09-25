@@ -5,6 +5,9 @@
     notebook:
       ps_ac_string: 'ACAD'
       ps_bt_string: 'BAT1'
+    git:
+      name: 'Rafael Reggiani Manzo'
+      email: 'rafael.manzo@mandae.com.br'
   environment:
     PATH: "/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
   roles:

@@ -10,8 +10,8 @@
   check_mode: no
   ignore_errors: True
 - name: Set git user name
-  shell: git config --global user.name "{{ git_username }}"
-  when: host_git_username.stdout != "{{ git_username }}"
+  shell: git config --global user.name "{{ git.name }}"
+  when: host_git_username.stdout != "{{ git.name }}"
 - name: Check configured git user email
   shell: git config --get user.email
   register: host_git_useremail
@@ -19,5 +19,5 @@
   check_mode: no
   ignore_errors: True
 - name: Set git user email
-  shell: git config --global user.email "{{ git_useremail }}"
-  when: host_git_useremail.stdout != "{{ git_useremail }}"
+  shell: git config --global user.email "{{ git.email }}"
+  when: host_git_useremail.stdout != "{{ git.email }}"
