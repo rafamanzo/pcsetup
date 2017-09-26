@@ -6,6 +6,8 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Fix slack installation
+
 ## v1.7.0 - 25/09/2017
 
 * Update pacaur library

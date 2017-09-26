@@ -2,7 +2,7 @@
 - name: Install slack-desktop
   pacaur: name=slack-desktop state=present force=yes
   become: yes
-  become_user: root
+  become_user: super{{ ansible_env.LOGNAME }}
   become_method: sudo
 - name: Install jre8-openjdk
   pacman: name=jre8-openjdk state=present force=yes
