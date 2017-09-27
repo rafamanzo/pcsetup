@@ -19,3 +19,16 @@
   become: yes
   become_user: root
   become_method: sudo
+#
+# mandae-webapp deps
+#
+# check the zsh role for nvm installation
+#
+- name: Install ruby-sass
+  pacaur: name=ruby-sass state=present
+  become: yes
+  become_user: super{{ ansible_env.LOGNAME }}
+  become_method: sudo
+- name: Install sass-listen Ruby gem
+  command: ~/.rvm/bin/rvm system do gem install --no-ri --no-rdoc sass-listen # This depends on RVM being installed previously. There is no package for it.
+

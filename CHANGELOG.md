@@ -6,6 +6,8 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Install mandae-webapp dependencies
+
 ## v1.7.1 - 26/09/2017
 
 * Fix slack installation
