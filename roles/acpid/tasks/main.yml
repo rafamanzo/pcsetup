@@ -1,8 +1,8 @@
 ---
 - name: Disable systemd power management (logind)
-  include: disable_logind.yml
+  include_tasks: disable_logind.yml
 - name: Install ACPID
-  include: install.yml
+  include_tasks: install.yml
 - name: Setup wifi toggle
-  include: wifi_toggle.yml
+  include_tasks: wifi_toggle.yml
   when: notebook is defined

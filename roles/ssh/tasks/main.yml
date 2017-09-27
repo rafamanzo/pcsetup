@@ -10,6 +10,6 @@
   become_user: root
   become_method: sudo
 - name: Set SSH private key files
-  include: set_key.yml
+  include_tasks: set_key.yml
 - name: Set SSH config
   copy: src=config dest=~/.ssh/config

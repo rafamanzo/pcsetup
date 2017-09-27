@@ -5,12 +5,12 @@
   become_user: root
   become_method: sudo
 - name: Set system locales
-  include: locale.yml
+  include_tasks: locale.yml
   become: yes
   become_user: root
   become_method: sudo
 - name: Configure pacman
-  include: configure_pacman.yml
+  include_tasks: configure_pacman.yml
 - name: Update the system
   pacman: update_cache=yes upgrade=yes
   become: yes
@@ -29,15 +29,15 @@
   changed_when: False
   check_mode: no
 - name: Install base-devel
-  include: base-devel.yml
+  include_tasks: base-devel.yml
   become: yes
   become_user: root
   become_method: sudo
 - name: Install cower
-  include: cower.yml
+  include_tasks: cower.yml
   when: cower_installed|failed
 - name: Install pacaur
-  include: pacaur.yml
+  include_tasks: pacaur.yml
   when: pacaur_installed|failed
 - name: Update AUR packages
   pacaur: update_cache=yes upgrade=yes
@@ -45,39 +45,39 @@
   become_user: super{{ ansible_env.LOGNAME }}
   become_method: sudo
 - name: Install vim
-  include: vim.yml
+  include_tasks: vim.yml
 - name: Install git
-  include: git.yml
+  include_tasks: git.yml
 - name: Install htop
   pacman: name=htop state=present
   become: yes
   become_user: root
   become_method: sudo
 - name: Install NetworkManager
-  include: networkmanager.yml
+  include_tasks: networkmanager.yml
 - name: Create Pandora's Box directory
-  include: pandorasbox.yml
+  include_tasks: pandorasbox.yml
 - name: Install PulseAudio
-  include: pulseaudio.yml
+  include_tasks: pulseaudio.yml
 - name: Setup web browsers
-  include: browsers.yml
+  include_tasks: browsers.yml
 - name: Set timezone
   file: src=/usr/share/zoneinfo/Brazil/East dest=/etc/localtime state=link force=yes
   become: yes
   become_user: root
   become_method: sudo
 - name: Setup systemd-timesyncd
-  include: systemd-timesyncd.yml
+  include_tasks: systemd-timesyncd.yml
   become: yes
   become_user: root
   become_method: sudo
 - name: Setup vlc
-  include: vlc.yml
+  include_tasks: vlc.yml
   become: yes
   become_user: root
   become_method: sudo
 - name: Setup CUPS
-  include: cups.yml
+  include_tasks: cups.yml
   become: yes
   become_user: root
   become_method: sudo
@@ -132,7 +132,7 @@
   become_user: root
   become_method: sudo
 - name: Setup redshift
-  include: redshift.yml
+  include_tasks: redshift.yml
 - name: Install transmission-qt package
   pacman: name=transmission-qt state=present
   become: yes

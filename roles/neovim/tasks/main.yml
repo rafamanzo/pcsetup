@@ -5,9 +5,9 @@
   become_user: root
   become_method: sudo
 - name: Install dein.vim plugin manager
-  include: dein.yml
+  include_tasks: dein.yml
 - name: Configure neovim
-  include: configure.yml
+  include_tasks: configure.yml
 - name: Install python-neovim package
   pacman: name=python-neovim state=present
   become: yes

@@ -5,26 +5,26 @@
   become_user: root
   become_method: sudo
 - name: Install terminal emulator
-  include: urxvt.yml
+  include_tasks: urxvt.yml
 - name: Install awesome themes package
   pacaur: name=awesome-themes-git state=present
   become: yes
   become_user: super{{ ansible_env.LOGNAME }}
   become_method: sudo
 - name: Install widgets requirements
-  include: widgets.yml
+  include_tasks: widgets.yml
   become: yes
   become_user: root
   become_method: sudo
 - name: Configure
-  include: configure.yml
+  include_tasks: configure.yml
 - name: Install NetworkManager applet
-  include: nm-applet.yml
+  include_tasks: nm-applet.yml
 - name: Install assult battery status display
-  include: assault.yml
+  include_tasks: assault.yml
   when: notebook is defined
 - name: Install backlight display
-  include: backlight.yml
+  include_tasks: backlight.yml
   when: notebook is defined
 - name: Install GNOME File Manager
   pacman: name=nautilus state=present

@@ -2,9 +2,9 @@
 - name: Get workspace main repository
   git: repo=git@gitlab.com:rafamanzo/workspace.git dest=~/workspace accept_hostkey=yes update=no
 - name: Setup RVM
-  include: rvm/main.yml
+  include_tasks: rvm/main.yml
 - name: Install PostgreSQL
-  include: postgresql.yml
+  include_tasks: postgresql.yml
 - name: Install PhantomJS package
   pacman: name=phantomjs state=present force=yes
   become: yes
@@ -16,15 +16,15 @@
   become_user: root
   become_method: sudo
 - name: Install C++ development tools
-  include: cpp.yml
+  include_tasks: cpp.yml
 - name: Install MSc dependencies
-  include: msc_dependencies.yml
+  include_tasks: msc_dependencies.yml
 - name: Install LaTeX
-  include: latex.yml
+  include_tasks: latex.yml
 - name: Install Python Virtualenv
-  include: python-virtualenv/main.yml
+  include_tasks: python-virtualenv/main.yml
 - name: Install FDM dependencies
-  include: fdm_dependencies.yml
+  include_tasks: fdm_dependencies.yml
 - name: Install sshpass
   pacman: name=sshpass state=present
   become: yes
@@ -56,6 +56,6 @@
   become_user: root
   become_method: sudo
 - name: Install smartbot dependencies
-  include: smartbot_dependencies.yml
+  include_tasks: smartbot_dependencies.yml
 - name: Install mandae dependencies
-  include: mandae_dependencies.yml
+  include_tasks: mandae_dependencies.yml
