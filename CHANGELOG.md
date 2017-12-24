@@ -7,6 +7,7 @@ The version numbers try to follow the standards set by http://semver.org
 ## Unreleased
 
 * Install mandae-webapp dependencies
+* Update ansible.cfg to avoid deprecations
 
 ## v1.7.1 - 26/09/2017
 
