@@ -6,3 +6,6 @@
 ---
 - name: Install base-devel
   pacman: name=base-devel state=present
+  become: yes
+  become_user: root
+  become_method: sudo

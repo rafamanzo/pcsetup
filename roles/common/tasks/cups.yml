@@ -1,14 +1,18 @@
 ---
-- name: Install cups package
-  pacman: name=cups state=present
-- name: Install ghostscript package
-  pacman: name=ghostscript state=present
-- name: Install gsfonts package
-  pacman: name=gsfonts state=present
-- name: Install gutenprint package
-  pacman: name=gutenprint state=present
-- name: Install foomatic-db-gutenprint-ppds package
-  pacman: name=foomatic-db-gutenprint-ppds state=present
+- block:
+  - name: Install cups package
+    pacman: name=cups state=present
+  - name: Install ghostscript package
+    pacman: name=ghostscript state=present
+  - name: Install gsfonts package
+    pacman: name=gsfonts state=present
+  - name: Install gutenprint package
+    pacman: name=gutenprint state=present
+  - name: Install foomatic-db-gutenprint-ppds package
+    pacman: name=foomatic-db-gutenprint-ppds state=present
+  become: yes
+  become_user: root
+  become_method: sudo
 - name: Install epson-inkjet-printer-201207w package # For Epson L355
   pacaur: name=epson-inkjet-printer-201207w state=present
   become: yes

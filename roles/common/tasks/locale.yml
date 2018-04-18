@@ -1,12 +1,16 @@
-- name: Enable locales
-  copy: src=locale.gen dest=/etc/locale.gen
-  register: locales_enablement
-- name: Generate locales
-  command: locale-gen
-  when: locales_enablement|changed
-- name: Configure locales
-  copy: src=locale.conf dest=/etc/locale.conf
-- name: Configure console
-  copy: src=vconsole.conf dest=/etc/vconsole.conf
-- name: Configure X11 keyboard layout
-  copy: src=00-keyboard.conf dest=/etc/X11/xorg.conf.d/00-keyboard.conf 
+- block:
+  - name: Enable locales
+    copy: src=locale.gen dest=/etc/locale.gen
+    register: locales_enablement
+  - name: Generate locales
+    command: locale-gen
+    when: locales_enablement|changed
+  - name: Configure locales
+    copy: src=locale.conf dest=/etc/locale.conf
+  - name: Configure console
+    copy: src=vconsole.conf dest=/etc/vconsole.conf
+  - name: Configure X11 keyboard layout
+    copy: src=00-keyboard.conf dest=/etc/X11/xorg.conf.d/00-keyboard.conf
+  become: yes
+  become_user: root
+  become_method: sudo

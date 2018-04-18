@@ -6,9 +6,6 @@
   become_method: sudo
 - name: Set system locales
   include_tasks: locale.yml
-  become: yes
-  become_user: root
-  become_method: sudo
 - name: Configure pacman
   include_tasks: configure_pacman.yml
 - name: Update the system
@@ -68,9 +65,6 @@
   become_method: sudo
 - name: Setup systemd-timesyncd
   include_tasks: systemd-timesyncd.yml
-  become: yes
-  become_user: root
-  become_method: sudo
 - name: Setup vlc
   include_tasks: vlc.yml
   become: yes

@@ -1,3 +1,6 @@
 ---
 - name: Enable systemd-timesyncd
   service: name=systemd-timesyncd enabled=yes
+  become: yes
+  become_user: root
+  become_method: sudo
