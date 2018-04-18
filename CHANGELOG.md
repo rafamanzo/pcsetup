@@ -8,6 +8,8 @@ The version numbers try to follow the standards set by http://semver.org
 
 * Install mandae-webapp dependencies
 * Update ansible.cfg to avoid deprecations
+* Fix Skype package name
+* Fix privilege escalation for task inclusion
 
 ## v1.7.1 - 26/09/2017
 
