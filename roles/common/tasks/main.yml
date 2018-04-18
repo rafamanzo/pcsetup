@@ -96,7 +96,7 @@
   become_user: root
   become_method: sudo
 - name: Install skype package
-  pacaur: name=skypeforlinux-bin state=present
+  pacaur: name=skypeforlinux-stable-bin state=present
   become: yes
   become_user: super{{ ansible_env.LOGNAME }}
   become_method: sudo
