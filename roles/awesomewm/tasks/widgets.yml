@@ -1,13 +1,17 @@
 ---
-- name: Install vicious package
-  pacman: name=vicious state=present
-- name: Install alsa-utils package
-  pacman: name=alsa-utils state=present
-- name: Install curl package
-  pacman: name=curl state=present
-- name: Install hddtemp package
-  pacman: name=hddtemp state=present
-- name: Install wireless_tools package
-  pacman: name=wireless_tools state=present
-- name: Install gnome-icon-theme package
-  pacman: name=gnome-icon-theme state=present
+- block:
+  - name: Install vicious package
+    pacman: name=vicious state=present
+  - name: Install alsa-utils package
+    pacman: name=alsa-utils state=present
+  - name: Install curl package
+    pacman: name=curl state=present
+  - name: Install hddtemp package
+    pacman: name=hddtemp state=present
+  - name: Install wireless_tools package
+    pacman: name=wireless_tools state=present
+  - name: Install gnome-icon-theme package
+    pacman: name=gnome-icon-theme state=present
+  become: yes
+  become_user: root
+  become_method: sudo

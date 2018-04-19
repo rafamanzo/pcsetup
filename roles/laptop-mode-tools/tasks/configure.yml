@@ -1,6 +1,10 @@
 ---
-- copy: src=wireless-ipw-power.conf dest=/etc/laptop-mode/conf.d/wireless-ipw-power.conf
-- copy: src=wireless-iwl-power.conf dest=/etc/laptop-mode/conf.d/wireless-iwl-power.conf
-- copy: src=wireless-power.conf dest=/etc/laptop-mode/conf.d/wireless-power.conf
-- template: src=ethernet.conf.j2 dest=/etc/laptop-mode/conf.d/ethernet.conf
-- copy: src=laptop-mode.conf dest=/etc/laptop-mode/laptop-mode.conf
+- block:
+  - copy: src=wireless-ipw-power.conf dest=/etc/laptop-mode/conf.d/wireless-ipw-power.conf
+  - copy: src=wireless-iwl-power.conf dest=/etc/laptop-mode/conf.d/wireless-iwl-power.conf
+  - copy: src=wireless-power.conf dest=/etc/laptop-mode/conf.d/wireless-power.conf
+  - template: src=ethernet.conf.j2 dest=/etc/laptop-mode/conf.d/ethernet.conf
+  - copy: src=laptop-mode.conf dest=/etc/laptop-mode/laptop-mode.conf
+  become: yes
+  become_user: root
+  become_method: sudo

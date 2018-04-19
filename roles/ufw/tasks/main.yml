@@ -1,24 +1,12 @@
 ---
 - name: Install ufw
   include_tasks: install.yml
-  become: yes
-  become_user: root
-  become_method: sudo
 - name: Configure ufw
   include_tasks: configure.yml
-  become: yes
-  become_user: root
-  become_method: sudo
 - name: Block all traffic
   include_tasks: close.yml
-  become: yes
-  become_user: root
-  become_method: sudo
 - name: Set incoming traffic exceptions
   include_tasks: incoming_allowed.yml
-  become: yes
-  become_user: root
-  become_method: sudo
 - name: Enable ufw
   ufw: state=enabled policy=deny
   become: yes

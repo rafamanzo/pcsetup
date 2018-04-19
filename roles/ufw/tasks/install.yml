@@ -1,5 +1,9 @@
 ---
-- name: Install ufw package
-  pacman: name=ufw state=present
-- name: Enable ufw service
-  service: name=ufw enabled=yes
+- block:
+  - name: Install ufw package
+    pacman: name=ufw state=present
+  - name: Enable ufw service
+    service: name=ufw enabled=yes
+  become: yes
+  become_user: root
+  become_method: sudo

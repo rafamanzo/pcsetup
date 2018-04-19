@@ -1,3 +1,7 @@
 ---
-- copy: src=before.rules dest=/etc/ufw/before.rules
-- copy: src=before6.rules dest=/etc/ufw/before6.rules
+- block:
+  - copy: src=before.rules dest=/etc/ufw/before.rules
+  - copy: src=before6.rules dest=/etc/ufw/before6.rules
+  become: yes
+  become_user: root
+  become_method: sudo

@@ -1,9 +1,6 @@
 ---
 - name: Setup CPU scaling
   include_tasks: cpu_scaling.yml
-  become: yes
-  become_user: root
-  become_method: sudo
 - name: Install laptop-mode-tools-git
   # Git version preferred over the mainstream beacuse of sustemd incompatibility:
   # * https://bbs.archlinux.org/viewtopic.php?id=209100
@@ -13,9 +10,6 @@
   become_method: sudo
 - name: Configure Laptop Mode Tools
   include_tasks: configure.yml
-  become: yes
-  become_user: root
-  become_method: sudo
 - name: Enable laptop-mode
   service: name=laptop-mode enabled=yes
   become: yes

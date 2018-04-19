@@ -13,9 +13,6 @@
   become_method: sudo
 - name: Install widgets requirements
   include_tasks: widgets.yml
-  become: yes
-  become_user: root
-  become_method: sudo
 - name: Configure
   include_tasks: configure.yml
 - name: Install NetworkManager applet
