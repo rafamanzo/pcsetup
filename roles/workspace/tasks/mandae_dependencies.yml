@@ -14,6 +14,8 @@
     pacman: name=jdk8-openjdk state=present force=yes
   - name: Install maven
     pacman: name=maven state=present force=yes
+  - name: Install eclipse
+    pacman: name=eclipse-java state=present force=yes
   - name: Set settings.xml for maven
     copy: src=settings.xml dest=/opt/maven/conf/settings.xml
   become: yes

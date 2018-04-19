@@ -13,6 +13,7 @@ The version numbers try to follow the standards set by http://semver.org
 * Fix PhantomJS installation source
 * Install NodeJS neovim package
 * Install OpenJDK8
+* Install Eclipse
 
 ## v1.7.1 - 26/09/2017
 
