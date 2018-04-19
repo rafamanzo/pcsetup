@@ -12,6 +12,7 @@ The version numbers try to follow the standards set by http://semver.org
 * Fix privilege escalation for task inclusion
 * Fix PhantomJS installation source
 * Install NodeJS neovim package
+* Install OpenJDK8
 
 ## v1.7.1 - 26/09/2017
 

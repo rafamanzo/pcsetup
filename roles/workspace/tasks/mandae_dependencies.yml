@@ -1,21 +1,21 @@
 ---
-- name: Install slack-desktop
-  pacaur: name=slack-desktop state=present force=yes
+- block:
+  - name: Install slack-desktop
+    pacaur: name=slack-desktop state=present force=yes
+  - name: Install ruby-sass
+    pacaur: name=ruby-sass state=present
   become: yes
   become_user: super{{ ansible_env.LOGNAME }}
   become_method: sudo
-- name: Install jre8-openjdk
-  pacman: name=jre8-openjdk state=present force=yes
-  become: yes
-  become_user: root
-  become_method: sudo
-- name: Install maven
-  pacman: name=maven state=present force=yes
-  become: yes
-  become_user: root
-  become_method: sudo
-- name: Set settings.xml for maven
-  copy: src=settings.xml dest=/opt/maven/conf/settings.xml
+- block:
+  - name: Install jre8-openjdk
+    pacman: name=jre8-openjdk state=present force=yes
+  - name: Install jdk8-openjdk
+    pacman: name=jdk8-openjdk state=present force=yes
+  - name: Install maven
+    pacman: name=maven state=present force=yes
+  - name: Set settings.xml for maven
+    copy: src=settings.xml dest=/opt/maven/conf/settings.xml
   become: yes
   become_user: root
   become_method: sudo
@@ -24,11 +24,5 @@
 #
 # check the zsh role for nvm installation
 #
-- name: Install ruby-sass
-  pacaur: name=ruby-sass state=present
-  become: yes
-  become_user: super{{ ansible_env.LOGNAME }}
-  become_method: sudo
 - name: Install sass-listen Ruby gem
   command: ~/.rvm/bin/rvm system do gem install --no-ri --no-rdoc sass-listen # This depends on RVM being installed previously. There is no package for it.
-
