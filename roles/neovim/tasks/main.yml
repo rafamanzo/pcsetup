@@ -1,20 +1,13 @@
 ---
-- name: Install neovim package
-  pacman: name=neovim state=present
-  become: yes
-  become_user: root
-  become_method: sudo
-- name: Install dein.vim plugin manager
-  include_tasks: dein.yml
-- name: Configure neovim
-  include_tasks: configure.yml
-- name: Install python-neovim package
-  pacman: name=python-neovim state=present
-  become: yes
-  become_user: root
-  become_method: sudo
-- name: Install python2-neovim package
-  pacman: name=python2-neovim state=present
+- block:
+  - name: Install neovim package
+    pacman: name=neovim state=present
+  - name: Install python-neovim package
+    pacman: name=python-neovim state=present
+  - name: Install python2-neovim package
+    pacman: name=python2-neovim state=present
+  - name: Install NodeJS neovim package
+    npm: name=neovim state=latest global=yes
   become: yes
   become_user: root
   become_method: sudo
@@ -23,3 +16,7 @@
   become: yes
   become_user: super{{ ansible_env.LOGNAME }}
   become_method: sudo
+- name: Install dein.vim plugin manager
+  include_tasks: dein.yml
+- name: Configure neovim
+  include_tasks: configure.yml
