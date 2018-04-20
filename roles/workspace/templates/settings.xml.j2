@@ -1,25 +1,12 @@
 <settings>
   <servers>
+    {% for id, data in maven_servers.items() %}
     <server>
-      <id>mandae-snapshots</id>
-      <username>deployment</username>
-      <password>nexusdep21</password>
+      <id>{{ id }}</id>
+      <username>{{ data.username }}</username>
+      <password>{{ data.password }}</password>
     </server>
-    <server>
-      <id>mandae-releases</id>
-      <username>deployment</username>
-      <password>nexusdep21</password>
-    </server>
-    <server>
-      <id>mandae-core-releases</id>
-      <username>deployment</username>
-      <password>nexusdep21</password>
-    </server>
-    <server>
-      <id>mandae-core-snapshots</id>
-      <username>deployment</username>
-      <password>nexusdep21</password>
-    </server>
+    {% endfor %}
   </servers>
   <pluginGroups>
     <pluginGroup>org.sonarsource.scanner.maven</pluginGroup>

@@ -14,6 +14,7 @@ The version numbers try to follow the standards set by http://semver.org
 * Install NodeJS neovim package
 * Install OpenJDK8
 * Install Eclipse
+* Encrypt Maven servers configuration
 
 ## v1.7.1 - 26/09/2017
 
