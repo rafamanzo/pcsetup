@@ -15,6 +15,7 @@ The version numbers try to follow the standards set by http://semver.org
 * Install OpenJDK8
 * Install Eclipse
 * Encrypt Maven servers configuration
+* Install postgis extension
 
 ## v1.7.1 - 26/09/2017
 

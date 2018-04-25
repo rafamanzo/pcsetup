@@ -21,6 +21,8 @@
     no_log: true
   - name: Set settings.xml for maven
     template: src=settings.xml.j2 dest=/opt/maven/conf/settings.xml
+  - name: Install postgis
+    pacman: name=postgis state=present force=yes
   become: yes
   become_user: root
   become_method: sudo
