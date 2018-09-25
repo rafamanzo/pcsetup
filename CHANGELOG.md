@@ -6,6 +6,8 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+## v1.8.0 - 25/09/2018
+
 * Install mandae-webapp dependencies
 * Update ansible.cfg to avoid deprecations
 * Fix Skype package name
