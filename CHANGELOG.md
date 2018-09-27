@@ -6,6 +6,8 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Fix Vagrant develoment environment
+
 ## v1.8.0 - 25/09/2018
 
 * Install mandae-webapp dependencies
