@@ -7,6 +7,7 @@ The version numbers try to follow the standards set by http://semver.org
 ## Unreleased
 
 * Fix Vagrant develoment environment
+* Install typescript-vim plugin to neovim
 
 ## v1.8.0 - 25/09/2018
 
