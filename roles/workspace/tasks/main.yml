@@ -6,7 +6,7 @@
 - name: Install PostgreSQL
   include_tasks: postgresql.yml
 - name: Install PhantomJS package
-  pacaur: name=phantomjs state=present force=yes
+  pacaur: name=phantomjs-bin state=present force=yes
   become: yes
   become_user: super{{ ansible_env.LOGNAME }}
   become_method: sudo

@@ -5,9 +5,9 @@
   become_user: root
   become_method: sudo
 - name: Install mongodb
-  pacman: name=mongodb state=present
+  pacaur: name=mongodb-bin state=present
   become: yes
-  become_user: root
+  become_user: super{{ ansible_env.LOGNAME }}
   become_method: sudo
 - name: Install yarn
   pacman: name=yarn state=present
