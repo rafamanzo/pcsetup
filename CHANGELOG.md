@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Fix pgadmin installation
 * Fix RVM installation
 * Fix neovim installation
 * Fix vlc installation

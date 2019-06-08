@@ -23,7 +23,7 @@
   become_method: sudo
   when: cluster_files.matched|int == 0
 - name: Install pgAdmin package
-  pacman: name=pgadmin3 state=present
+  pacman: name=pgadmin4 state=present
   become: yes
   become_user: root
   become_method: sudo
