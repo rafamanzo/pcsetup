@@ -27,9 +27,6 @@
   check_mode: no
 - name: Install base-devel
   include_tasks: base-devel.yml
-  become: yes
-  become_user: root
-  become_method: sudo
 - name: Install cower
   include_tasks: cower.yml
   when: cower_installed|failed
@@ -67,14 +64,8 @@
   include_tasks: systemd-timesyncd.yml
 - name: Setup vlc
   include_tasks: vlc.yml
-  become: yes
-  become_user: root
-  become_method: sudo
 - name: Setup CUPS
   include_tasks: cups.yml
-  become: yes
-  become_user: root
-  become_method: sudo
 - name: Install ttf-dejavu package # (high quality, general-purpose fonts with good Unicode coverage)
   pacman: name=ttf-dejavu state=present
   become: yes
