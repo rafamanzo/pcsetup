@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Fix neovim installation
 * Fix vlc installation
 * Fix git setup
 * Fix pacaur installation
