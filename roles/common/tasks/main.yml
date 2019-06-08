@@ -19,6 +19,12 @@
   ignore_errors: True
   changed_when: False
   check_mode: no
+- name: Check auracle installed
+  command: pacman -Q auracle-git
+  register: auracle_installed
+  ignore_errors: True
+  changed_when: False
+  check_mode: no
 - name: Check pacaur installed
   command: pacman -Q pacaur
   register: pacaur_installed
@@ -30,6 +36,9 @@
 - name: Install cower
   include_tasks: cower.yml
   when: cower_installed|failed
+- name: Install auracle
+  include_tasks: auracle.yml
+  when: auracle_installed|failed
 - name: Install pacaur
   include_tasks: pacaur.yml
   when: pacaur_installed|failed

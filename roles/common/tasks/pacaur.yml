@@ -17,6 +17,11 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Install jq
+  pacman: name=jq state=present
+  become: yes
+  become_user: root
+  become_method: sudo
 - name: Build pacaur
   command: makepkg
   args:

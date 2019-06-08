@@ -1,0 +1,36 @@
+---
+- file: dest=/tmp/auracle-git state=directory
+- name: Download auracle-git PKGBUILG
+  get_url: url=https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=auracle-git dest=/tmp/auracle-git/PKGBUILD
+- name: Install meson
+  pacman:
+    name: meson
+    state: present
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Install gtest
+  pacman:
+    name: gtest
+    state: present
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Install gmock
+  pacman:
+    name: gmock
+    state: present
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Build auracle-git
+  command: makepkg
+  args:
+    chdir: /tmp/auracle-git
+- name: Install auracle-git
+  shell: pacman -U --noconfirm auracle-git-*.tar.xz
+  become: yes
+  become_user: root
+  become_method: sudo
+  args:
+    chdir: /tmp/auracle-git
