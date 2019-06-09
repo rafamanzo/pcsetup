@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Fix ruby sass-listen installation
 * Fix pgadmin installation
 * Fix RVM installation
 * Fix neovim installation

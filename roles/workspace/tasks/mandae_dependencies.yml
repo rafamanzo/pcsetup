@@ -32,4 +32,4 @@
 # check the zsh role for nvm installation
 #
 - name: Install sass-listen Ruby gem
-  command: ~/.rvm/bin/rvm system do gem install --no-ri --no-rdoc sass-listen # This depends on RVM being installed previously. There is no package for it.
+  command: ~/.rvm/bin/rvm system do gem install --no-doc sass-listen # This depends on RVM being installed previously. There is no package for it.
