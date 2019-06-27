@@ -7,15 +7,17 @@
 * An Arch Linux installation with internet access
 * Create an user with the name you desires using `useradd <NAME> -m`
 * Add this user to the sudoers list
+  - You might want to install `vim` to make this task easier
 
 ### First time only
 
+* Install the `make` package
 * At the root dir run `make preconfig`
   - Creates `sudo` group and add the current user to it as several ansible steps will require sudo
   - Create a super user that can run sudo passwordless. This is require to properly make pacaur work without asking sudo password
   - Update the system
   - Install ansible
-* If you are not me, you need to [set your own personal information](https://github.com/rafamanzo/pcsetup/wiki/Replace-my-personal-information-by-yours)
+* If you are not me, you need to [set your own personal information](https://gitlab.com/rafamanzo/pcsetup/wikis/Replace-my-personal-information-by-yours)
   - Specially set the vault files and password
 
 ### Everyday
