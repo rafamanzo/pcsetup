@@ -23,6 +23,13 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Install git
+  pacman:
+    name: git
+    state: present
+  become: yes
+  become_user: root
+  become_method: sudo
 - name: Build auracle-git
   command: makepkg
   args:
