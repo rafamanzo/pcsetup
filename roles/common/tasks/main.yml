@@ -35,13 +35,13 @@
   include_tasks: base-devel.yml
 - name: Install cower
   include_tasks: cower.yml
-  when: cower_installed|failed
+  when: cower_installed is failed
 - name: Install auracle
   include_tasks: auracle.yml
-  when: auracle_installed|failed
+  when: auracle_installed is failed
 - name: Install pacaur
   include_tasks: pacaur.yml
-  when: pacaur_installed|failed
+  when: pacaur_installed is failed
 - name: Update AUR packages
   pacaur: update_cache=yes upgrade=yes
   become: yes

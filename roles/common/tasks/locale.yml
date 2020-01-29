@@ -4,7 +4,7 @@
     register: locales_enablement
   - name: Generate locales
     command: locale-gen
-    when: locales_enablement|changed
+    when: locales_enablement is changed
   - name: Configure locales
     copy: src=locale.conf dest=/etc/locale.conf
   - name: Configure console

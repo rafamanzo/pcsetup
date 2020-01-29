@@ -7,7 +7,7 @@
   check_mode: no
 - name: Install RVM
   include_tasks: install.yml
-  when: rvm_installed|failed
+  when: rvm_installed is failed
 - name: Update RVM
   include_tasks: update.yml
-  when: rvm_installed|succeeded
+  when: rvm_installed is succeeded

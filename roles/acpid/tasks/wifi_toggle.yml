@@ -17,4 +17,4 @@
   become: yes
   become_user: root
   become_method: sudo
-  when: handler_set|changed or event_set|changed
+  when: handler_set is changed or event_set is changed

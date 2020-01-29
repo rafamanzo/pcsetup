@@ -9,4 +9,4 @@
   become: yes
   become_user: root
   become_method: sudo
-  when: replaced_logind|changed
+  when: replaced_logind is changed
