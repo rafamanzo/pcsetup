@@ -7,7 +7,7 @@
 - name: Install terminal emulator
   include_tasks: urxvt.yml
 - name: Install awesome themes package
-  pacaur: name=awesome-themes-git state=present
+  yay: name=awesome-themes-git state=present
   become: yes
   become_user: super{{ ansible_env.LOGNAME }}
   become_method: sudo

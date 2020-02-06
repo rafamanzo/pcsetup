@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Replace pacaur by yay
 * Fix broken ansible filter syntax
 * Fix missing README information
 * Fix ruby sass-listen installation

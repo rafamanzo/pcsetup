@@ -14,7 +14,7 @@
   become_user: root
   become_method: sudo
 - name: Install epson-inkjet-printer-201207w package # For Epson L355
-  pacaur: name=epson-inkjet-printer-201207w state=present
+  yay: name=epson-inkjet-printer-201207w state=present
   become: yes
   become_user: super{{ ansible_env.LOGNAME }}
   become_method: sudo

@@ -12,7 +12,7 @@
   become_user: root
   become_method: sudo
 - name: Install psensor
-  pacaur: name=psensor state=present
+  yay: name=psensor state=present
   become: yes
   become_user: super{{ ansible_env.LOGNAME }}
   become_method: sudo

@@ -1,0 +1,20 @@
+---
+- file: dest=/tmp/yay state=directory
+- name: Download yay-bin PKGBUILG
+  get_url: url=https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=yay-bin dest=/tmp/yay/PKGBUILD
+- name: Install git
+  pacman: name=git state=present
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Build yay
+  command: makepkg
+  args:
+    chdir: /tmp/yay
+- name: Install yay
+  shell: pacman -U --noconfirm yay-*.tar.xz
+  become: yes
+  become_user: root
+  become_method: sudo
+  args:
+    chdir: /tmp/yay

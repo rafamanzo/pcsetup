@@ -4,7 +4,7 @@
 - name: Install laptop-mode-tools-git
   # Git version preferred over the mainstream beacuse of sustemd incompatibility:
   # * https://bbs.archlinux.org/viewtopic.php?id=209100
-  pacaur: name=laptop-mode-tools-git state=present
+  yay: name=laptop-mode-tools-git state=present
   become: yes
   become_user: super{{ ansible_env.LOGNAME }}
   become_method: sudo

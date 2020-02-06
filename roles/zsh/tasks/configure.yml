@@ -10,17 +10,17 @@
   become_user: root
   become_method: sudo
 - name: Install zsh-autosuggestions package
-  pacaur: name=zsh-autosuggestions state=present
+  yay: name=zsh-autosuggestions state=present
   become: yes
   become_user: super{{ ansible_env.LOGNAME }}
   become_method: sudo
 - name: Install python-virtualenvwrapper package
-  pacaur: name=python-virtualenvwrapper state=present
+  yay: name=python-virtualenvwrapper state=present
   become: yes
   become_user: super{{ ansible_env.LOGNAME }}
   become_method: sudo
 - name: Install nvm package
-  pacaur: name=nvm state=present
+  yay: name=nvm state=present
   become: yes
   become_user: super{{ ansible_env.LOGNAME }}
   become_method: sudo

@@ -1,90 +1,91 @@
-#!/usr/bin/python -tt
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# Mofied by: Rafael Reggiani Manzo <rr.manzo@protonmail.com>
-#
-# Based on Ansible code which has the following copyright and license:
-#
-# (c) 2012, Afterburn <http://github.com/afterburn>
-# (c) 2013, Aaron Bull Schaefer <aaron@elasticdog.com>
-# (c) 2015, Indrajit Raychaudhuri <irc+code@indrajit.com>
-#
+# Copyright: (c) 2012, Afterburn <https://github.com/afterburn>
+# Copyright: (c) 2013, Aaron Bull Schaefer <aaron@elasticdog.com>
+# Copyright: (c) 2015, Indrajit Raychaudhuri <irc+code@indrajit.com>
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
 __metaclass__ = type
 
-
 ANSIBLE_METADATA = {'metadata_version': '1.1',
                     'status': ['preview'],
                     'supported_by': 'community'}
 
-
 DOCUMENTATION = '''
 ---
-module: pacaur
-short_description: Manage packages with I(pacaur)
+module: yay
+short_description: Manage packages with I(yay)
 description:
-    - Manage packages with the I(pacaur) package manager, which is used by
-      Arch Linux and its variants.
+    - Manage packages with the I(yay) package manager, which is used by Arch Linux and its variants.
 version_added: "1.0"
 author:
-    - "Indrajit Raychaudhuri (@indrajitr)"
-    - "'Aaron Bull Schaefer (@elasticdog)' <aaron@elasticdog.com>"
-    - "Afterburn"
-notes: []
-requirements: []
+    - Indrajit Raychaudhuri (@indrajitr)
+    - Aaron Bull Schaefer (@elasticdog) <aaron@elasticdog.com>
+    - Maxime de Roucy (@tchernomax)
 options:
     name:
         description:
-            - Name of the package to install, upgrade, or remove.
-        required: false
-        default: null
-        aliases: [ 'pkg', 'package' ]
+            - Name or list of names of the package(s) or file(s) to install, upgrade, or remove.
+              Can't be used in combination with C(upgrade).
+        aliases: [ package, pkg ]
+        type: list
+        elements: str
 
     state:
         description:
             - Desired state of the package.
-        required: false
-        default: "present"
-        choices: ["present", "absent", "latest"]
-
-    recurse:
-        description:
-            - When removing a package, also remove its dependencies, provided
-              that they are not required by other packages and were not
-              explicitly installed by a user.
-        required: false
-        default: no
-        choices: ["yes", "no"]
-        version_added: "1.3"
+        default: present
+        choices: [ absent, latest, present ]
 
     force:
         description:
-            - When removing package - force remove package, without any
-              checks. When update_cache - force redownload repo
-              databases.
-        required: false
+            - When removing package, force remove package, without any checks.
+              Same as `extra_args="--nodeps --nodeps"`.
+              When update_cache, force redownload repo databases.
+              Same as `update_cache_extra_args="--refresh --refresh"`.
         default: no
-        choices: ["yes", "no"]
+        type: bool
         version_added: "2.0"
+
+    extra_args:
+        description:
+            - Additional option to pass to yay when enforcing C(state).
+        default:
+        version_added: "2.8"
 
     update_cache:
         description:
-            - Whether or not to refresh the master package lists. This can be
-              run as part of a package installation or as a separate step.
-        required: false
+            - Whether or not to refresh the master package lists.
+            - This can be run as part of a package installation or as a separate step.
         default: no
-        choices: ["yes", "no"]
-        aliases: [ 'update-cache' ]
+        type: bool
+        aliases: [ update-cache ]
+
+    update_cache_extra_args:
+        description:
+            - Additional option to pass to yay when enforcing C(update_cache).
+        default:
+        version_added: "2.8"
 
     upgrade:
         description:
-            - Whether or not to upgrade whole system
-        required: false
+            - Whether or not to upgrade the whole system.
+              Can't be used in combination with C(name).
         default: no
-        choices: ["yes", "no"]
+        type: bool
         version_added: "2.0"
+
+    upgrade_extra_args:
+        description:
+            - Additional option to pass to yay when enforcing C(upgrade).
+        default:
+        version_added: "2.8"
+
+notes:
+  - When used with a `loop:` each package will be processed individually,
+    it is much more efficient to pass the list directly to the `name` option.
 '''
 
 RETURN = '''
@@ -92,47 +93,61 @@ packages:
     description: a list of packages that have been changed
     returned: when upgrade is set to yes
     type: list
-    sample: ['package', 'other-package']
+    sample: [ package, other-package ]
 '''
 
 EXAMPLES = '''
-# Install package foo
-- pacaur:
+- name: Install package foo from repo
+  yay:
     name: foo
     state: present
 
-# Upgrade package foo
-- pacaur:
+- name: Install package bar from file
+  yay:
+    name: ~/bar-1.0-1-any.pkg.tar.xz
+    state: present
+
+- name: Install package foo from repo and bar from file
+  yay:
+    name:
+      - foo
+      - ~/bar-1.0-1-any.pkg.tar.xz
+    state: present
+
+- name: Upgrade package foo
+  yay:
     name: foo
     state: latest
     update_cache: yes
 
-# Remove packages foo and bar
-- pacaur:
-    name: foo,bar
+- name: Remove packages foo and bar
+  yay:
+    name:
+      - foo
+      - bar
     state: absent
 
-# Recursively remove package baz
-- pacaur:
+- name: Recursively remove package baz
+  yay:
     name: baz
     state: absent
-    recurse: yes
+    extra_args: --recursive
 
-# Run the equivalent of "pacaur -Sy" as a separate step
-- pacaur:
+- name: Run the equivalent of "yay -Sy" as a separate step
+  yay:
     update_cache: yes
 
-# Run the equivalent of "pacaur -Su" as a separate step
-- pacaur:
+- name: Run the equivalent of "yay -Su" as a separate step
+  yay:
     upgrade: yes
 
-# Run the equivalent of "pacaur -Syu" as a separate step
-- pacaur:
+- name: Run the equivalent of "yay -Syu" as a separate step
+  yay:
     update_cache: yes
     upgrade: yes
 
-# Run the equivalent of "pacaur -Rdd", force remove package baz
-- pacaur:
+- name: Run the equivalent of "yay -Rdd", force remove package baz
+  yay:
     name: baz
     state: absent
     force: yes
@@ -140,29 +155,48 @@ EXAMPLES = '''
 
 import re
 
-def get_version(pacaur_output):
-    """Take pacaur -Qi or pacaur -Si output and get the Version"""
-    lines = pacaur_output.split('\n')
+from ansible.module_utils.basic import AnsibleModule
+
+
+def get_version(yay_output):
+    """Take yay -Qi or yay -Si output and get the Version"""
+    lines = yay_output.split('\n')
     for line in lines:
-        if 'Version' in line:
+        if line.startswith('Version '):
             return line.split(':')[1].strip()
     return None
 
-def query_package(module, pacaur_path, name, state="present"):
+
+def get_name(module, yay_output):
+    """Take yay -Qi or yay -Si output and get the package name"""
+    lines = yay_output.split('\n')
+    for line in lines:
+        if line.startswith('Name '):
+            return line.split(':')[1].strip()
+    module.fail_json(msg="get_name: fail to retrieve package name from yay output")
+
+
+def query_package(module, yay_path, name, state="present"):
     """Query the package status in both the local system and the repository. Returns a boolean to indicate if the package is installed, a second
     boolean to indicate if the package is up-to-date and a third boolean to indicate whether online information were available
     """
     if state == "present":
-        lcmd = "%s -Qi %s" % (pacaur_path, name)
+        lcmd = "%s --query --info %s" % (yay_path, name)
         lrc, lstdout, lstderr = module.run_command(lcmd, check_rc=False)
         if lrc != 0:
             # package is not installed locally
             return False, False, False
+        else:
+            # a non-zero exit code doesn't always mean the package is installed
+            # for example, if the package name queried is "provided" by another package
+            installed_name = get_name(module, lstdout)
+            if installed_name != name:
+                return False, False, False
 
         # get the version installed locally (if any)
         lversion = get_version(lstdout)
 
-        rcmd = "%s -Si %s" % (pacaur_path, name)
+        rcmd = "%s --sync --info %s" % (yay_path, name)
         rrc, rstdout, rstderr = module.run_command(rcmd, check_rc=False)
         # get the version in the repository
         rversion = get_version(rstdout)
@@ -176,13 +210,11 @@ def query_package(module, pacaur_path, name, state="present"):
         return True, True, True
 
 
-def update_package_db(module, pacaur_path):
-    if module.params["force"]:
-        args = "Syy"
-    else:
-        args = "Sy"
+def update_package_db(module, yay_path):
+    if module.params['force']:
+        module.params["update_cache_extra_args"] += " --refresh --refresh"
 
-    cmd = "%s -%s" % (pacaur_path, args)
+    cmd = "%s --sync --refresh %s" % (yay_path, module.params["update_cache_extra_args"])
     rc, stdout, stderr = module.run_command(cmd, check_rc=False)
 
     if rc == 0:
@@ -190,9 +222,10 @@ def update_package_db(module, pacaur_path):
     else:
         module.fail_json(msg="could not update package db")
 
-def upgrade(module, pacaur_path):
-    cmdupgrade = "%s -Suq --noconfirm" % (pacaur_path)
-    cmdneedrefresh = "%s -Qu" % (pacaur_path)
+
+def upgrade(module, yay_path):
+    cmdupgrade = "%s --sync --sysupgrade --quiet --noconfirm %s" % (yay_path, module.params["upgrade_extra_args"])
+    cmdneedrefresh = "%s --query --upgrades" % (yay_path)
     rc, stdout, stderr = module.run_command(cmdneedrefresh, check_rc=False)
     data = stdout.split('\n')
     data.remove('')
@@ -203,7 +236,10 @@ def upgrade(module, pacaur_path):
     }
 
     if rc == 0:
-        regex = re.compile('([\w-]+)\s+((?:\S+)-(?:\S+))\s+->\s+((?:\S+)-(?:\S+))') # The original version was '([\w-]+) ((?:\S+)-(?:\S+)) -> ((?:\S+)-(?:\S+))'
+        # Match lines of `yay -Qu` output of the form:
+        #   (package name) (before version-release) -> (after version-release)
+        # e.g., "ansible 2.7.1-1 -> 2.7.2-1"
+        regex = re.compile(r'([\w+\-.@]+) (\S+-\S+) -> (\S+-\S+)')
         for p in data:
             m = regex.search(p)
             packages.append(m.group(1))
@@ -220,32 +256,26 @@ def upgrade(module, pacaur_path):
     else:
         module.exit_json(changed=False, msg='Nothing to upgrade', packages=packages)
 
-def remove_packages(module, pacaur_path, packages):
+
+def remove_packages(module, yay_path, packages):
     data = []
     diff = {
         'before': '',
         'after': '',
     }
 
-    if module.params["recurse"] or module.params["force"]:
-        if module.params["recurse"]:
-            args = "Rs"
-        if module.params["force"]:
-            args = "Rdd"
-        if module.params["recurse"] and module.params["force"]:
-            args = "Rdds"
-    else:
-        args = "R"
+    if module.params["force"]:
+        module.params["extra_args"] += " --nodeps --nodeps"
 
     remove_c = 0
     # Using a for loop in case of error, we can report the package that failed
     for package in packages:
         # Query the package first, to see if we even need to remove
-        installed, updated, unknown = query_package(module, pacaur_path, package)
+        installed, updated, unknown = query_package(module, yay_path, package)
         if not installed:
             continue
 
-        cmd = "%s -%s %s --noconfirm --noprogressbar" % (pacaur_path, args, package)
+        cmd = "%s --remove --noconfirm --noprogressbar %s %s" % (yay_path, module.params["extra_args"], package)
         rc, stdout, stderr = module.run_command(cmd, check_rc=False)
 
         if rc != 0:
@@ -266,7 +296,7 @@ def remove_packages(module, pacaur_path, packages):
     module.exit_json(changed=False, msg="package(s) already absent")
 
 
-def install_packages(module, pacaur_path, state, packages, package_files):
+def install_packages(module, yay_path, state, packages, package_files):
     install_c = 0
     package_err = []
     message = ""
@@ -280,7 +310,7 @@ def install_packages(module, pacaur_path, state, packages, package_files):
     to_install_files = []
     for i, package in enumerate(packages):
         # if the package is installed and state == present or state == latest and is up-to-date then skip
-        installed, updated, latestError = query_package(module, pacaur_path, package)
+        installed, updated, latestError = query_package(module, yay_path, package)
         if latestError and state == 'latest':
             package_err.append(package)
 
@@ -293,36 +323,42 @@ def install_packages(module, pacaur_path, state, packages, package_files):
             to_install_repos.append(package)
 
     if to_install_repos:
-        cmd = "%s -S %s --noconfirm --noprogressbar --needed" % (pacaur_path, " ".join(to_install_repos))
+        cmd = "%s --sync --noconfirm --noprogressbar --needed %s %s" % (yay_path, module.params["extra_args"], " ".join(to_install_repos))
         rc, stdout, stderr = module.run_command(cmd, check_rc=False)
 
         if rc != 0:
             module.fail_json(msg="failed to install %s: %s" % (" ".join(to_install_repos), stderr))
 
-        data = stdout.split('\n')[3].split(' ')[2:]
-        data = [ i for i in data if i != '' ]
-        for i, pkg in enumerate(data):
-            data[i] = re.sub('-[0-9].*$', '', data[i].split('/')[-1])
-            if module._diff:
-                diff['after'] += "%s\n" % pkg
+        # As we pass `--needed` to yay returns a single line of ` there is nothing to do` if no change is performed.
+        # The check for > 3 is here because we pick the 4th line in normal operation.
+        if len(stdout.split('\n')) > 3:
+            data = stdout.split('\n')[3].split(' ')[2:]
+            data = [i for i in data if i != '']
+            for i, pkg in enumerate(data):
+                data[i] = re.sub('-[0-9].*$', '', data[i].split('/')[-1])
+                if module._diff:
+                    diff['after'] += "%s\n" % pkg
 
-        install_c += len(to_install_repos)
+            install_c += len(to_install_repos)
 
     if to_install_files:
-        cmd = "%s -U %s --noconfirm --noprogressbar --needed" % (pacaur_path, " ".join(to_install_files))
+        cmd = "%s --upgrade --noconfirm --noprogressbar --needed %s %s" % (yay_path, module.params["extra_args"], " ".join(to_install_files))
         rc, stdout, stderr = module.run_command(cmd, check_rc=False)
 
         if rc != 0:
             module.fail_json(msg="failed to install %s: %s" % (" ".join(to_install_files), stderr))
 
-        data = stdout.split('\n')[3].split(' ')[2:]
-        data = [ i for i in data if i != '' ]
-        for i, pkg in enumerate(data):
-            data[i] = re.sub('-[0-9].*$', '', data[i].split('/')[-1])
-            if module._diff:
-                diff['after'] += "%s\n" % pkg
+        # As we pass `--needed` to yay returns a single line of ` there is nothing to do` if no change is performed.
+        # The check for > 3 is here because we pick the 4th line in normal operation.
+        if len(stdout.split('\n')) > 3:
+            data = stdout.split('\n')[3].split(' ')[2:]
+            data = [i for i in data if i != '']
+            for i, pkg in enumerate(data):
+                data[i] = re.sub('-[0-9].*$', '', data[i].split('/')[-1])
+                if module._diff:
+                    diff['after'] += "%s\n" % pkg
 
-        install_c += len(to_install_files)
+            install_c += len(to_install_files)
 
     if state == 'latest' and len(package_err) > 0:
         message = "But could not ensure 'latest' state for %s package(s) as remote version could not be fetched." % (package_err)
@@ -332,7 +368,8 @@ def install_packages(module, pacaur_path, state, packages, package_files):
 
     module.exit_json(changed=False, msg="package(s) already installed. %s" % (message), diff=diff)
 
-def check_packages(module, pacaur_path, packages, state):
+
+def check_packages(module, yay_path, packages, state):
     would_be_changed = []
     diff = {
         'before': '',
@@ -342,7 +379,7 @@ def check_packages(module, pacaur_path, packages, state):
     }
 
     for package in packages:
-        installed, updated, unknown = query_package(module, pacaur_path, package)
+        installed, updated, unknown = query_package(module, yay_path, package)
         if ((state in ["present", "latest"] and not installed) or
                 (state == "absent" and installed) or
                 (state == "latest" and not updated)):
@@ -364,12 +401,12 @@ def check_packages(module, pacaur_path, packages, state):
         module.exit_json(changed=False, msg="package(s) already %s" % state, diff=diff)
 
 
-def expand_package_groups(module, pacaur_path, pkgs):
+def expand_package_groups(module, yay_path, pkgs):
     expanded = []
 
     for pkg in pkgs:
-        if pkg: # avoid empty strings
-            cmd = "%s -Sgq %s" % (pacaur_path, pkg)
+        if pkg:  # avoid empty strings
+            cmd = "%s --sync --groups --quiet %s" % (yay_path, pkg)
             rc, stdout, stderr = module.run_command(cmd, check_rc=False)
 
             if rc == 0:
@@ -386,18 +423,23 @@ def expand_package_groups(module, pacaur_path, pkgs):
 
 def main():
     module = AnsibleModule(
-        argument_spec    = dict(
-            name         = dict(aliases=['pkg', 'package'], type='list'),
-            state        = dict(default='present', choices=['present', 'installed', "latest", 'absent', 'removed']),
-            recurse      = dict(default=False, type='bool'),
-            force        = dict(default=False, type='bool'),
-            upgrade      = dict(default=False, type='bool'),
-            update_cache = dict(default=False, aliases=['update-cache'], type='bool')
+        argument_spec=dict(
+            name=dict(type='list', elements='str', aliases=['pkg', 'package']),
+            state=dict(type='str', default='present', choices=['present', 'installed', 'latest', 'absent', 'removed']),
+            force=dict(type='bool', default=False),
+            extra_args=dict(type='str', default=''),
+            upgrade=dict(type='bool', default=False),
+            upgrade_extra_args=dict(type='str', default=''),
+            update_cache=dict(type='bool', default=False, aliases=['update-cache']),
+            update_cache_extra_args=dict(type='str', default=''),
         ),
-        required_one_of = [['name', 'update_cache', 'upgrade']],
-        supports_check_mode = True)
+        required_one_of=[['name', 'update_cache', 'upgrade']],
+        mutually_exclusive=[['name', 'upgrade']],
+        supports_check_mode=True,
+    )
 
-    pacaur_path = module.get_bin_path('pacaur', True)
+    yay_path = module.get_bin_path('yay', True)
+    module.run_command_environ_update = dict(LC_ALL='C')
 
     p = module.params
 
@@ -408,7 +450,7 @@ def main():
         p['state'] = 'absent'
 
     if p["update_cache"] and not module.check_mode:
-        update_package_db(module, pacaur_path)
+        update_package_db(module, yay_path)
         if not (p['name'] or p['upgrade']):
             module.exit_json(changed=True, msg='Updated the package master lists')
 
@@ -416,33 +458,33 @@ def main():
         module.exit_json(changed=True, msg='Would have updated the package cache')
 
     if p['upgrade']:
-        upgrade(module, pacaur_path)
+        upgrade(module, yay_path)
 
     if p['name']:
-        pkgs = expand_package_groups(module, pacaur_path, p['name'])
+        pkgs = expand_package_groups(module, yay_path, p['name'])
 
         pkg_files = []
         for i, pkg in enumerate(pkgs):
-            if not pkg: # avoid empty strings
+            if not pkg:  # avoid empty strings
                 continue
-            elif re.match(".*\.pkg\.tar(\.(gz|bz2|xz|lrz|lzo|Z))?$", pkg):
+            elif re.match(r".*\.pkg\.tar(\.(gz|bz2|xz|lrz|lzo|Z))?$", pkg):
                 # The package given is a filename, extract the raw pkg name from
                 # it and store the filename
                 pkg_files.append(pkg)
-                pkgs[i] = re.sub('-[0-9].*$', '', pkgs[i].split('/')[-1])
+                pkgs[i] = re.sub(r'-[0-9].*$', '', pkgs[i].split('/')[-1])
             else:
                 pkg_files.append(None)
 
         if module.check_mode:
-            check_packages(module, pacaur_path, pkgs, p['state'])
+            check_packages(module, yay_path, pkgs, p['state'])
 
         if p['state'] in ['present', 'latest']:
-            install_packages(module, pacaur_path, p['state'], pkgs, pkg_files)
+            install_packages(module, yay_path, p['state'], pkgs, pkg_files)
         elif p['state'] == 'absent':
-            remove_packages(module, pacaur_path, pkgs)
+            remove_packages(module, yay_path, pkgs)
+    else:
+        module.exit_json(changed=False, msg="No package specified to work on.")
 
-# import module snippets
-from ansible.module_utils.basic import *
 
 if __name__ == "__main__":
     main()

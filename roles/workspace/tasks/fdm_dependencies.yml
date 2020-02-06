@@ -5,7 +5,7 @@
   become_user: root
   become_method: sudo
 - name: Install nodejs-istanbul
-  pacaur: name=nodejs-istanbul state=present
+  yay: name=nodejs-istanbul state=present
   become: yes
   become_user: super{{ ansible_env.LOGNAME }}
   become_method: sudo

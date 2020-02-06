@@ -13,37 +13,19 @@
   become: yes
   become_user: root
   become_method: sudo
-- name: Check cower installed
-  command: pacman -Q cower
-  register: cower_installed
-  ignore_errors: True
-  changed_when: False
-  check_mode: no
-- name: Check auracle installed
-  command: pacman -Q auracle-git
-  register: auracle_installed
-  ignore_errors: True
-  changed_when: False
-  check_mode: no
-- name: Check pacaur installed
-  command: pacman -Q pacaur
-  register: pacaur_installed
+- name: Check yay installed
+  command: pacman -Q yay
+  register: yay_installed
   ignore_errors: True
   changed_when: False
   check_mode: no
 - name: Install base-devel
   include_tasks: base-devel.yml
-- name: Install cower
-  include_tasks: cower.yml
-  when: cower_installed is failed
-- name: Install auracle
-  include_tasks: auracle.yml
-  when: auracle_installed is failed
-- name: Install pacaur
-  include_tasks: pacaur.yml
-  when: pacaur_installed is failed
+- name: Install yay
+  include_tasks: yay.yml
+  when: yay_installed is failed
 - name: Update AUR packages
-  pacaur: update_cache=yes upgrade=yes
+  yay: update_cache=yes upgrade=yes
   become: yes
   become_user: super{{ ansible_env.LOGNAME }}
   become_method: sudo
@@ -96,7 +78,7 @@
   become_user: root
   become_method: sudo
 - name: Install skype package
-  pacaur: name=skypeforlinux-stable-bin state=present
+  yay: name=skypeforlinux-stable-bin state=present
   become: yes
   become_user: super{{ ansible_env.LOGNAME }}
   become_method: sudo
