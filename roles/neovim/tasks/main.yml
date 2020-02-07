@@ -2,8 +2,8 @@
 - block:
   - name: Install neovim package
     pacman: name=neovim state=present
-  - name: Install python-neovim package
-    pacman: name=python-neovim state=present
+  - name: Install python-pynvim package
+    pacman: name=python-pynvim state=present
   - name: Install nodejs package
     pacman: name=nodejs state=present
   - name: Install npm package
