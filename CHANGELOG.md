@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Remove PhantomJS
 * Replace Google Chrome by Chromium
 * Fix missing python-neovim package
 * Laptop-mode modprobe failure on vagrant

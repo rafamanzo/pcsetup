@@ -5,11 +5,6 @@
   include_tasks: rvm/main.yml
 - name: Install PostgreSQL
   include_tasks: postgresql.yml
-- name: Install PhantomJS package
-  yay: name=phantomjs-bin state=present force=yes
-  become: yes
-  become_user: super{{ ansible_env.LOGNAME }}
-  become_method: sudo
 - name: Install libmariadbclient
   pacman: name=libmariadbclient state=present force=yes
   become: yes
