@@ -51,8 +51,21 @@
   become: yes
   become_user: root
   become_method: sudo
-- name: Install smartbot dependencies
-  include_tasks: smartbot_dependencies.yml
+- name: Install redis
+  pacman: name=redis state=present force=yes
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Install mongodb
+  yay: name=mongodb-bin state=present
+  become: yes
+  become_user: super{{ ansible_env.LOGNAME }}
+  become_method: sudo
+- name: Install yarn
+  pacman: name=yarn state=present
+  become: yes
+  become_user: root
+  become_method: sudo
 - name: Install mandae dependencies
   include_tasks: mandae_dependencies.yml
 - name: Install chromium
