@@ -15,8 +15,6 @@
   become: yes
   become_user: root
   become_method: sudo
-- name: Install MSc dependencies
-  include_tasks: msc_dependencies.yml
 - name: Install LaTeX
   include_tasks: latex.yml
 - name: Install Python Virtualenv

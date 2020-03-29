@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Remove MSc dev dependencies
 * Remove CPP dev dependencies
 * Remove PhantomJS
 * Replace Google Chrome by Chromium
