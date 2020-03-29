@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Remove Mandaê dev dependencies
 * Move smartbot setup taks to main
 * Remove MSc dev dependencies
 * Remove CPP dev dependencies

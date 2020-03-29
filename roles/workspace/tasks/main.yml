@@ -66,8 +66,6 @@
   become: yes
   become_user: root
   become_method: sudo
-- name: Install mandae dependencies
-  include_tasks: mandae_dependencies.yml
 - name: Install chromium
   pacman: name=chromium state=present
   become: yes

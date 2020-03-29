@@ -1,5 +1,0 @@
----
-maven_servers:
-  server_id:
-    username: user
-    password: pass
