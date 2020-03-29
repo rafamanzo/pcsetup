@@ -33,6 +33,10 @@
 * CUPS network printer discovery
   - Simplest thing is to disable UFW while setting up the printer (`sudo ufw disable`), set it up and enable UFW back (`sudo ufw enable`). After configured the printer should stay working
   - If you know the printer network address and model (for driver choosing), you can go through CUPS configuration process
+* `{"msg": "privilege output closed while waiting for password prompt:\nmanzo is not in the sudoers file.  This incident will be reported.\n"}`
+  - This is expected the first time you are running the playbook on a fresh install
+  - It happens because of changes to the sudoers file that are now based on newly create user groups that are not loaded in the ansible ssh session
+  - Logout, login and reun again the playbook
 
 ## Managed machines
 
