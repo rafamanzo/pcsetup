@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Remove CPP dev dependencies
 * Remove PhantomJS
 * Replace Google Chrome by Chromium
 * Fix missing python-neovim package

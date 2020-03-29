@@ -10,8 +10,11 @@
   become: yes
   become_user: root
   become_method: sudo
-- name: Install C++ development tools
-  include_tasks: cpp.yml
+- name: Install base-devel package
+  pacman: name=base-devel state=present force=yes
+  become: yes
+  become_user: root
+  become_method: sudo
 - name: Install MSc dependencies
   include_tasks: msc_dependencies.yml
 - name: Install LaTeX
