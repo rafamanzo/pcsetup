@@ -8,6 +8,7 @@ myawesomemenu = {
 
 mysessionmenu = {  { "logout", function() awesome.quit() end },
                    { "suspend", terminal .. " -e systemctl suspend -i" },
+                   { "reboot", terminal .. " -e reboot" },
                    { "shutdown", terminal .. " -e systemctl poweroff -i" }
 }
 
@@ -23,8 +24,6 @@ myconfigurationsmenu = {  { "monitor", "arandr" },
 }
 
 mymainmenu = awful.menu({ items = { { "files", "nautilus" },
-                                    { "terminal", terminal },
-                                    { "browser", browser },
                                     { "awesome", myawesomemenu, beautiful.awesome_icon },
                                     { "session", mysessionmenu },
                                     { "configurations", myconfigurationsmenu }

@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Add reboot option to menu
 * Use only Brazilian package mirrors
 * Fix neovim denite plugin configuration
 * Intall vim-slim plugin to neovim
