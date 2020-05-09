@@ -21,8 +21,8 @@ call dein#add('Shougo/denite.nvim')
 " <CR>, but I removed it because I have no idea what it does. No seriously, I
 " must be blind to obvious things because I saw nothing on the docs that
 " referred to it in relation to this denite command.
-nnoremap <leader>r :<C-u>Denite -default-action=tabopen
-      \ file_rec<CR>
+nnoremap <leader>r :<C-u>Denite -default-action=tabopen -start-filter
+      \ file/rec<CR>
 
 " List buffers with a simple and fast leader mapping, which will allow for
 " easing switching of files. The thing is, this is not as easy as opening a
@@ -34,6 +34,28 @@ nnoremap <leader>b :<C-u>Denite buffer<CR>
 " I use ag, pretty slow if I stay with grep. This code search is useful
 " whenever the tags are not useful, which should be almost never.
 nnoremap <leader>f :<C-u>Denite grep:.<CR>
+
+autocmd FileType denite call s:denite_my_settings()
+function! s:denite_my_settings() abort
+  nnoremap <silent><buffer><expr> <CR>
+        \ denite#do_map('do_action')
+  nnoremap <silent><buffer><expr> d
+        \ denite#do_map('do_action', 'delete')
+  nnoremap <silent><buffer><expr> p
+        \ denite#do_map('do_action', 'preview')
+  nnoremap <silent><buffer><expr> q
+        \ denite#do_map('quit')
+  nnoremap <silent><buffer><expr> i
+        \ denite#do_map('open_filter_buffer')
+  nnoremap <silent><buffer><expr> <Space>
+        \ denite#do_map('toggle_select').'j'
+endfunction
+
+autocmd FileType denite-filter call s:denite_filter_my_settings()
+function! s:denite_filter_my_settings() abort
+  call deoplete#custom#buffer_option('auto_complete', v:false)
+  imap <silent><buffer> <esc> <Plug>(denite_filter_quit)
+endfunction
 
 " Use ag for faster code searching. Faster than grep, at least, and any
 " feature that grep has and ag doesn't which should be a problem to me wasn't
