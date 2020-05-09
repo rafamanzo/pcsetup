@@ -5,7 +5,7 @@
   become_user: root
   become_method: sudo
 - name: Get awesome.brightness-widget from git
-  git: repo=https://github.com/velovix/awesome.brightness-widget.git dest=/opt/pandorasbox/awesome.brightness-widget
+  git: repo=https://github.com/rafamanzo/awesome.brightness-widget.git version=handle_missing_value dest=/opt/pandorasbox/awesome.brightness-widget
 - name: Link awesome.brightness-widget to awesome config folder
   file: src=/opt/pandorasbox/awesome.brightness-widget/brightness-widget.lua dest=~/.config/awesome/brightness-widget.lua state=link
 - name: Create awesome.brightness-widget directory to awesome config folder
