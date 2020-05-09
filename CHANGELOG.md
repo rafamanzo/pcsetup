@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Intall vim-slim plugin to neovim
 * Intall vim-fugitive plugin to neovim
 * Intall vim-javascript plugin to neovim
 * Fix wallpaper path
