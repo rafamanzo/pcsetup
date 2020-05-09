@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Intall vim-javascript plugin to neovim
 * Fix wallpaper path
 * Fix AwesomeWM backlight control for VirtualBox
 * Remove Mandaê dev dependencies
