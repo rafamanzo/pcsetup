@@ -1,7 +1,7 @@
 ---
 - block:
   - name: Fetch mirror list
-    get_url: url='https://www.archlinux.org/mirrorlist/?country=BR&country=CL&country=CO&country=EC&protocol=http&ip_version=4&use_mirror_status=on' dest=/tmp/mirrorlist
+    get_url: url='https://www.archlinux.org/mirrorlist/?country=BR&protocol=http&ip_version=4&use_mirror_status=on' dest=/tmp/mirrorlist
     changed_when: False
     check_mode: no
   - stat: path=/tmp/mirrorlist checksum_algorithm=sha1
