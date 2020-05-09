@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Fix wallpaper path
 * Fix AwesomeWM backlight control for VirtualBox
 * Remove Mandaê dev dependencies
 * Move smartbot setup taks to main

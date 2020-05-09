@@ -22,7 +22,7 @@ end
 themedir      = themes .. themename
 home_themedir = "~/.config/awesome/theme"
 
-wallpaper1    = "/usr/share/archlinux/wallpaper/archlinux-tribute.jpg"
+wallpaper1    = "/usr/share/backgrounds/archlinux/archlinux-tribute.jpg"
 wallpaper2    = themedir .. "/background.jpg"
 wallpaper3    = themedir .. "/background.png"
 wallpaper4    = sharedthemes .. "/zenburn/zenburn-background.png"
