@@ -6,6 +6,8 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+## v2.0.0 - 12/05/2020
+
 * Remove EVA
 * Rename BURN-E to WALL-E
 * Improve README with knowledge of latest install
