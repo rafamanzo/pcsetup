@@ -5,6 +5,9 @@
 ### Pre-requisites
 
 * An Arch Linux installation with internet access
+  - If you complete this guide you should be good https://wiki.archlinux.org/index.php/installation_guide
+  - This is the time you must set important features such as LVM and disk encryption
+* Have `sudo` installed
 * Create an user with the name you desires using `useradd <NAME> -m`
 * Add this user to the sudoers list
   - You might want to install `vim` to make this task easier
@@ -28,6 +31,8 @@
 
 ### Firewall (UFW)
 
+* Error enabling the UFW when running for the first time
+  - Reboot and start again
 * Locks you out of Vagrant box after rebooting the machine
   - Going through the VirtualBox's gui, disable UFW (`sudo ufw disable`) and reload the box (`vagrant reload`)
 * CUPS network printer discovery
