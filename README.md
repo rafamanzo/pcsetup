@@ -50,7 +50,7 @@
 
 ## Managed machines
 
-* BURN-E (Notebook)
+* WALL-E (Notebook)
   - Specs
     * Intel Core i7 2620M
     * Geforce GT 520M
