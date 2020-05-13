@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Install gedit
 * Fix neovim vim-slim plugin installation
 * Install ag: the silver searcher
 * Add user to docker group

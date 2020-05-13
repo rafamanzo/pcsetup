@@ -81,3 +81,8 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Install gedit
+  pacman: name=gedit state=present
+  become: yes
+  become_user: root
+  become_method: sudo
