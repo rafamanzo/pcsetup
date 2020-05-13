@@ -31,6 +31,11 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Add user to docker group
+  user: name={{ ansible_env.LOGNAME }} append=yes groups=docker
+  become: yes
+  become_user: root
+  become_method: sudo
 - name: Install vagrant
   pacman: name=vagrant state=present
   become: yes
