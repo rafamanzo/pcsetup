@@ -76,3 +76,8 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Install ag
+  pacman: name=the_silver_searcher state=present
+  become: yes
+  become_user: root
+  become_method: sudo

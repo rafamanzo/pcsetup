@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Install ag: the silver searcher
 * Add user to docker group
 
 ## v2.0.0 - 12/05/2020
