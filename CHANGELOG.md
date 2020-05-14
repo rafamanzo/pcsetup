@@ -6,6 +6,8 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+## v2.1.0 - 13/05/2020
+
 * Install gedit
 * Fix neovim vim-slim plugin installation
 * Install ag: the silver searcher
