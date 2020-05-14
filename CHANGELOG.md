@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Create playbook to manage my Raspberry Pi 4 home server (BURN-E)
 * Install MariaDB
 * Install wkhtmltopdf
 * Install cmake

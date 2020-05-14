@@ -1,0 +1,11 @@
+---
+- hosts: burn-e
+  remote_user: ubuntu
+  become: yes
+  tasks:
+    - name: Upgrade all packages to the last version
+      apt:
+        name: "*"
+        state: latest
+        update_cache: yes
+        cache_valid_time: 3600
