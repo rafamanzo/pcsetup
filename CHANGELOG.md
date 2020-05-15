@@ -6,6 +6,8 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+## v2.2.0 - 14/05/2020
+
 * Install zoom
 * Install kdiff3
 * Fix gitk
