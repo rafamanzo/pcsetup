@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Install kdiff3
 * Fix gitk
 
 ## v2.1.0 - 13/05/2020

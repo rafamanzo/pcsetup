@@ -91,3 +91,8 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Install kdiff3
+  pacman: name=kdiff3 state=present
+  become: yes
+  become_user: root
+  become_method: sudo
