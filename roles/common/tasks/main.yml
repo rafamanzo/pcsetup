@@ -119,3 +119,8 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Install Eye of Gnome package
+  pacman: name=eog state=present
+  become: yes
+  become_user: root
+  become_method: sudo
