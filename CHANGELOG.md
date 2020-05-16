@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Install cmake
 * Install the Eye Of Gnome
 
 ## v2.2.0 - 14/05/2020
