@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Install MariaDB
 * Install wkhtmltopdf
 * Install cmake
 * Install the Eye Of Gnome

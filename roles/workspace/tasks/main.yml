@@ -111,3 +111,15 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Install MariaDB
+  yay: name=mariadb state=present
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Init MariaDB
+  shell: mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+  args:
+    creates: /var/lib/mysql
+  become: yes
+  become_user: root
+  become_method: sudo
