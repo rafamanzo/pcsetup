@@ -29,3 +29,5 @@
       shell: netplan apply
     - name: Install samba
       apt: name=samba
+    - name: Configure samba
+      copy: src=files/smb.conf dest=/etc/samba/smb.conf
