@@ -27,6 +27,7 @@
       register: network_conf
     - name: Apply network changes
       shell: netplan apply
+      when: network_conf.changed
     - name: Install samba
       apt: name=samba
     - name: Create Axiom directory
