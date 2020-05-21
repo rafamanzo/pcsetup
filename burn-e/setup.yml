@@ -27,3 +27,5 @@
       register: network_conf
     - name: Apply network changes
       shell: netplan apply
+    - name: Install samba
+      apt: name=samba

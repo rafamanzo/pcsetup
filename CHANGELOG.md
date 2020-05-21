@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Install samba to BURN-E
 * Set Raspberry Pi 4 (BURN-E) static IP
 * Create playbook to manage my Raspberry Pi 4 home server (BURN-E)
 * Install MariaDB
