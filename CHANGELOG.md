@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Share Axiom (mass storage) using samba on BURN-E
 * Install samba to BURN-E
 * Set Raspberry Pi 4 (BURN-E) static IP
 * Create playbook to manage my Raspberry Pi 4 home server (BURN-E)
