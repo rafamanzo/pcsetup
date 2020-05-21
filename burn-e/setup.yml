@@ -29,5 +29,11 @@
       shell: netplan apply
     - name: Install samba
       apt: name=samba
+    - name: Create Axiom directory
+      file: path=/Axiom state=directory mode='0777'
     - name: Configure samba
       copy: src=files/smb.conf dest=/etc/samba/smb.conf
+      register: samba_conf
+    - name: Restart samba
+      systemd: name=smbd state=restarted
+      when: samba_conf.changed
