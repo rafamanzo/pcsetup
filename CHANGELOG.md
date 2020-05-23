@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Add bits productions hosts to SSH config
 * Add deployment SSH keys
 * Add hosts to SSH config
 * Remove Mandaê SSH key

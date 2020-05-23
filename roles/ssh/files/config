@@ -46,3 +46,23 @@ Host deployer.kinoforum
 Host minuto
   HostName festivaldominuto.com.br
   User minuto
+
+Host financas.bits
+  HostName ec2-54-235-233-25.compute-1.amazonaws.com
+  User deploy
+
+Host diadamusica.bits
+  HostName ec2-3-88-252-6.compute-1.amazonaws.com
+  User deploy
+
+Host matchmaking.bits
+  HostName ec2-3-85-227-175.compute-1.amazonaws.com
+  User deploy
+
+Host redis.bits
+  HostName ec2-100-27-43-241.compute-1.amazonaws.com
+  User ubuntu
+
+Host mongo.bits
+  HostName ec2-23-23-122-131.compute-1.amazonaws.com
+  User ubuntu
