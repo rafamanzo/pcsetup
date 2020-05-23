@@ -43,3 +43,9 @@
       shell: "((echo {{ sambapass }}; echo {{ sambapass }}) | smbpasswd -s -a {{ ansible_user }}) && touch /home/{{ ansible_user }}/.sambapass_set"
       args:
         creates: "/home/{{ ansible_user }}/.sambapass_set"
+    - include_vars: file=../roles/ssh/vars/private_key.yml
+    - name: Allow my own pubkey to SSH
+      lineinfile:
+        path: "/home/{{ ansible_user }}/.ssh/authorized_keys"
+        regexp: 'manzo'
+        line: "{{ private_key['~/.ssh/id_rsa.pub']['content'] }}"

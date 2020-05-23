@@ -1,3 +1,7 @@
+Host BURN-E
+  HostName 192.168.0.5
+  User ubuntu
+
 Host skynet
   HostName skynet.pragmacode.com.br
   User root
