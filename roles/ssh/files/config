@@ -1,1 +1,26 @@
+Host skynet
+  HostName skynet.pragmacode.com.br
+  User root
 
+Host internasus
+  HostName 143.107.45.126
+  User manzo
+  Port 10113
+
+Host old.internasus
+  HostName 143.107.45.126
+  User epinheiro
+  Port 10136
+
+Host interscity
+  HostName 143.107.45.126
+  User manzo
+  Port 10134
+
+Host kinoforum
+  HostName acervo.kinoforum.org.br
+  User kinoforum
+
+Host minuto
+  HostName festivaldominuto.com.br
+  User minuto
