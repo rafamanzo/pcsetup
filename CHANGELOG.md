@@ -6,6 +6,8 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+## v2.3.0 - 23/05/2020
+
 * Add bits productions hosts to SSH config
 * Add deployment SSH keys
 * Add hosts to SSH config
