@@ -2,10 +2,21 @@ Host skynet
   HostName skynet.pragmacode.com.br
   User root
 
+Host deployer.inteligenta-roboto
+  HostName skynet.pragmacode.com.br
+  User deployer
+  IdentityFile ~/.ssh/inteligenta-roboto_deployer_rsa
+
 Host internasus
   HostName 143.107.45.126
   User manzo
   Port 10113
+
+Host deployer.internasus
+  HostName 143.107.45.126
+  User deployer
+  Port 10113
+  IdentityFile ~/.ssh/internasus_deployer_rsa
 
 Host old.internasus
   HostName 143.107.45.126
@@ -17,9 +28,20 @@ Host interscity
   User manzo
   Port 10134
 
+Host deployer.interscity
+  HostName 143.107.45.126
+  User deployer
+  Port 10134
+  IdentityFile ~/.ssh/interscity_deployer_rsa
+
 Host kinoforum
   HostName acervo.kinoforum.org.br
   User kinoforum
+
+Host deployer.kinoforum
+  HostName acervo.kinoforum.org.br
+  User kinoforum
+  IdentityFile ~/.ssh/kinoforum_deployer_rsa
 
 Host minuto
   HostName festivaldominuto.com.br
