@@ -124,3 +124,8 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Install gparted package
+  pacman: name=gparted state=present
+  become: yes
+  become_user: root
+  become_method: sudo
