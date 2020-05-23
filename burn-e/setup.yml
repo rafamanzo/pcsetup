@@ -3,6 +3,7 @@
   remote_user: ubuntu
   become: yes
   tasks:
+    - include_vars: file=vars.yml
     - name: Upgrade all packages to the last version
       apt:
         name: "*"
@@ -38,3 +39,7 @@
     - name: Restart samba
       systemd: name=smbd state=restarted
       when: samba_conf.changed
+    - name: Set samba user password
+      shell: "((echo {{ sambapass }}; echo {{ sambapass }}) | smbpasswd -s -a {{ ansible_user }}) && touch /home/{{ ansible_user }}/.sambapass_set"
+      args:
+        creates: "/home/{{ ansible_user }}/.sambapass_set"
