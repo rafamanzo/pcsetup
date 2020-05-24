@@ -129,3 +129,5 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Configure samba client
+  include_tasks: sambacli.yml

@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Configure samba fs mounting on client systems
 * Authorize my SSH key to log into BURN-E
 * Set samba user password
 * Share Axiom (mass storage) using samba on BURN-E

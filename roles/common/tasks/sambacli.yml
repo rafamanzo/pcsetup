@@ -1,0 +1,17 @@
+---
+- include_vars: file=../../../burn-e/vars.yml
+- block:
+  - name: Install cifs-utils
+    pacman: name=cifs-utils state=present
+  - name: Create Axiom directory
+    file: path=/Axiom state=directory mode='0777'
+  - name: Configure mounting of remote samba share
+    mount:
+      path: /Axiom
+      src: //192.168.0.5/Axiom
+      fstype: cifs
+      opts: "username=ubuntu,password={{ sambapass }}"
+      state: present
+  become: yes
+  become_user: root
+  become_method: sudo
