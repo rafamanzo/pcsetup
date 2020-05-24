@@ -74,3 +74,5 @@
     * Boot time: < 23s
     * Mem. usage after boot: ~260MB
     * Disk usage: 11.5GB
+* BURN-E (Rapsberry Pi 4 B)
+  - Running Ubuntu
