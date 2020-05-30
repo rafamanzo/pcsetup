@@ -49,3 +49,10 @@
         path: "/home/{{ ansible_user }}/.ssh/authorized_keys"
         regexp: 'manzo'
         line: "{{ private_key['~/.ssh/id_rsa.pub']['content'] }}"
+    - name: Configure mounting of RAID disks
+      mount:
+        path: /Axiom
+        src: UUID=0e528bbc-c862-481b-859a-6695af0944dd
+        fstype: btrfs
+        opts: 'defaults'
+        state: present
