@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Fix copy of symlinks to samba
 * Configure RAID to be automounted in BURN-E
 
 ## v2.4.0 - 23/05/2020
