@@ -123,3 +123,13 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Install man-db package
+  pacman: name=man-db state=present
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Install man-pages package
+  pacman: name=man-db state=present
+  become: yes
+  become_user: root
+  become_method: sudo

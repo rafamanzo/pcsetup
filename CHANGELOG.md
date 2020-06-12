@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Install man
 * Fix WALL-E NVIDIA driver
 * Fix samba case sensitivity
 * Fix copy of symlinks to samba
