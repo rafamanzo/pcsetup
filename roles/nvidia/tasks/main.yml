@@ -4,6 +4,13 @@
   become: yes
   become_user: root
   become_method: sudo
+  when: not nvidia_legacy
+- name: Install legacy nvidia GPU driver package
+  yay: name=nvidia-390xx-dkms state=present
+  become: yes
+  become_user: super{{ ansible_env.LOGNAME }}
+  become_method: sudo
+  when: nvidia_legacy
 - name: Install nvidia GPU driver 32 bits lib package
   pacman: name=lib32-nvidia-utils state=present
   become: yes
