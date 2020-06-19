@@ -56,3 +56,8 @@
         fstype: btrfs
         opts: 'defaults'
         state: present
+    - name: Install tasksel
+      apt: name=tasksel
+    - name: Install LXQt
+      shell: tasksel install lubuntu-desktop
+
