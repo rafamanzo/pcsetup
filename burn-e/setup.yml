@@ -56,3 +56,5 @@
         fstype: btrfs
         opts: 'defaults'
         state: present
+    - name: Install Plex Media Server
+      snap: name=plexmediaserver
