@@ -32,7 +32,7 @@
     - name: Install samba
       apt: name=samba
     - name: Create Axiom directory
-      file: path=/Axiom state=directory mode='0777'
+      file: path=/media/Axiom state=directory mode='0777'
     - name: Configure samba
       copy: src=files/smb.conf dest=/etc/samba/smb.conf
       register: samba_conf
@@ -51,7 +51,7 @@
         line: "{{ private_key['~/.ssh/id_rsa.pub']['content'] }}"
     - name: Configure mounting of RAID disks
       mount:
-        path: /Axiom
+        path: /media/Axiom
         src: UUID=0e528bbc-c862-481b-859a-6695af0944dd
         fstype: btrfs
         opts: 'defaults'
