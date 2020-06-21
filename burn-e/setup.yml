@@ -62,3 +62,6 @@
       apt_repository: repo='deb https://downloads.plex.tv/repo/deb public main'
     - name: Install Plex Media Server
       apt: name=plexmediaserver
+    - name: Set timezone to Asia/Tokyo
+      timezone:
+        name: America/Sao_Paulo
