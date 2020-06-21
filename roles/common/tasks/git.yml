@@ -3,29 +3,18 @@
   become: yes
   become_user: root
   become_method: sudo
-- name: Check configured git user name
-  shell: git config --get user.name
-  register: host_git_username
-  changed_when: False
-  check_mode: no
-  ignore_errors: True
-  args:
-    chdir: "/home/{{ ansible_user_id }}"
 - name: Set git user name
-  shell: git config --global user.name "{{ git.name }}"
-  when: host_git_username.stdout != "{{ git.name }}"
-  args:
-    chdir: "/home/{{ ansible_user_id }}"
-- name: Check configured git user email
-  shell: git config --get user.email
-  register: host_git_useremail
-  changed_when: False
-  check_mode: no
-  ignore_errors: True
-  args:
-    chdir: "/home/{{ ansible_user_id }}"
+  git_config:
+    name: user.name
+    scope: global
+    value: "{{ git.name }}"
 - name: Set git user email
-  shell: git config --global user.email "{{ git.email }}"
-  when: host_git_useremail.stdout != "{{ git.email }}"
-  args:
-    chdir: "/home/{{ ansible_user_id }}"
+  git_config:
+    name: user.email
+    scope: global
+    value: "{{ git.email }}"
+- name: Set git pull behaviour for divergent branches
+  git_config:
+    name: pull.ff
+    scope: global
+    value: only

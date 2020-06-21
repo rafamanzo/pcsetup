@@ -6,6 +6,8 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Configure git pull behaviour for divergent branches
+* Use git_config
 * Set BURN-E timezone to Sao Paulo
 * Install Plex Media Server on BURN-E
 * Install man
