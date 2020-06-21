@@ -56,5 +56,9 @@
         fstype: btrfs
         opts: 'defaults'
         state: present
+    - name: Trust Plex Media Server repository key
+      apt_key: url=https://downloads.plex.tv/plex-keys/PlexSign.key
+    - name: Add Plex Media Server repository
+      apt_repository: repo='deb https://downloads.plex.tv/repo/deb public main'
     - name: Install Plex Media Server
-      snap: name=plexmediaserver
+      apt: name=plexmediaserver
