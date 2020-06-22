@@ -9,3 +9,8 @@
   become: yes
   become_user: super{{ ansible_env.LOGNAME }}
   become_method: sudo
+- name: Install gifsicle package # Required for gif encoding
+  pacman: name=gifsicle state=present
+  become: yes
+  become_user: root
+  become_method: sudo
