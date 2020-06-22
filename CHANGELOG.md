@@ -6,6 +6,8 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+## v2.5.0 - 22/06/2020
+
 * Install gifsicle package
 * Configure git pull behaviour for divergent branches
 * Use git_config
