@@ -62,6 +62,14 @@
       apt_repository: repo='deb https://downloads.plex.tv/repo/deb public main'
     - name: Install Plex Media Server
       apt: name=plexmediaserver
-    - name: Set timezone to Asia/Tokyo
+    - name: Set timezone to America/Sao_Paulo
       timezone:
         name: America/Sao_Paulo
+    - name: Install Transmission Daemon
+      apt: name=transmission-daemon
+    - name: Stop Transmission Daemon
+      systemd: name=transmission-daemon state=stopped
+    - name: Configure Transmission Daemon
+      copy: src=files/settings.json dest=/var/lib/transmission-daemon/info/settings.json
+    - name: Start Transmission Daemon
+      systemd: name=transmission-daemon state=started

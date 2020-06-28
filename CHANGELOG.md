@@ -6,6 +6,8 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Install transmission
+
 ## v2.5.0 - 22/06/2020
 
 * Install gifsicle package
