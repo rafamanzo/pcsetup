@@ -133,3 +133,8 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Install pandoc package
+  pacman: name=pandoc state=present
+  become: yes
+  become_user: root
+  become_method: sudo
