@@ -60,7 +60,7 @@ Host diadamusica.bits
   User deploy
 
 Host matchmaking.bits
-  HostName ec2-3-85-227-175.compute-1.amazonaws.com
+  HostName ec2-3-82-218-4.compute-1.amazonaws.com
   User deploy
 
 Host redis.bits
