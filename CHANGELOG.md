@@ -6,6 +6,8 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+## v2.6.0 - 08/07/2020
+
 * Install pandoc
 * Install transmission-daemon to BURN-E
 
