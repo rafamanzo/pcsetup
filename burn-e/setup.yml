@@ -81,3 +81,8 @@
       apt: name=grafana
     - name: Start Grafana
       systemd: name=grafana-server state=started enabled=yes daemon-reload=yes
+    - name: Install Prometheus
+      apt:
+        pkg:
+          - prometheus
+          - prometheus-node-exporter

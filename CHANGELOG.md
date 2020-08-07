@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Install Prometheus to BURN-E
 * Install Grafana to BURN-E
 
 ## v2.6.0 - 08/07/2020
