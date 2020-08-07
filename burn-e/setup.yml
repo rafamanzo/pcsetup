@@ -21,6 +21,13 @@
               eth0:
                 dhcp4: no
                 dhcp6: no
+              wlan0:
+                dhcp4: no
+                dhcp6: no
+                optional: true
+            bridges:
+              br0:
+                interfaces: [eth0, wlan0]
                 addresses: [192.168.0.5/24]
                 gateway4: 192.168.0.1
                 nameservers:
