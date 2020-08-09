@@ -18,7 +18,7 @@
     "download-queue-enabled": true,
     "download-queue-size": 5,
     "encryption": 1,
-    "idle-seeding-limit": 30,
+    "idle-seeding-limit": 1440,
     "idle-seeding-limit-enabled": true,
     "incomplete-dir": "/var/lib/transmission-daemon/Downloads",
     "incomplete-dir-enabled": false,
