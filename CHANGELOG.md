@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Configure BURN-E as WiFi access point
 * Install Prometheus to BURN-E
 * Install Grafana to BURN-E
 
