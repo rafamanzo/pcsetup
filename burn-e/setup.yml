@@ -106,11 +106,3 @@
         name: net.ipv4.ip_forward
         value: '1'
         state: present
-    - name: Install bind9
-      apt: name=bind9
-    - name: Configure bind9
-      copy: src=named.conf.options dest=/etc/bind/named.conf.options
-      register: bind9_configuration
-    - name: Restart bind9
-      systemd: name=bind9 state=restarted
-      when: bind9_configuration.changed
