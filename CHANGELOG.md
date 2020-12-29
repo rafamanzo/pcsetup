@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Fix WALL-A and WALL-E wallpaper
 * Increase BURN-E idle seeding time limit
 * Configure BURN-E as WiFi access point
 * Install Prometheus to BURN-E
