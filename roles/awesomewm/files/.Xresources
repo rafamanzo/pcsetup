@@ -48,7 +48,7 @@ urxvt.borderless: 1
 urxvt.saveLines: 5000
 
 ! Open URLs
-urxvt.perl-ext-common: default,matcher
+urxvt.perl-ext-common: default,matcher,resize-font
 urxvt.urlLauncher: firefox
 urxvt.matcher.button: 1
 

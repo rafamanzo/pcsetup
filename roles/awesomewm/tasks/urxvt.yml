@@ -9,5 +9,10 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Install urxvt-resize-font-git package
+  yay: name=urxvt-resize-font-git state=present
+  become: yes
+  become_user: super{{ ansible_env.LOGNAME }}
+  become_method: sudo
 - name: Configure through Xresources
   copy: src=.Xresources dest=~/.Xresources

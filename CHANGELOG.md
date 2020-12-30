@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Configure urxvt font resize hot keys
 * Install new work-related packages
 * Fix WALL-A and WALL-E wallpaper
 * Increase BURN-E idle seeding time limit
