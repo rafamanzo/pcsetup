@@ -138,3 +138,18 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Install peek package
+  pacman: name=peek state=present
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Install docker-compose package
+  pacman: name=docker-compose state=present
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Install tmate package
+  pacman: name=tmate state=present
+  become: yes
+  become_user: root
+  become_method: sudo
