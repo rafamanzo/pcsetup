@@ -6,6 +6,8 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+## v2.7.0 - 31/12/2020
+
 * Fix awesomewm brightness widget configuration
 * Add new SSH servers config
 * Configure urxvt font resize hot keys
