@@ -9,6 +9,6 @@
 - name: Link awesome.brightness-widget to awesome config folder
   file: src=/opt/pandorasbox/awesome.brightness-widget/brightness-widget.lua dest=~/.config/awesome/brightness-widget.lua state=link
 - name: Create awesome.brightness-widget directory to awesome config folder
-  file: src=/opt/pandorasbox/awesome.brightness-widget/icons/ dest=~/.config/awesome/awesome.brightness-widget/ state=directory
+  file: path=~/.config/awesome/awesome.brightness-widget/ state=directory
 - name: Link awesome.brightness-widget icons to awesome config folder
   file: src=/opt/pandorasbox/awesome.brightness-widget/icons dest=~/.config/awesome/awesome.brightness-widget/icons state=link
