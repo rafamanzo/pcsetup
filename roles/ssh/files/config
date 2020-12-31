@@ -70,3 +70,16 @@ Host redis.bits
 Host mongo.bits
   HostName ec2-23-23-122-131.compute-1.amazonaws.com
   User ubuntu
+
+Host gestao.palin
+  HostName 168.138.148.245
+  User ubuntu
+
+Host meteorologia.palin
+  HostName 168.138.135.119
+  User ubuntu
+
+Host ieps
+  HostName 177.92.73.246
+  User manzo
+  Port 30022
