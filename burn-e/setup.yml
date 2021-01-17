@@ -88,6 +88,20 @@
       apt: name=grafana
     - name: Start Grafana
       systemd: name=grafana-server state=started enabled=yes daemon-reload=yes
+    - name: Install python
+      apt: name=python3
+    - name: Install python pip
+      apt: name=python3-pip
+    - name: Install Grafana backup tool
+      pip: name=grafana-backup
+    - name: Configure Grafana backup tool
+      template: src=grafana-backup.json.j2 dest=~/.grafana-backup.json
+    - name: Copy Grafana backup to server
+      copy: src=files/grafana-backup.tar.gz dest=~/grafana_backup/grafana-backup.tar.gz
+      register: grafana_backup_file
+    - name: Restore Grafana backup
+      command: grafana-backup restore ~/grafana_backup/grafana-backup.tar.gz
+      when: grafana_backup_file.changed
     - name: Install Prometheus
       apt:
         pkg:

@@ -1,3 +1,5 @@
 ---
 sambapass: password
 wifi_pass: changeme
+grafana_admin_pass: changeme
+grafana_admin_token: changeme
