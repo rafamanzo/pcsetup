@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Monitor internet speed in BURN-E
 * Restore Grafana backup
 
 ## v2.7.0 - 31/12/2020

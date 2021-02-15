@@ -92,6 +92,49 @@
       apt: name=python3
     - name: Install python pip
       apt: name=python3-pip
+    - name: Install ISM Python dependencies
+      pip:
+        name:
+          - speedtest-cli
+          - psycopg2
+    - name: Install PostgreSQL
+      apt:
+        name:
+          - postgresql
+          - postgresql-contrib
+          - libpq-dev
+    - name: Install ACL
+      apt: name=acl
+    - name: Create ISM PostgreSQL user
+      postgresql_user:
+        name: internet_speed_monitor
+        password: internet_speed_monitor
+        role_attr_flags: LOGIN,NOSUPERUSER,NOCREATEDB,NOCREATEROLE
+      become_user: postgres
+    - name: Create ISM PostgreSQL database
+      postgresql_db:
+        name: internet_speed_monitor
+        owner: internet_speed_monitor
+      become_user: postgres
+    - name: Create ISM PostgreSQL table
+      postgresql_table:
+        name: measurements
+        db: internet_speed_monitor
+        owner: internet_speed_monitor
+        columns:
+          - id bigserial primary key
+          - measured_at timestamp without time zone
+          - down_speed double precision
+          - up_speed double precision
+      become_user: postgres
+    - name: Copy ISM script to server
+      copy: src=files/measure_internet_speed dest=/usr/local/bin/measure_internet_speed mode=755
+    - name: Schedule periodic measurements for ISM
+      cron:
+        name: Periodic measurements for ISM
+        minute: 0
+        hour: "*/8"
+        job: "measure_internet_speed"
     - name: Install Grafana backup tool
       pip: name=grafana-backup
     - name: Configure Grafana backup tool

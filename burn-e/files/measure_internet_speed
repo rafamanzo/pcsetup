@@ -1,0 +1,24 @@
+#!/usr/bin/env python3
+
+import speedtest
+import psycopg2
+
+from datetime import datetime
+
+
+test = speedtest.Speedtest()
+test.get_servers()
+test.get_best_server()
+test.download()
+test.upload()
+
+test_results = test.results.dict()
+
+
+db_conn = psycopg2.connect(database="internet_speed_monitor", user="internet_speed_monitor", password="internet_speed_monitor", host="127.0.0.1", port="5432")
+db_cursor = db_conn.cursor()
+
+db_cursor.execute("INSERT INTO measurements(measured_at, down_speed, up_speed) VALUES(%s, %s, %s)", (datetime.now(), test_results['download'], test_results['upload'],))
+
+db_conn.commit()
+db_conn.close()
