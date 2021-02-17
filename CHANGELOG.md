@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Remove configuration of BURN-E as WiFi access point
 * Install additional wireless drivers
 * Fix neovim nerdtree-git plugin
 * Fix WALL-A playbook integration with nvidia_legacy flag

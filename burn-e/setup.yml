@@ -150,16 +150,3 @@
         pkg:
           - prometheus
           - prometheus-node-exporter
-    - name: Install hostapd
-      apt: name=hostapd
-    - name: Configure hostapd
-      template: src=hostapd.conf.j2 dest=/etc/hostapd/hostapd.conf
-    - name: Configure hostapd envvar
-      copy: src=hostapd dest=/etc/default/hostapd
-    - name: Start hostapd
-      systemd: name=hostapd enabled=yes daemon-reload=yes masked=no
-    - name: Enable network forwarding
-      sysctl:
-        name: net.ipv4.ip_forward
-        value: '1'
-        state: present
