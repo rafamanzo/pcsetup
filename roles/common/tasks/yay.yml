@@ -12,7 +12,7 @@
   args:
     chdir: /tmp/yay
 - name: Install yay
-  shell: pacman -U --noconfirm yay-*.tar.xz
+  shell: pacman -U --noconfirm yay-*.tar.zst
   become: yes
   become_user: root
   become_method: sudo

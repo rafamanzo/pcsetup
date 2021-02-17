@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Fix yay installation
 * Remove flashplugin
 * Add support to GRUB custom kernel parameters
 * Monitor internet speed in BURN-E
