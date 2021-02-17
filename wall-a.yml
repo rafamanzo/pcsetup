@@ -3,7 +3,7 @@
   connection: local
   vars:
     nvidia_legacy: false
-    GRUB_CMDLINE_LINUX_DEFAULT: "loglevel=3 quiet iommu=soft"
+    GRUB_CMDLINE_LINUX_DEFAULT: "loglevel=3 quiet iommu=soft cryptdevice=UUID=be8ab8ff-68eb-4b19-9416-a101cb2f3d17:cryptroot root=/dev/mapper/cryptroot"
   environment:
     PATH: "/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
   roles:
