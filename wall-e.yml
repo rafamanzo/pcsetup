@@ -6,6 +6,7 @@
       ps_ac_string: 'ACAD'
       ps_bt_string: 'BAT1'
     nvidia_legacy: true
+    GRUB_CMDLINE_LINUX_DEFAULT: "loglevel=3 quiet cryptdevice=UUID=53d5289c-b8e6-4313-ba66-2b0354852168:cryptroot root=/dev/mapper/cryptroot"
   environment:
     PATH: "/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
   roles:
