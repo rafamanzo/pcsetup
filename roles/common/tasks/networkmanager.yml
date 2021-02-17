@@ -1,3 +1,18 @@
+- name: Install linux-headers package
+  pacman: name=linux-headers state=present
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Install 8192cu-dkms package # For TP Link tl-wn823n
+  yay: name=8192cu-dkms state=present
+  become: yes
+  become_user: super{{ ansible_env.LOGNAME }}
+  become_method: sudo
+- name: Install 8192eu-dkms package # For TP Link tl-wn823n
+  yay: name=8192eu-dkms state=present
+  become: yes
+  become_user: super{{ ansible_env.LOGNAME }}
+  become_method: sudo
 - name: Install NetworkManager package
   pacman: name=networkmanager state=present
   become: yes
