@@ -27,6 +27,12 @@
 
 * `ansible-playbook <HOST PLAYBOOK> -K`
 
+Things to know the first time you run:
+
+* there may be errors related to group changes in your user
+  - logout, log back in and run the playbook again
+* reboot the machine after the first successful run
+
 ## Known ~~issues~~ features
 
 ### Firewall (UFW)
@@ -66,13 +72,11 @@
   - Specs
     * AMD FX8320E
     * Geforce GTX 1050
-    * 16 GB RAM
+    * 32 GB RAM
     * 256 GB SSD
-    * 300 GB HDD
-    * 1 TB RAID1 HDD
-  - Statistics (v1.6.1)
-    * Boot time: < 23s
-    * Mem. usage after boot: ~260MB
-    * Disk usage: 11.5GB
+  - Statistics (v3.0.0)
+    * Boot time: < 35s
+    * Mem. usage after boot: ~365MB
+    * Disk usage: 18GB
 * BURN-E (Rapsberry Pi 4 B)
   - Running Ubuntu

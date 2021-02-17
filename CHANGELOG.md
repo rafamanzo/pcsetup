@@ -6,6 +6,8 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+## v3.0.0 - 17/02/2021
+
 * Remove configuration of BURN-E as WiFi access point
 * Install additional wireless drivers
 * Fix neovim nerdtree-git plugin
