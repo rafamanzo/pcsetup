@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Remove flashplugin
 * Add support to GRUB custom kernel parameters
 * Monitor internet speed in BURN-E
 * Restore Grafana backup

@@ -4,8 +4,3 @@
   become: yes
   become_user: root
   become_method: sudo
-- name: Install flashplugin package
-  pacman: name=flashplugin state=present
-  become: yes
-  become_user: root
-  become_method: sudo
