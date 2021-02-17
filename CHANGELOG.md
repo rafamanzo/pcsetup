@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Fix neovim nerdtree-git plugin
 * Fix WALL-A playbook integration with nvidia_legacy flag
 * Fix yay installation
 * Remove flashplugin
