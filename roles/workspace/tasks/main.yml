@@ -183,3 +183,13 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Install pdftk package
+  pacman: name=pdftk state=present
+  become: yes
+  become_user: root
+  become_method: sudo
+- name: Install java-commons-lang package
+  pacman: name=java-commons-lang state=present
+  become: yes
+  become_user: root
+  become_method: sudo
