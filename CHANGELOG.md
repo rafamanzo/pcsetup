@@ -6,6 +6,8 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+## v3.1.0 - 14/03/2021
+
 * Add timezone to internet speed measurement records
 * Measure internet speed every 6 hours in BURN-E
 * Add error handling to internet speed monitor script on BURN-E
