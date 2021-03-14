@@ -10,7 +10,7 @@
       path: /Axiom
       src: //192.168.0.5/Axiom
       fstype: cifs
-      opts: "username=ubuntu,password={{ sambapass }}"
+      opts: "uid={{ ansible_env.LOGNAME }},username=ubuntu,password={{ sambapass }}"
       state: present
   become: yes
   become_user: root
