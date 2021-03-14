@@ -178,3 +178,8 @@
   become: yes
   become_user: root
   become_method: sudo
+- name: Install python-poetry package
+  pacman: name=python-poetry state=present
+  become: yes
+  become_user: root
+  become_method: sudo

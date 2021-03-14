@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Install python-poetry
 * Install gfortran
 * Install R
 * Install RabbitMQ
