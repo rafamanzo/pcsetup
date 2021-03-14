@@ -12,11 +12,22 @@ Host deployer.inteligenta-roboto
   IdentityFile ~/.ssh/inteligenta-roboto_deployer_rsa
 
 Host internasus
+  HostName 200.144.245.21
+  User manzo
+  Port 10022
+
+Host deployer.internasus
+  HostName 200.144.245.21
+  User deployer
+  Port 10022
+  IdentityFile ~/.ssh/internasus_deployer_rsa
+
+Host revoada.internasus
   HostName 143.107.45.126
   User manzo
   Port 10113
 
-Host deployer.internasus
+Host deployer.revoada.internasus
   HostName 143.107.45.126
   User deployer
   Port 10113
