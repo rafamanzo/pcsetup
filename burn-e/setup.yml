@@ -123,7 +123,7 @@
         owner: internet_speed_monitor
         columns:
           - id bigserial primary key
-          - measured_at timestamp without time zone
+          - measured_at timestamp with time zone
           - down_speed double precision
           - up_speed double precision
       become_user: postgres
