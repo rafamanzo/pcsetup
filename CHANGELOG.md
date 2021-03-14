@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Add error handling to internet speed monitor script on BURN-E
 * Update InterSUS ssh information
 * Install PDF splitting tool
 * Fix user not allowed to write to SAMBA mount

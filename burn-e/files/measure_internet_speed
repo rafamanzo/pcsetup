@@ -7,13 +7,22 @@ from datetime import datetime
 
 
 test = speedtest.Speedtest()
-test.get_servers()
-test.get_best_server()
-test.download()
-test.upload()
+test_results = None
 
-test_results = test.results.dict()
-
+for attempt in range(3):
+    try:
+        test.get_servers()
+        test.get_best_server()
+        test.download()
+        test.upload()
+    except:
+        print("Error measuring internet speed")
+    else:
+        test_results = test.results.dict()
+        break
+else:
+    print("All attepmts to measure internet speed failed")
+    test_results = { 'download': -1, 'upload': -1 }
 
 db_conn = psycopg2.connect(database="internet_speed_monitor", user="internet_speed_monitor", password="internet_speed_monitor", host="127.0.0.1", port="5432")
 db_cursor = db_conn.cursor()
