@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Install RabbitMQ
 * Install MongoDB Tools
 * Install Python 3.8
 
