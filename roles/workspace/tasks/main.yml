@@ -66,6 +66,11 @@
   become: yes
   become_user: super{{ ansible_env.LOGNAME }}
   become_method: sudo
+- name: Install mongodb tools
+  yay: name=mongodb-tools-bin state=present
+  become: yes
+  become_user: super{{ ansible_env.LOGNAME }}
+  become_method: sudo
 - name: Install yarn
   pacman: name=yarn state=present
   become: yes
