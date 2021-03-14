@@ -133,7 +133,7 @@
       cron:
         name: Periodic measurements for ISM
         minute: 0
-        hour: "*/8"
+        hour: "*/6"
         job: "measure_internet_speed"
     - name: Install Grafana backup tool
       pip: name=grafana-backup

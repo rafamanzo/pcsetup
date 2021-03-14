@@ -6,6 +6,7 @@ The version numbers try to follow the standards set by http://semver.org
 
 ## Unreleased
 
+* Measure internet speed every 6 hours in BURN-E
 * Add error handling to internet speed monitor script on BURN-E
 * Update InterSUS ssh information
 * Install PDF splitting tool
